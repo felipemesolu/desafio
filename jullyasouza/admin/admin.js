@@ -68,6 +68,7 @@ function renderAdminList() {
                     <h4 class="font-bold text-sm text-white line-clamp-1">${p.name}</h4>
                     <div class="flex items-center gap-2 mt-2">
                         <span class="text-xs font-black">R$ ${p.price.toFixed(2)}</span>
+                        ${p.oldPrice && p.oldPrice > p.price ? `<span class="text-[9px] text-zinc-500 line-through">R$ ${p.oldPrice.toFixed(2)}</span>` : ''}
                     </div>
                 </div>
                 <div class="flex gap-2">
