@@ -159,6 +159,22 @@ function renderBrandedSections() {
                             </div>
                         `;
                     }).join('')}
+                    
+                    <!-- CARD CTA: SOLICITAR CATÁLOGO -->
+                    <div class="swiper-slide bg-zinc-50 border-2 border-dashed border-zinc-200 p-8 rounded-[40px] flex flex-col items-center justify-center text-center gap-6 h-auto min-h-[400px]">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <svg class="w-8 h-8 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-black text-[#0B1320] uppercase tracking-tighter mb-2">Não encontrou o que procurava?</h3>
+                            <p class="text-[11px] text-zinc-500 leading-relaxed px-4 italic">Me peça o catálogo completo da <strong>${brandNames[brand]}</strong> e confira todas as novidades!</p>
+                        </div>
+                        <button onclick="requestCatalog('${brand}')" style="background-color: ${brandColor}" class="px-8 py-4 text-white rounded-2xl text-[10px] uppercase tracking-widest font-black hover:scale-105 transition-all active:scale-95 shadow-lg">
+                            Solicitar Catálogo
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
