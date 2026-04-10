@@ -59,20 +59,20 @@ function renderAdminList() {
         const imgPath = isExternal ? p.image : `../images/produtos/${p.image}.webp`;
 
         return `
-            <div class="admin-card rounded-[30px] p-6 border border-white/5 flex flex-col gap-4">
-                <div class="h-40 bg-white shadow-inner rounded-2xl overflow-hidden flex items-center justify-center p-4">
+            <div class="admin-card rounded-[30px] p-6 flex flex-col gap-4">
+                <div class="h-40 bg-white shadow-inner rounded-2xl overflow-hidden flex items-center justify-center p-4 border border-slate-50">
                     <img src="${imgPath}" class="h-full w-full object-contain" onerror="this.src='https://placehold.co/400x400/0B1320/rose-gold?text=Sem+Foto'">
                 </div>
                 <div>
-                    <span class="text-[8px] uppercase tracking-widest text-rose-gold font-bold">${p.brand}</span>
-                    <h4 class="font-bold text-sm text-white line-clamp-1">${p.name}</h4>
+                    <span class="text-[8px] uppercase tracking-widest text-[#0B1320] font-bold opacity-60">${p.brand}</span>
+                    <h4 class="font-bold text-sm text-slate-900 line-clamp-1">${p.name}</h4>
                     <div class="flex items-center gap-2 mt-2">
-                        <span class="text-xs font-black">R$ ${p.price.toFixed(2)}</span>
-                        ${p.oldPrice && p.oldPrice > p.price ? `<span class="text-[9px] text-zinc-500 line-through">R$ ${p.oldPrice.toFixed(2)}</span>` : ''}
+                        <span class="text-xs font-black text-[#0B1320]">R$ ${p.price.toFixed(2)}</span>
+                        ${p.oldPrice && p.oldPrice > p.price ? `<span class="text-[9px] text-zinc-400 line-through">R$ ${p.oldPrice.toFixed(2)}</span>` : ''}
                     </div>
                 </div>
                 <div class="flex gap-2">
-                    <button onclick="openEditModal(${p.id})" class="flex-grow py-2 bg-white/5 rounded-lg text-[9px] uppercase font-bold hover:bg-white/10 transition-all text-zinc-400">Editar</button>
+                    <button onclick="openEditModal(${p.id})" class="flex-grow py-2 bg-slate-100 rounded-lg text-[9px] uppercase font-bold hover:bg-slate-200 transition-all text-slate-600">Editar</button>
                     <button onclick="deleteProduct(${p.id})" class="px-4 py-2 bg-rose-500/10 text-rose-500 rounded-lg text-[9px] uppercase font-bold hover:bg-rose-500 hover:text-white transition-all">Excluir</button>
                 </div>
             </div>
