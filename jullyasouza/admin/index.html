@@ -37,29 +37,50 @@
     </div>
 
     <!-- MAIN ADMIN PANEL -->
-    <div id="admin-panel" class="hidden opacity-0 transition-opacity duration-1000 max-w-5xl mx-auto p-6 md:p-10">
-        <header class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-slate-200 pb-10 font-bold">
+    <div id="admin-panel" class="hidden opacity-0 transition-opacity duration-1000 max-w-5xl mx-auto p-4 md:p-10">
+        <header class="flex flex-row items-center justify-between gap-4 mb-8 border-b border-slate-200 pb-8 font-bold">
             <div>
-                <span class="text-[10px] text-zinc-400 uppercase tracking-[0.4em] mb-2 block">Painel de Gestão</span>
-                <h2 class="text-3xl font-serif text-[#0B1320] italic">Olá, Jullya!</h2>
+                <span class="text-[10px] md:text-[11px] text-zinc-400 uppercase tracking-[0.4em] mb-1 block">Gestão</span>
+                <h2 class="text-xl md:text-3xl font-serif text-[#0B1320] italic">Olá, Jullya!</h2>
             </div>
-            <div class="flex gap-4">
-                <button onclick="openAddModal()" class="px-6 py-3 bg-[#0B1320] text-white rounded-xl text-[10px] uppercase font-black tracking-widest hover:scale-105 transition-all">
-                    + Novo Produto
+            <div class="flex items-center gap-2 md:gap-4">
+                <button onclick="openAddModal()" class="px-4 py-3 md:px-6 md:py-3 bg-[#0B1320] text-white rounded-xl text-[9px] md:text-[10px] uppercase font-black tracking-widest hover:scale-105 transition-all text-center">
+                    + Novo
                 </button>
-                <button onclick="saveChanges()" id="btn-save" class="px-6 py-3 bg-green-600 text-white rounded-xl text-[10px] uppercase font-black tracking-widest hover:scale-105 transition-all hidden">
-                    Salvar Mudanças
+                <button onclick="saveChanges()" id="btn-save" class="px-4 py-3 md:px-6 md:py-3 bg-green-600 text-white rounded-xl text-[9px] md:text-[10px] uppercase font-black tracking-widest hover:scale-105 transition-all hidden text-center">
+                    Salvar
+                </button>
+                <div class="h-8 w-px bg-slate-200 mx-1"></div>
+                <button onclick="logout()" class="text-[10px] text-zinc-400 hover:text-rose-500 uppercase font-black tracking-widest transition-all px-2">
+                    SAIR
                 </button>
             </div>
         </header>
 
         <!-- FILTROS -->
-        <div class="flex gap-2 overflow-x-auto pb-6 mb-8 no-scrollbar">
-            <button onclick="filterBrand('all')" class="filter-btn active px-6 py-2 rounded-full border border-slate-200 text-slate-500 text-[10px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">Todas</button>
-            <button onclick="filterBrand('eudora')" class="filter-btn px-6 py-2 rounded-full border border-slate-200 text-slate-500 text-[10px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">Eudora</button>
-            <button onclick="filterBrand('boticario')" class="filter-btn px-6 py-2 rounded-full border border-slate-200 text-slate-500 text-[10px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">Boticário</button>
-            <button onclick="filterBrand('oui')" class="filter-btn px-6 py-2 rounded-full border border-slate-200 text-slate-500 text-[10px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">O.U.I</button>
-            <button onclick="filterBrand('qdb')" class="filter-btn px-6 py-2 rounded-full border border-slate-200 text-slate-500 text-[10px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">QDB</button>
+        <div class="mb-8">
+            <!-- Mobile Select -->
+            <div class="md:hidden relative">
+                <select id="brand-select-mobile" onchange="filterBrand(this.value)" class="w-full bg-white border border-slate-200 rounded-2xl px-6 py-4 text-[11px] font-black uppercase tracking-widest text-[#0B1320] appearance-none outline-none shadow-sm">
+                    <option value="all">Filtro: Todas as Marcas</option>
+                    <option value="eudora">Eudora</option>
+                    <option value="boticario">Boticário</option>
+                    <option value="oui">O.U.I Paris</option>
+                    <option value="qdb">Quem Disse, Berenice?</option>
+                </select>
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </div>
+
+            <!-- Desktop Buttons -->
+            <div class="hidden md:flex gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth">
+                <button onclick="filterBrand('all')" class="filter-btn active px-7 py-3 rounded-full border border-slate-200 text-slate-500 text-[11px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">Todas</button>
+                <button onclick="filterBrand('eudora')" class="filter-btn px-7 py-3 rounded-full border border-slate-200 text-slate-500 text-[11px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">Eudora</button>
+                <button onclick="filterBrand('boticario')" class="filter-btn px-7 py-3 rounded-full border border-slate-200 text-slate-500 text-[11px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">Boticário</button>
+                <button onclick="filterBrand('oui')" class="filter-btn px-7 py-3 rounded-full border border-slate-200 text-slate-500 text-[11px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">O.U.I</button>
+                <button onclick="filterBrand('qdb')" class="filter-btn px-7 py-3 rounded-full border border-slate-200 text-slate-500 text-[11px] uppercase font-black tracking-widest hover:border-[#0B1320] transition-all whitespace-nowrap">QDB</button>
+            </div>
         </div>
 
         <!-- LISTA DE PRODUTOS -->
@@ -130,7 +151,7 @@
                     <textarea id="field-desc" class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all resize-none h-20 text-xs"></textarea>
                 </div>
                 
-                <button type="submit" class="w-full py-4 bg-[#0B1320] text-white rounded-2xl text-[10px] uppercase font-black tracking-[0.2em] shadow-xl hover:brightness-110 active:scale-95 transition-all sticky bottom-0">
+                <button type="submit" class="w-full py-5 bg-[#0B1320] text-white rounded-2xl text-[12px] uppercase font-black tracking-[0.2em] shadow-xl hover:brightness-110 active:scale-95 transition-all sticky bottom-0">
                     Salvar Produto
                 </button>
             </form>
@@ -147,10 +168,10 @@
             <p class="text-xs text-zinc-500 leading-relaxed mb-10">Esta ação não pode ser desfeita. O produto será removido permanentemente do seu catálogo.</p>
             
             <div class="flex flex-col gap-3">
-                <button id="confirm-delete-btn" class="w-full py-4 bg-rose-500 text-white rounded-2xl text-[10px] uppercase font-black tracking-widest hover:brightness-110 transition-all">
+                <button id="confirm-delete-btn" class="w-full py-5 bg-rose-500 text-white rounded-2xl text-[12px] uppercase font-black tracking-widest hover:brightness-110 transition-all">
                     Sim, Excluir permanentemente
                 </button>
-                <button onclick="closeDeleteModal()" class="w-full py-4 bg-zinc-100 text-zinc-400 rounded-2xl text-[10px] uppercase font-black tracking-widest hover:bg-zinc-200 transition-all">
+                <button onclick="closeDeleteModal()" class="w-full py-5 bg-zinc-100 text-zinc-400 rounded-2xl text-[12px] uppercase font-black tracking-widest hover:bg-zinc-200 transition-all">
                     Cancelar
                 </button>
             </div>

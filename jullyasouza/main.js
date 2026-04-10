@@ -113,11 +113,11 @@ function renderBrandedSections() {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-accessible-title mb-3">Estoque esgotado</h3>
-                    <p class="text-accessible-desc mb-8">
+                    <h3 class="text-3xl font-serif text-[#0B1320] mb-5">Estoque esgotado</h3>
+                    <p class="text-base text-zinc-500 leading-relaxed mb-10 px-4">
                         No momento não tenho produtos desta marca em pronta entrega, mas você pode escolher qualquer item do catálogo oficial!
                     </p>
-                    <button onclick="requestCatalog('${brand}')" style="background-color: ${brandColor}" class="w-full py-5 text-white rounded-2xl text-[12px] uppercase tracking-widest font-black hover:scale-105 transition-transform shadow-lg">
+                    <button onclick="requestCatalog('${brand}')" style="background-color: ${brandColor}" class="w-full py-5 text-white rounded-2xl text-[14px] uppercase tracking-widest font-black hover:scale-105 transition-transform shadow-lg">
                         Solicitar Catálogo ${brandNames[brand]}
                     </button>
                 </div>
@@ -137,12 +137,12 @@ function renderBrandedSections() {
                         
                         return `
                             <div class="swiper-slide bg-white border border-zinc-100 p-5 rounded-[40px] flex flex-col gap-4 relative h-auto shadow-sm">
-                                ${hasPromo ? `<div class="absolute top-5 left-5 z-20 bg-rose-gold text-[#0B1320] text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">Oferta</div>` : ''}
+                                ${hasPromo ? `<div class="absolute top-5 left-5 z-20 bg-rose-gold text-[#0B1320] text-[12px] font-black uppercase px-4 py-1.5 rounded-full shadow-lg">Oferta</div>` : ''}
                                 <div class="relative overflow-hidden rounded-[30px] h-60 bg-zinc-50 flex items-center justify-center">
                                     <img src="${imgPath}" alt="${product.name}" class="w-full h-full object-contain p-4" onerror="this.src='https://placehold.co/400x400/0B1320/rose-gold?text=Sem+Foto'">
-                                    <div class="absolute bottom-3 right-3 px-4 py-2 bg-white/90 backdrop-blur-md rounded-2xl shadow-md border border-zinc-100">
+                                    <div class="absolute bottom-3 right-3 px-5 py-3 bg-white/90 backdrop-blur-md rounded-2xl shadow-md border border-zinc-100">
                                         <div class="flex flex-col items-end">
-                                            ${hasPromo ? `<span class="text-[10px] text-zinc-400 line-through font-bold">R$ ${product.oldPrice.toFixed(2)}</span>` : ''}
+                                            ${hasPromo ? `<span class="text-[12px] text-zinc-400 line-through font-bold">R$ ${product.oldPrice.toFixed(2)}</span>` : ''}
                                             <span class="text-accessible-price">R$ ${product.price.toFixed(2)}</span>
                                         </div>
                                     </div>
@@ -151,7 +151,7 @@ function renderBrandedSections() {
                                     <h3 class="text-accessible-title mb-2 leading-tight">${product.name}</h3>
                                     <p class="text-accessible-desc mb-6 line-clamp-2">${product.description}</p>
                                     <div class="mt-auto">
-                                        <button onclick="addToCart(${product.id})" style="background-color: ${brandColor}" class="w-full py-4 text-white rounded-2xl text-[11px] uppercase tracking-widest font-black transition-all active:scale-95 shadow-lg">
+                                        <button onclick="addToCart(${product.id})" style="background-color: ${brandColor}" class="w-full py-5 text-white rounded-2xl text-[14px] uppercase tracking-widest font-black transition-all active:scale-95 shadow-lg">
                                             Adicionar
                                         </button>
                                     </div>
@@ -168,10 +168,10 @@ function renderBrandedSections() {
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-sm font-black text-[#0B1320] uppercase tracking-tighter mb-2">Não encontrou o que procurava?</h3>
-                            <p class="text-[11px] text-zinc-500 leading-relaxed px-4 italic">Me peça o catálogo completo da <strong>${brandNames[brand]}</strong> e confira todas as novidades!</p>
+                            <h3 class="text-2xl font-serif text-[#0B1320] mb-3">Não encontrou o que procurava?</h3>
+                            <p class="text-[15px] text-zinc-500 leading-relaxed px-4">Me peça o catálogo completo da <strong>${brandNames[brand]}</strong> e confira todas as novidades!</p>
                         </div>
-                        <button onclick="requestCatalog('${brand}')" style="background-color: ${brandColor}" class="px-8 py-4 text-white rounded-2xl text-[10px] uppercase tracking-widest font-black hover:scale-105 transition-all active:scale-95 shadow-lg">
+                        <button onclick="requestCatalog('${brand}')" style="background-color: ${brandColor}" class="px-10 py-5 text-white rounded-2xl text-[13px] uppercase tracking-widest font-black hover:scale-105 transition-all active:scale-95 shadow-lg">
                             Solicitar Catálogo
                         </button>
                     </div>

@@ -22,6 +22,10 @@ async function checkAuth() {
     }
 }
 
+function logout() {
+    window.location.reload(); // Forma mais segura de limpar o estado e voltar ao login
+}
+
 async function loadAdminProducts() {
     let data = [];
     try {
@@ -54,26 +58,40 @@ async function loadAdminProducts() {
 function renderAdminList() {
     const container = document.getElementById('admin-product-list');
     const filtered = currentFilter === 'all' ? adminProducts : adminProducts.filter(p => p.brand === currentFilter);
+    
+    if (filtered.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full py-20 text-center bg-white rounded-[40px] border border-dashed border-slate-200">
+                <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707.293l-2.414-2.414A1 1 0 006.586 13H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 class="text-lg font-serif text-[#0B1320] italic mb-2">Nenhum produto encontrado</h3>
+                <p class="text-xs text-zinc-400">Você ainda não cadastrou produtos nesta marca.</p>
+            </div>
+        `;
+        return;
+    }
+
     container.innerHTML = filtered.map(p => {
         const isExternal = p.image.startsWith('http');
         const imgPath = isExternal ? p.image : `../images/produtos/${p.image}.webp`;
 
         return `
-            <div class="admin-card rounded-[30px] p-6 flex flex-col gap-4">
-                <div class="h-40 bg-white shadow-inner rounded-2xl overflow-hidden flex items-center justify-center p-4 border border-slate-50">
+            <div class="admin-card rounded-[35px] p-5 md:p-6 flex flex-col gap-5">
+                <div class="h-48 md:h-52 bg-white shadow-inner rounded-[30px] overflow-hidden flex items-center justify-center p-6 border border-slate-50 relative">
                     <img src="${imgPath}" class="h-full w-full object-contain" onerror="this.src='https://placehold.co/400x400/0B1320/rose-gold?text=Sem+Foto'">
+                    <span class="absolute top-4 left-4 bg-slate-100/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-[9px] uppercase tracking-widest text-[#0B1320] font-black">${p.brand}</span>
                 </div>
-                <div>
-                    <span class="text-[8px] uppercase tracking-widest text-[#0B1320] font-bold opacity-60">${p.brand}</span>
-                    <h4 class="font-bold text-sm text-slate-900 line-clamp-1">${p.name}</h4>
-                    <div class="flex items-center gap-2 mt-2">
-                        <span class="text-xs font-black text-[#0B1320]">R$ ${p.price.toFixed(2)}</span>
-                        ${p.oldPrice && p.oldPrice > p.price ? `<span class="text-[9px] text-zinc-400 line-through">R$ ${p.oldPrice.toFixed(2)}</span>` : ''}
+                <div class="px-2">
+                    <h4 class="font-bold text-[15px] md:text-base text-slate-900 leading-tight mb-3 line-clamp-2 min-h-[3rem]">${p.name}</h4>
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg font-black text-[#0B1320]">R$ ${p.price.toFixed(2)}</span>
+                        ${p.oldPrice && p.oldPrice > p.price ? `<span class="text-[12px] text-zinc-400 line-through font-bold">R$ ${p.oldPrice.toFixed(2)}</span>` : ''}
                     </div>
                 </div>
-                <div class="flex gap-2">
-                    <button onclick="openEditModal(${p.id})" class="flex-grow py-2 bg-slate-100 rounded-lg text-[9px] uppercase font-bold hover:bg-slate-200 transition-all text-slate-600">Editar</button>
-                    <button onclick="deleteProduct(${p.id})" class="px-4 py-2 bg-rose-500/10 text-rose-500 rounded-lg text-[9px] uppercase font-bold hover:bg-rose-500 hover:text-white transition-all">Excluir</button>
+                <div class="flex gap-3 mt-auto">
+                    <button onclick="openEditModal(${p.id})" class="flex-grow py-4 bg-slate-100 rounded-2xl text-[11px] uppercase font-black tracking-widest hover:bg-[#0B1320] hover:text-white transition-all text-slate-600 shadow-sm">Editar</button>
+                    <button onclick="deleteProduct(${p.id})" class="px-6 py-4 bg-rose-50 rounded-2xl text-[11px] uppercase font-black tracking-widest text-rose-500 hover:bg-rose-500 hover:text-white transition-all shadow-sm">Excluir</button>
                 </div>
             </div>
         `;
@@ -267,4 +285,18 @@ document.getElementById('confirm-delete-btn').addEventListener('click', () => {
 });
 
 function closeModal() { document.getElementById('product-modal').classList.add('hidden'); }
-function filterBrand(brand) { currentFilter = brand; renderAdminList(); document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.innerText.toLowerCase().includes(brand === 'all' ? 'todas' : brand)));}
+function filterBrand(brand) { 
+    currentFilter = brand; 
+    renderAdminList(); 
+    
+    // Sync buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        const isAll = brand === 'all' && btn.innerText.toLowerCase().includes('todas');
+        const isMatch = btn.innerText.toLowerCase().includes(brand);
+        btn.classList.toggle('active', isAll || isMatch);
+    });
+
+    // Sync select
+    const mobileSelect = document.getElementById('brand-select-mobile');
+    if (mobileSelect) mobileSelect.value = brand;
+}

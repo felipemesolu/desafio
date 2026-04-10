@@ -18,7 +18,7 @@ body {
     color: #fff;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    font-size: 18px; /* Aumentado para melhor legibilidade */
+    font-size: 16px; 
 }
 
 h1, h2, h3, .font-serif {
@@ -60,21 +60,22 @@ h1, h2, h3, .font-serif {
 
 /* Tipografia Acessível */
 .text-accessible-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 800;
+    line-height: 1.2;
     color: #0B1320;
 }
 
 .text-accessible-price {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 900;
     color: #0B1320;
 }
 
 .text-accessible-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #4b5563;
 }
 .gold-shimmer {
