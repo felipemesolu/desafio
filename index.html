@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-4PPX85K3QL', {
+      page_title: 'Desafio 30 Dias 30 Sites'
+    });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 30 Dias 30 Sites</title>
+    <meta name="description" content="Acompanhe o desafio de 30 dias criando 30 sites reais, com ideias sugeridas pelos seguidores no Instagram. Veja o processo, aprendizados e resultados.">
+    <link rel="icon" type="image/png" href="https://www.mesolu.com.br/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mesolu.com.br/desafio/">
+    <meta property="og:title" content="Desafio 30 dias, 30 sites - Felipe Mesolu">
+    <meta property="og:description" content="30 dias, 30 sites criados do zero com ideias da comunidade. Acompanhe o desafio completo e os bastidores.">
+
+
+    <meta property="og:image" content="https://www.mesolu.com.br/logo-mesolu-1200x630.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS c/ Configuração Customizada -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6', // Azul principal da Hero original
+                            600: '#2563eb', // Azul escuro 
+                            900: '#1e3a8a',
+                            // Cores de fundo Light Theme
+                            light: '#f8fafc',  // bg-slate-50
+                            card: '#ffffff',
+                            border: '#e2e8f0'  // border-slate-200
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 8px 20px -5px rgba(59, 130, 246, 0.3)',
+                        'card-hover': '0 20px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            /* brand-light */
+            color: #475569;
+            /* text-slate-600 */
+        }
+
+        /* Abstract Clean Background para Hero - Claro */
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+            /* Gradiente claro super elegante e limpo usando apenas azul */
+            background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.08), transparent 25%);
+        }
+
+        @keyframes bg-scrolling-reverse {
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        /* Padrão de fundo com textura animada */
+        .hexagon-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.8;
+            /* Elevado bruscamente para garantir visibilidade */
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC");
+            background-size: 50px 50px;
+            background-repeat: repeat;
+            /* Voltando à velocidade hiper rápida do código base original */
+            animation: bg-scrolling-reverse 0.92s linear infinite;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        /* Animação para revelação suave dos cards */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Marcador da Timeline Central */
+        .timeline-dot {
+            transition: all 0.5s ease;
+            box-shadow: none;
+            /* Removi shadow fake para evitar glow */
+        }
+
+        .reveal-element.active .timeline-dot {
+            background-color: #3b82f6 !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+            /* Sombreamento opaco natural SEM efeito de luz rgb */
+            color: #ffffff !important;
+            border-color: #3b82f6 !important;
+            transform: scale(1.1);
+        }
+
+        /* Cards minimalistas e limpos com borda e sombra leve */
+        .clean-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .clean-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            /* Foco em azul agora */
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Linha guia de progresso otimizada */
+        .progress-track {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            bottom: 2rem;
+            width: 3px;
+            background: #cbd5e1;
+            /* Base limpa da corda cinza */
+            transform: translateX(-50%);
+        }
+
+        .progress-fill {
+            width: 100%;
+            background: #3b82f6;
+            /* Pintura Sólida Azul no progresso (SEM degradê que atrapalha visão) */
+            height: 0%;
+            border-radius: 999px;
+            box-shadow: none;
+            /* Todo o glow da trilha foi limpo */
+            will-change: height;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-600 selection:bg-brand-500 selection:text-white">
+
+    <!-- ==================== CONTROLES DE NAVEGAÇÃO / HERO SECTION ==================== -->
+    <header
+        class="hero-bg min-h-screen border-b border-slate-200 flex items-center justify-center relative pt-20 pb-16 bg-white">
+        <div class="hexagon-pattern z-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+
+                <!-- Tag Desafio -->
+                <div
+                    class="inline-flex items-center gap-2 bg-brand-50 text-brand-600 px-3 py-1.5 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-3 border border-brand-100">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                    </span>
+                    Desafio Aberto
+                </div>
+
+                <!-- Título -->
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                    30 dias<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-blue-600">
+                        30 Sites
+                    </span>
+                </h1>
+
+                <!-- Subtítulo -->
+                <p class="text-lg md:text-2xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
+                    De <strong class="text-slate-800 font-bold">01 a 30 de Abril de 2026</strong>. <br>
+                    Um compromisso diário.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Scroll Indicator animado -->
+        <div class="absolute bottom-10 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 animate-bounce cursor-pointer"
+            onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">
+            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400">Role para baixo</span>
+            <i class="fa-solid fa-chevron-down text-sm text-slate-400"></i>
+        </div>
+    </header>
+
+    <!-- ==================== TIMELINE GERADA DE MODO DINÂMICO ==================== -->
+    <main id="timeline" class="py-24 relative overflow-hidden bg-slate-50">
+        <div class="container mx-auto px-6 max-w-5xl">
+
+            <div class="text-center mb-24">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Linha do Tempo
+                </h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
+                    Acompanhe a linha do tempo dos 30 dias deste desafio, quem sabe o próximo pode ser o seu.
+                </p>
+            </div>
+
+            <!-- Wrapper da grid da timeline com a linha no meio -->
+            <div class="relative">
+
+                <!-- Linha Vertical (desktop apenas) -->
+                <div class="hidden md:block progress-track" id="progress-container">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <!-- Cards inseridos via Script -->
+                <div id="timeline-grid" class="space-y-12 md:space-y-20 relative z-10"></div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER OTIMIZADO ==================== -->
+    <footer class="border-t border-slate-200 bg-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none"></div>
+        <div
+            class="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left">
+
+            <div class="flex items-center gap-5 justify-center md:justify-start">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-blue-600 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-brand-500/20">
+                    30
+                </div>
+                <div>
+                    <h3 class="text-slate-900 font-extrabold text-xl mb-1">Desafio 30 dias 30 Sites</h3>
+                    <p class="text-sm text-slate-500 font-medium">Idealizado e construído por Felipe</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4 justify-center md:justify-end">
+                <a href="https://www.instagram.com/felipemesolu/" aria-label="Acessar Instagram de Felipe"
+                    class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-brand-600 hover:bg-brand-50 hover:border-brand-200 transition-all">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/felipe-mesolu/" aria-label="Acessar LinkedIn de Felipe"
+                    class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-brand-600 hover:bg-brand-50 hover:border-brand-200 transition-all">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="https://wa.me/5527996364467" target="_blank" rel="noopener noreferrer"
+                    aria-label="Falar com Felipe no WhatsApp"
+                    class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-brand-600 hover:bg-brand-50 hover:border-brand-200 transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ==================== LÓGICA DE DADOS & ANIMAÇÕES DA PÁGINA ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ==================== 1. DATA BUILDER ====================
+            const timelineGrid = document.getElementById('timeline-grid');
+            const totalDays = 30;
+
+            // Simulação de lógicas de "entrega" adaptada ao Light Mode
+            const getStatusData = (dayIndex) => {
+                if (dayIndex === 1) return {
+                    status: 'concluido',
+                    title: 'Igreja Fortalecendo Vidas - Guarapari',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-brand-50 text-brand-600 border border-brand-100',
+                    linkText: 'text-brand-600 hover:text-brand-700',
+                    link: 'https://mesolu.com.br/desafio/ifv/index.html'
+                };
+                if (dayIndex === 2) return {
+                    status: 'concluido',
+                    title: 'Cardoso Cosméticos - Guarapari',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://mesolu.com.br/desafio/cardosocosmeticos/'
+                };
+                if (dayIndex === 3) return {
+                    status: 'concluido',
+                    title: 'Jéssica Carvalho Barreto - Advogada e Consultora Jurídica',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://mesolu.com.br/desafio/jcb-adv/'
+                };
+                if (dayIndex === 4) return {
+                    status: 'concluido',
+                    title: 'Leonardo Almeida - Corretor Imobiliário',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://mesolu.com.br/desafio/leonardoalmeida/'
+                };
+                    return {
+                        status: 'pendente',
+                        title: 'aguardando',
+                        text: 'Agendado',
+                        badge: 'bg-slate-100 text-slate-500 border border-slate-200',
+                        linkText: 'text-slate-400',
+                        link: 'javascript:void(0)'
+                    };
+            };
+
+            let timelineHTML = '';
+
+            for (let i = 1; i <= totalDays; i++) {
+                const dayString = String(i).padStart(2, '0');
+                const isEven = i % 2 === 0;
+                // Layout Zig-Zag
+                const flexDir = isEven ? 'md:flex-row-reverse' : 'md:flex-row';
+                const textAlign = isEven ? 'md:text-left' : 'md:text-right';
+                const data = getStatusData(i);
+
+                const linkClass = data.status === 'concluido'
+                    ? `inline-flex items-center gap-2 mt-6 font-bold transition-all ${data.linkText} hover:gap-3`
+                    : `inline-flex items-center gap-2 mt-6 font-medium cursor-not-allowed opacity-60 ${data.linkText}`;
+
+                // Estrutura HTML de um card para o Light Theme
+                timelineHTML += `
+                    <div class="reveal-element flex flex-col ${flexDir} items-center gap-8 md:gap-14 w-full relative">
+                        
+                        <!-- Coluna Lateral de Conteúdo (Card) -->
+                        <div class="w-full md:w-5/12 ${textAlign}">
+                            <div class="clean-card rounded-3xl p-8 md:p-10 relative overflow-hidden group h-full flex flex-col justify-center">
+                                
+                                <!-- Marca de D'Agua Decorativa mais visível -->
+                                <span class="absolute -right-4 -bottom-6 text-9xl font-black text-slate-300/40 select-none transition-transform group-hover:scale-110 pointer-events-none">
+                                    ${dayString}
+                                </span>
+                                
+                                <div class="relative z-10">
+                                    <div class="inline-block px-3 py-1 text-xs font-bold rounded-full mb-5 uppercase tracking-wide ${data.badge}">
+                                        Dia ${dayString}
+                                    </div>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">${data.title}</h3>
+                                    
+                                    <a href="${data.link}" class="${linkClass}" target="_blank" rel="noopener noreferrer">
+                                        ${data.text} 
+                                        ${data.status === 'concluido' ? '<i class="fa-solid fa-arrow-right text-sm"></i>' : ''}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coluna Central: Marcador -->
+                        <div class="hidden md:flex w-2/12 justify-center relative z-20">
+                            <!-- A bolinha que acende -->
+                            <div class="timeline-dot w-16 h-16 bg-white border-[4px] border-slate-300 rounded-full flex items-center justify-center font-extrabold text-slate-500 shadow-md text-xl z-20">
+                                ${dayString}
+                            </div>
+                        </div>
+                        
+                        <!-- Coluna Oposta Invisível (Equilíbrio Flex) -->
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+                `;
+            }
+
+            timelineGrid.innerHTML = timelineHTML;
+
+            // ==================== 1.5. AJUSTE MILIMÉTRICO DA LINHA ====================
+            // Impede que a corda cinza passe reto da última bolinha descendo pelo card
+            const adjustProgressLine = () => {
+                const track = document.getElementById('progress-container');
+                const dots = document.querySelectorAll('.timeline-dot');
+                const grid = document.getElementById('timeline-grid');
+
+                if (!track || !grid || dots.length === 0) return;
+
+                // Medindo tamanhos relativos na tela no momento atual
+                const gridRect = grid.getBoundingClientRect();
+                const firstDotRect = dots[0].getBoundingClientRect();
+                const lastDotRect = dots[dots.length - 1].getBoundingClientRect();
+
+                // Calcula a distância exata até o "centro" da primeira bolinha e da última
+                const topOffset = (firstDotRect.top - gridRect.top) + (firstDotRect.height / 2);
+                const bottomOffset = gridRect.bottom - (lastDotRect.top + lastDotRect.height / 2);
+
+                track.style.top = `${topOffset}px`;
+                track.style.bottom = `${bottomOffset}px`;
+            };
+
+            // Timeout garante que as imagens/cards já ajustaram suas alturas antes da medição
+            setTimeout(adjustProgressLine, 100);
+            // Re-calcula se a janela do usuário mudar de tamanho
+            window.addEventListener('resize', () => window.requestAnimationFrame(adjustProgressLine));
+
+            // ==================== 2. INTERSECTION OBSERVER ====================
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -15% 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        // Faz o card sumir levemente ao subir a tela se preferir o efeito
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-element').forEach(el => observer.observe(el));
+
+
+            // ==================== 3. SCROLL PROGRESS BAR ====================
+            const progressFill = document.getElementById('progress-fill');
+            const progressContainer = document.getElementById('progress-container');
+            let ticking = false;
+
+            const updateProgressBar = () => {
+                if (!progressContainer || !progressFill) return;
+
+                const rect = progressContainer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const scrollableDistance = rect.height;
+                const distanceTop = rect.top - (windowHeight / 2) + 150;
+
+                if (distanceTop > 0) {
+                    progressFill.style.height = '0%';
+                } else {
+                    let scrolledPixels = Math.abs(distanceTop);
+                    let percentage = (scrolledPixels / scrollableDistance) * 100;
+                    percentage = Math.max(0, Math.min(100, percentage));
+                    progressFill.style.height = `${percentage}%`;
+                }
+
+                ticking = false;
+            };
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateProgressBar);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+        });
+    </script>
+</body>
+
+</html>

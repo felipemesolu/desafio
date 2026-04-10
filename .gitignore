@@ -1,7 +1,7 @@
 # Ignore everything
 /*
 
-# Unignore the chosen projects
+# Unignore the chosen projects and root index
 !/arquiteta/
 !/cardosocosmeticos/
 !/estampariaide/
@@ -10,6 +10,7 @@
 !/leonardo-almeida/
 !/lumodas/
 !/oliverconfeitaria/
+!/index.html
 
 # Important: Don't ignore the gitignore itself
 !.gitignore
