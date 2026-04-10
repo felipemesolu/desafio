@@ -245,6 +245,26 @@ function openEditModal(id) {
     document.getElementById('modal-title').innerText = "Editar Produto";
 }
 
+let productIdToDelete = null;
+
+function deleteProduct(id) {
+    productIdToDelete = id;
+    document.getElementById('delete-modal').classList.remove('hidden');
+}
+
+function closeDeleteModal() {
+    productIdToDelete = null;
+    document.getElementById('delete-modal').classList.add('hidden');
+}
+
+document.getElementById('confirm-delete-btn').addEventListener('click', () => {
+    if (productIdToDelete) {
+        adminProducts = adminProducts.filter(x => x.id !== productIdToDelete);
+        renderAdminList();
+        document.getElementById('btn-save').classList.remove('hidden');
+        closeDeleteModal();
+    }
+});
+
 function closeModal() { document.getElementById('product-modal').classList.add('hidden'); }
-function filterBrand(brand) { currentFilter = brand; renderAdminList(); document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.innerText.toLowerCase().includes(brand === 'all' ? 'todas' : brand))); }
-function deleteProduct(id) { if (confirm("Excluir produto?")) { adminProducts = adminProducts.filter(x => x.id !== id); renderAdminList(); document.getElementById('btn-save').classList.remove('hidden'); } }
+function filterBrand(brand) { currentFilter = brand; renderAdminList(); document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.innerText.toLowerCase().includes(brand === 'all' ? 'todas' : brand)));}
