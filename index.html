@@ -5,22 +5,24 @@
     <meta charset="UTF-8">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-4PPX85K3QL', {
-      page_title: 'Desafio 30 Dias 30 Sites'
-    });
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4PPX85K3QL', {
+            page_title: 'Desafio 30 Dias 30 Sites'
+        });
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 30 Dias 30 Sites</title>
-    <meta name="description" content="Acompanhe o desafio de 30 dias criando 30 sites reais, com ideias sugeridas pelos seguidores no Instagram. Veja o processo, aprendizados e resultados.">
+    <meta name="description"
+        content="Acompanhe o desafio de 30 dias criando 30 sites reais, com ideias sugeridas pelos seguidores no Instagram. Veja o processo, aprendizados e resultados.">
     <link rel="icon" type="image/png" href="https://www.mesolu.com.br/favicon.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.mesolu.com.br/desafio/">
     <meta property="og:title" content="Desafio 30 dias, 30 sites - Felipe Mesolu">
-    <meta property="og:description" content="30 dias, 30 sites criados do zero com ideias da comunidade. Acompanhe o desafio completo e os bastidores.">
+    <meta property="og:description"
+        content="30 dias, 30 sites criados do zero com ideias da comunidade. Acompanhe o desafio completo e os bastidores.">
 
 
     <meta property="og:image" content="https://www.mesolu.com.br/logo-mesolu-1200x630.png">
@@ -294,68 +296,81 @@
 
             // Simulação de lógicas de "entrega" adaptada ao Light Mode
             const getStatusData = (dayIndex) => {
-                const projects = {
-                    1: {
-                        title: 'Igreja Fortalecendo Vidas',
-                        link: '/ifv/index.html',
-                        badge: 'bg-brand-50 text-brand-600 border border-brand-100'
-                    },
-                    2: {
-                        title: 'Cardoso Cosméticos',
-                        link: '/cardosocosmeticos/',
-                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
-                    },
-                    3: {
-                        title: 'Jéssica Carvalho Barreto',
-                        link: '/jcb-adv/',
-                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
-                    },
-                    4: {
-                        title: 'Leonardo Almeida',
-                        link: '/leonardo-almeida/',
-                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
-                    },
-                    5: {
-                        title: 'Arquiteta - Portfólio',
-                        link: '/arquiteta/',
-                        badge: 'bg-brand-50 text-brand-600 border border-brand-100'
-                    },
-                    6: {
-                        title: 'Estamparia Ide',
-                        link: '/estampariaide/',
-                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
-                    },
-                    7: {
-                        title: 'Lu Modas',
-                        link: '/lumodas/',
-                        badge: 'bg-brand-50 text-brand-600 border border-brand-100'
-                    },
-                    8: {
-                        title: 'Oliver Confeitaria',
-                        link: '/oliverconfeitaria/',
-                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
-                    },
-                    9: {
-                        title: 'Modelo de Catálogo (PHP)',
-                        link: 'https://mesolu.com.br/desafio/modelo-catalogo/',
-                        badge: 'bg-slate-100 text-slate-600 border border-slate-200'
-                    }
+                if (dayIndex === 1) return {
+                    status: 'concluido',
+                    title: 'Igreja Fortalecendo Vidas - Guarapari',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-brand-50 text-brand-600 border border-brand-100',
+                    linkText: 'text-brand-600 hover:text-brand-700',
+                    link: 'https://mesolu.com.br/desafio/ifv/'
                 };
-
-                if (projects[dayIndex]) {
-                    return {
-                        status: 'concluido',
-                        title: projects[dayIndex].title,
-                        text: 'Concluído • Visualizar Projeto',
-                        badge: projects[dayIndex].badge,
-                        linkText: 'text-brand-600 hover:text-brand-700',
-                        link: projects[dayIndex].link
-                    };
-                }
-
+                if (dayIndex === 2) return {
+                    status: 'concluido',
+                    title: 'Cardoso Cosméticos - Guarapari',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/cardosocosmeticos/'
+                };
+                if (dayIndex === 3) return {
+                    status: 'concluido',
+                    title: 'Jéssica Carvalho Barreto - Advogada e Consultora Jurídica',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/jcb-adv/'
+                };
+                if (dayIndex === 4) return {
+                    status: 'concluido',
+                    title: 'Leonardo Almeida - Corretor Imobiliário',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/leonardoalmeida/'
+                };
+                if (dayIndex === 5) return {
+                    status: 'concluido',
+                    title: 'Estamparia IDE',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/estampariaide/'
+                };
+                if (dayIndex === 6) return {
+                    status: 'concluido',
+                    title: 'Nicole Araújo - Arquitetura e Interiores',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/nicolearaujoarq/'
+                };
+                if (dayIndex === 7) return {
+                    status: 'concluido',
+                    title: 'SETE - Segurança Eletrônica e Serviços Elétricos',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://setemonitoramento.com.br/'
+                };
+                if (dayIndex === 8) return {
+                    status: 'concluido',
+                    title: 'Luciana Carvalho - Moda e Confecções',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/lucianacarvalho/'
+                };
+                if (dayIndex === 9) return {
+                    status: 'concluido',
+                    title: 'Oliver Confeitaria',
+                    text: 'Concluído • Visualizar Projeto',
+                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
+                    linkText: 'text-blue-600 hover:text-blue-700',
+                    link: 'https://desafio-1vx.pages.dev/oliverconfeitaria/'
+                };
                 return {
                     status: 'pendente',
-                    title: 'Aguardando',
+                    title: 'aguardando',
                     text: 'Agendado',
                     badge: 'bg-slate-100 text-slate-500 border border-slate-200',
                     linkText: 'text-slate-400',

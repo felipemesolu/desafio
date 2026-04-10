@@ -39,14 +39,15 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 
 | Projeto | Conceito / Foco | Ferramenta Base |
 | :--- | :--- | :--- |
-| **Arquiteta** | Clean & Minimalista | HTML/CSS |
-| **Oliver Confeitaria** | Visual Premium & Gourmet | IA + Refinamento |
-| **Lu Modas** | Estética Fashion & Moderna | Tailwind/Refining |
-| **JCB Adv** | Sobriedade & Confiança | HTML/CSS |
-| **Estamparia Ide** | Criatividade & Cores | IA + Custom Design |
+| **Igreja Fortalecendo Vidas** | Institucional Moderno | HTML/CSS |
 | **Cardoso Cosméticos** | Suavidade & Limpeza | HTML/CSS |
-| **IFV** | Institucional Moderno | HTML/CSS |
+| **JCB Advogada** | Sobriedade & Confiança | HTML/CSS |
 | **Leonardo Almeida** | Mercado Imobiliário | IA + Custom Design |
+| **Estamparia IDE** | Criatividade & Cores | IA + Custom Design |
+| **Nicole Araújo Arq** | Clean & Minimalista | HTML/CSS |
+| **SETE - Segurança Eletrônica** | Segurança Eletrônica | External Project |
+| **Luciana Carvalho** | Estética Fashion & Moderna | Tailwind/Refining |
+| **Oliver Confeitaria** | Visual Premium & Gourmet | IA + Refinamento |
 
 ---
 
