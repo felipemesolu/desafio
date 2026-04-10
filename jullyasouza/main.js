@@ -105,6 +105,7 @@ function renderBrandedSections() {
         
         if (brandProducts.length === 0) {
             section.setAttribute('data-has-stock', 'false');
+            section.setAttribute('data-product-count', 0);
             container.innerHTML = `
                 <div class="p-8 text-center max-w-sm mx-auto animate-fade-in">
                     <div class="w-20 h-20 bg-zinc-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -125,6 +126,7 @@ function renderBrandedSections() {
         }
 
         section.setAttribute('data-has-stock', 'true');
+        section.setAttribute('data-product-count', brandProducts.length);
         container.innerHTML = `
             <div class="swiper ${brand}HorizontalSwiper px-4">
                 <div class="swiper-wrapper">
@@ -182,7 +184,14 @@ function reorderSections() {
     brandSlides.sort((a, b) => {
         const aStock = a.getAttribute('data-has-stock') === 'true' ? 1 : 0;
         const bStock = b.getAttribute('data-has-stock') === 'true' ? 1 : 0;
-        return bStock - aStock;
+        
+        // Critério 1: Tem Estoque
+        if (aStock !== bStock) return bStock - aStock;
+        
+        // Critério 2: Quantidade de Produtos (Maior primeiro)
+        const aCount = parseInt(a.getAttribute('data-product-count') || 0);
+        const bCount = parseInt(b.getAttribute('data-product-count') || 0);
+        return bCount - aCount;
     });
     
     wrapper.innerHTML = '';
