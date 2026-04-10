@@ -3,7 +3,7 @@
 Este repositório é o registro do meu desafio pessoal de criar **30 sites em 30 dias**. O foco aqui não é apenas código puro, mas sim o **processo criativo e a agilidade** no desenvolvimento.
 
 Acompanhe o progresso em tempo real e a linha do tempo completa aqui:  
-👉 **[mesolu.com.br/desafio/](https://www.mesolu.com.br/desafio/)**
+👉 **[desafio-1vx.pages.dev/](https://desafio-1vx.pages.dev/)**
 
 ---
 
@@ -31,7 +31,7 @@ A cada dia, escolho a ferramenta que melhor se adapta ao conceito do projeto:
 
 A página principal deste repositório (`index.html`) foi projetada como uma **Linha do Tempo interativa**. Nela, você pode acompanhar cada dia do desafio, o status de entrega de cada site e acessar diretamente as versões online de cada um.
 
-🔗 **Visualizar ao vivo:** [https://www.mesolu.com.br/desafio/](https://www.mesolu.com.br/desafio/)
+🔗 **Visualizar ao vivo:** [https://desafio-1vx.pages.dev/](https://desafio-1vx.pages.dev/)
 
 ---
 
