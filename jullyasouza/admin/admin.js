@@ -151,10 +151,18 @@ async function saveChanges() {
                 btn.classList.remove('bg-blue-500');
                 btn.classList.add('bg-green-500');
             }, 2000);
+        } else {
+            const errorText = await response.text();
+            console.error("Erro do servidor:", errorText);
+            alert("Erro ao salvar: Verifique se o banco de dados KV está configurado no Cloudflare.");
+            btn.innerText = originalText;
+            btn.classList.remove('animate-pulse');
         }
     } catch (e) {
+        console.error("Erro de rede:", e);
         alert("Erro ao salvar: Verifique a conexão com o banco de dados.");
         btn.innerText = originalText;
+        btn.classList.remove('animate-pulse');
     }
 }
 
