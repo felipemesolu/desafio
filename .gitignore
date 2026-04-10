@@ -11,6 +11,7 @@
 !/lumodas/
 !/oliverconfeitaria/
 !/index.html
+!/README.md
 
 # Important: Don't ignore the gitignore itself
 !.gitignore
