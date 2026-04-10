@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- DNS prefetch para serviços externos -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://wa.me">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- Google Analytics diferido para não bloquear o render -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4PPX85K3QL', {
+            page_title: 'Aldeia Beach Club'
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldeia Beach Club - Leonardo Almeida Corretor Imobiliário CRECI/ES 11544-F</title>
+    <meta name="description"
+        content="Aldeia Beach Club - Leonardo Almeida Corretor Imobiliário CRECI/ES 11544-F. Atuação em Direito Previdenciário, BPC/LOAS, DPVAT, Direitos da Gestante e mais. OAB/ES 37.495.">
+    <meta property="og:title" content="Aldeia Beach Club - Leonardo Almeida Corretor Imobiliário CRECI/ES 11544-F">
+    <meta property="og:description"
+        content="Aldeia Beach Club - Leonardo Almeida Corretor Imobiliário CRECI/ES 11544-F. Atuação em Direito Previdenciário, BPC/LOAS, DPVAT, Direitos da Gestante e mais. OAB/ES 37.495.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo-leonardo.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#041E42',
+                        gold: '#C5A059',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Typography & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-color: #FDFCFB;
+        }
+        .cta-btn {
+            @apply inline-flex justify-center items-center gap-3 bg-navy text-white px-8 py-4 font-bold uppercase tracking-widest text-xs hover:bg-gold transition-colors;
+        }
+    </style>
+</head>
+
+<body class="text-navy flex flex-col min-h-screen w-full">
+
+    <!-- HERO -->
+    <header
+        class="relative min-h-screen bg-[#FDFDFD] flex flex-col items-center justify-between pt-20 md:pt-24 lg:pt-32 overflow-hidden border-b border-gray-100">
+
+        <!-- Fundo Parallax -->
+        <div class="absolute inset-0 z-0 opacity-80" data-aos="fade-in" data-aos-duration="2000">
+            <img src="images/fundo.jpg" alt="Fundo" loading="lazy"
+                class="w-full h-[120%] object-cover object-top -translate-y-10" id="hero-img">
+        </div>
+
+        <!-- Logo -->
+        <div class="relative z-20 flex flex-col items-center" data-aos="fade-down" data-aos-duration="1200"
+            id="hero-logo">
+            <picture>
+                <source srcset="images/logo-aldeia-beach-club.avif" type="image/avif">
+                <source srcset="images/logo-aldeia-beach-club.webp" type="image/webp">
+                <img src="images/logo-aldeia-beach-club.png" alt="Aldeia Beach Logo" loading="lazy"
+                    class="w-28 md:w-32 h-auto drop-shadow-sm">
+            </picture>
+        </div>
+
+        <!-- Fachada -->
+        <div class="relative z-10 w-full max-w-[50rem] px-4 mx-auto mt-auto flex justify-center items-end"
+            data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+            <picture class="flex justify-center items-end w-full">
+                <source srcset="images/fachada2.avif" type="image/avif">
+                <source srcset="images/fachada2.webp" type="image/webp">
+                <img src="images/fachada2.png" alt="Residencial Aldeia Beach" loading="lazy"
+                    class="w-full md:w-11/12 lg:w-[85%] h-auto object-contain object-bottom drop-shadow-[0_-30px_60px_rgba(0,0,0,0.15)] relative -bottom-2"
+                    id="hero-fachada">
+            </picture>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 animate-bounce hidden md:block">
+            <a href="#conversao" class="flex text-navy/60 hover:text-gold transition-colors drop-shadow-md">
+                <i class="ph ph-caret-down text-3xl"></i>
+            </a>
+        </div>
+
+        <!-- Degradê de transição -->
+        <div
+            class="absolute bottom-0 left-0 w-full h-32 md:h-56 bg-gradient-to-t from-white via-white/70 to-transparent z-20 pointer-events-none">
+        </div>
+    </header>
+
+    <!-- HERO DE CONVERSÃO -->
+    <section id="conversao" class="py-20 md:py-32 lg:py-40 px-6 max-w-6xl mx-auto text-center border-b border-gray-100">
+        <span
+            class="inline-block border border-gold text-gold font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] px-4 py-2 mb-8 md:mb-10 rounded-sm"
+            data-aos="fade-up">LANÇAMENTO IMOBILIÁRIO • ENTREGA 2030</span>
+
+        <h1 class="font-serif text-5xl md:text-8xl lg:text-[7.5rem] text-navy leading-[0.9] mb-8 md:mb-12 tracking-tighter text-balance"
+            data-aos="fade-up" data-aos-delay="100">
+            Residencial<br><span class="italic font-light text-navy/80">Aldeia Beach</span> Clube.
+        </h1>
+
+        <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center md:items-start max-w-4xl mx-auto mb-12 md:mb-16"
+            data-aos="fade-up" data-aos-delay="200">
+            <p
+                class="text-lg md:text-xl text-gray-500 font-light leading-relaxed text-balance flex-1 text-center md:text-right border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-8">
+                Um ativo imobiliário de alto padrão situado em uma das regiões mais valorizadas de Guarapari, projetado
+                para unir qualidade de vida e liquidez.
+            </p>
+            <p
+                class="text-lg md:text-xl text-gray-500 font-light leading-relaxed text-balance flex-1 text-center md:text-left md:pl-4">
+                Desenvolvido pela Construtora Laviola, posiciona-se como uma oportunidade estratégica para investidores
+                expostos ao crescimento litorâneo capixaba.
+            </p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="300">
+            <a href="#contato"
+                class="inline-flex justify-center items-center gap-4 bg-navy text-white px-8 md:px-10 py-4 md:py-5 font-bold uppercase tracking-[0.2em] text-xs lg:text-sm hover:bg-gold transition-colors shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(197,160,89,0.5)]">
+                Solicitar informações completas <i class="ph ph-arrow-right text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- TESE DE INVESTIMENTO -->
+    <section class="py-20 md:py-32 lg:py-48 bg-white border-b border-gray-100">
+        <div class="max-w-[70rem] mx-auto px-6 w-full">
+            <div data-aos="fade-right">
+                <span
+                    class="inline-block border-l-2 border-gold pl-4 text-navy font-bold text-xs uppercase tracking-[0.3em] mb-8 md:mb-10">Macro
+                    Tese</span>
+                <h2
+                    class="font-serif text-4xl md:text-7xl lg:text-[7rem] text-navy mb-8 md:mb-12 leading-[0.9] tracking-tighter text-balance max-w-5xl">
+                    Tese de <span class="italic font-light text-navy/70">investimento.</span>
+                </h2>
+                <p
+                    class="text-gray-500 font-light text-xl md:text-3xl max-w-4xl mb-16 md:mb-24 leading-relaxed tracking-tight text-balance">
+                    O projeto está inserido em um vetor consolidado de valorização, ao lado do Condomínio Aldeia da
+                    Praia, uma das referências supremas do alto padrão capixaba.
+                </p>
+            </div>
+
+            <ul
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-x-12 md:gap-y-16 text-gray-500 font-light text-base md:text-lg leading-relaxed border-t border-gray-100 pt-12 md:pt-16">
+                <li class="flex flex-col gap-4 md:gap-5" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-gold/5 shrink-0">
+                        <i class="ph ph-map-pin text-2xl"></i>
+                    </div>
+                    <span>Localização em zona de alta valorização consolidada.</span>
+                </li>
+                <li class="flex flex-col gap-4 md:gap-5" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-gold/5 shrink-0">
+                        <i class="ph ph-trend-down text-2xl"></i>
+                    </div>
+                    <span>Escassez de terrenos disponíveis na região.</span>
+                </li>
+                <li class="flex flex-col gap-4 md:gap-5" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-gold/5 shrink-0">
+                        <i class="ph ph-trend-up text-2xl"></i>
+                    </div>
+                    <span>Tendência de valorização contínua até e após a entrega.</span>
+                </li>
+                <li class="flex flex-col gap-4 md:gap-5" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-gold/5 shrink-0">
+                        <i class="ph ph-calendar-check text-2xl"></i>
+                    </div>
+                    <span>Demanda consistente para locação de temporada e moradia.</span>
+                </li>
+            </ul>
+
+            <!-- Callout estratégico -->
+            <div class="mt-16 md:mt-20 border-l-2 border-gold pl-6 md:pl-8 max-w-3xl" data-aos="fade-up"
+                data-aos-delay="200">
+                <p class="text-navy font-light text-lg md:text-2xl leading-relaxed mb-3 text-balance">
+                    Nem todas as unidades apresentam o mesmo potencial de valorização.
+                </p>
+                <p class="text-gray-500 font-light text-base md:text-lg leading-relaxed mb-8 text-balance">
+                    As posições mais estratégicas — considerando vista, ventilação, privacidade e liquidez — são
+                    geralmente selecionadas nas primeiras fases de comercialização e apresentadas de forma consultiva.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <section class="py-20 md:py-32 lg:py-48 bg-[#F8F9FA] border-b border-gray-100">
+        <div class="max-w-[70rem] mx-auto px-6 w-full">
+            <div data-aos="fade-up">
+                <span
+                    class="inline-block border-l-2 border-navy pl-4 text-navy font-bold text-xs uppercase tracking-[0.3em] mb-8 md:mb-10">Timing
+                    Estratégico</span>
+                <h2
+                    class="font-serif text-4xl md:text-7xl lg:text-[7rem] text-navy mb-8 md:mb-12 leading-[0.9] tracking-tighter text-balance max-w-5xl">
+                    Ciclo de <span class="italic font-light text-navy/70">valorização.</span>
+                </h2>
+                <p
+                    class="text-gray-500 font-light text-xl md:text-3xl max-w-4xl mb-12 md:mb-20 leading-relaxed tracking-tight text-balance">
+                    A aquisição na fase de lançamento permite ao investidor capturar o ganho de capital ao longo da
+                    evolução da obra, tradicionalmente o período de maior valorização dentro do ciclo imobiliário.
+                </p>
+            </div>
+
+            <ul class="space-y-5 md:space-y-8 font-light text-lg md:text-2xl text-navy/80 max-w-4xl" data-aos="fade-up"
+                data-aos-delay="200">
+                <li class="flex items-start gap-4 md:gap-5 border-b border-gray-200 pb-5 md:pb-6"><i
+                        class="ph ph-check-circle text-gold text-2xl md:text-3xl mt-0.5 shrink-0"></i> <span>Valorização
+                        progressiva massiva durante a construção física.</span></li>
+                <li class="flex items-start gap-4 md:gap-5 border-b border-gray-200 pb-5 md:pb-6"><i
+                        class="ph ph-check-circle text-gold text-2xl md:text-3xl mt-0.5 shrink-0"></i>
+                    <span>Possibilidade de reposicionamento (saída) estratégico do ativo antes da entrega de
+                        chaves.</span>
+                </li>
+                <li class="flex items-start gap-4 md:gap-5"><i
+                        class="ph ph-check-circle text-gold text-2xl md:text-3xl mt-0.5 shrink-0"></i> <span>Entrada em
+                        patamar de preço substancialmente inferior ao valor final de mercado garantido.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CONDIÇÕES DE AQUISIÇÃO -->
+    <section class="py-20 md:py-40 lg:py-56 bg-navy text-white relative overflow-hidden border-b-2 border-gold/10">
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-white/20 to-transparent">
+        </div>
+        <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-gold opacity-[0.03] rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[70rem] mx-auto px-6 w-full text-center relative z-10" data-aos="zoom-in"
+            data-aos-duration="1000">
+            <span class="inline-block text-gold font-bold text-xs uppercase tracking-[0.3em] mb-8 md:mb-12">Estrutura
+                Financeira</span>
+            <h2
+                class="font-serif text-4xl md:text-8xl lg:text-[8rem] text-white mb-10 md:mb-20 leading-[0.9] tracking-tighter text-balance">
+                Condições de<br><span class="italic font-light text-gold">aquisição.</span>
+            </h2>
+            <p
+                class="text-2xl md:text-5xl font-light leading-snug mb-10 md:mb-16 text-balance max-w-5xl mx-auto tracking-tight">
+                Sinal a partir de <span class="font-bold text-white">10%</span> e saldo dimensionado <br
+                    class="hidden md:block"> em até <span class="font-bold border-b-2 border-gold/50 text-gold pb-1">100
+                    parcelas diretas</span>.
+            </p>
+            <p class="font-light text-white/50 text-base md:text-2xl leading-relaxed max-w-3xl mx-auto text-balance">
+                Estrutura de pagamento que permite diluição do investimento ao longo do período de obra, alinhando fluxo
+                financeiro com o processo natural de evolução e valorização do ativo.
+            </p>
+            <p
+                class="font-light italic text-white/30 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto mt-8 text-balance">
+                Os valores e condições estão vinculados às fases de lançamento e podem sofrer atualizações conforme o
+                avanço da obra e a disponibilidade das unidades.
+            </p>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="py-20 md:py-40 lg:py-56 bg-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[#020d1e]"></div>
+        <div
+            class="absolute -right-40 bottom-0 w-[60rem] h-[60rem] bg-gold opacity-[0.07] rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div
+            class="max-w-[70rem] mx-auto px-6 relative z-10 w-full flex flex-col md:flex-row md:items-end md:justify-between gap-10 md:gap-16 border-l-2 border-white/10 pl-6 md:pl-12">
+            <div class="max-w-4xl" data-aos="fade-right">
+                <span
+                    class="inline-block bg-white/5 text-gold font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] px-4 py-2 mb-8 md:mb-10 rounded-sm">Mapeamento
+                    Geoespacial</span>
+                <h2
+                    class="font-serif text-5xl md:text-8xl lg:text-[8.5rem] text-white mb-10 md:mb-16 leading-[0.9] tracking-tighter text-balance">
+                    Localização.
+                </h2>
+                <p class="font-light text-white/80 text-xl md:text-3xl leading-relaxed mb-6 md:mb-8 text-balance">
+                    Situado na Praia do Morro, o empreendimento encontra-se a poucas quadras do mar, em uma posição
+                    estratégica que equilibra proximidade com a orla e preservação de conforto acústico.
+                </p>
+                <div class="h-px w-24 bg-gold mb-6 md:mb-8"></div>
+                <p class="font-light text-white/50 text-base md:text-xl leading-relaxed text-balance max-w-2xl">
+                    A proximidade com o Condomínio Aldeia da Praia reforça o efeito de valorização por vizinhança,
+                    característica contundente em ativos imobiliários premium.
+                </p>
+            </div>
+
+            <div data-aos="fade-left" data-aos-delay="200" class="pb-2">
+                <a href="https://wa.me/5527996524763?text=Quero%20visitar%20a%20obra%20do%20Residencial%20Aldeia%20Beach%20Clube"
+                    class="inline-flex items-center gap-3 border-b-2 border-gold text-gold hover:text-white hover:border-white transition-all pb-2 text-xs md:text-sm font-bold uppercase tracking-widest whitespace-nowrap">
+                    Conhecer o Empreendimento <i class="ph ph-arrow-right text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- O EMPREENDIMENTO -->
+    <section class="py-20 md:py-32 lg:py-48 bg-white border-b border-gray-100" id="analise-tecnica">
+        <div class="max-w-[70rem] mx-auto px-6 w-full" data-aos="fade-up">
+
+            <span
+                class="inline-block border-l-2 border-gold pl-4 text-navy font-bold text-xs uppercase tracking-[0.3em] mb-8 md:mb-10">Engenharia
+                de Planta</span>
+            <h2
+                class="font-serif text-4xl md:text-7xl lg:text-[7rem] text-navy mb-6 md:mb-8 leading-[0.9] tracking-tighter text-balance">
+                O empreendimento.
+            </h2>
+            <p class="text-gray-500 font-light text-lg md:text-2xl leading-relaxed mb-12 md:mb-16 max-w-3xl">
+                A arquitetura inteligente privilegia espaços amplos, ventilação cruzada e o máximo aproveitamento da luz
+                natural capixaba.
+            </p>
+
+            <ul class="flex flex-col gap-5 md:gap-6 font-light text-lg md:text-2xl text-navy">
+                <li class="flex justify-between items-end border-b border-gray-200 pb-4">
+                    <span
+                        class="text-xs md:text-base uppercase tracking-widest text-gray-400 font-bold shrink-0">Tipologia</span>
+                    <strong class="font-serif italic text-xl md:text-3xl text-right">3 Quartos (1 Suíte)</strong>
+                </li>
+                <li class="flex justify-between items-end border-b border-gray-200 pb-4">
+                    <span
+                        class="text-xs md:text-base uppercase tracking-widest text-gray-400 font-bold shrink-0">Metragem</span>
+                    <strong class="font-serif italic text-xl md:text-3xl text-right">95m² a 113m²</strong>
+                </li>
+                <li class="flex justify-between items-end border-b border-gray-200 pb-4">
+                    <span
+                        class="text-xs md:text-base uppercase tracking-widest text-gray-400 font-bold shrink-0">Conforto</span>
+                    <strong class="font-serif italic text-xl md:text-3xl text-right">Varanda Gourmet</strong>
+                </li>
+                <li class="flex justify-between items-end border-b border-gray-200 pb-4">
+                    <span
+                        class="text-xs md:text-base uppercase tracking-widest text-gray-400 font-bold shrink-0">Vagas</span>
+                    <strong class="font-serif italic text-xl md:text-3xl text-right">02 Garagens</strong>
+                </li>
+                <li class="flex justify-between items-end">
+                    <span
+                        class="text-xs md:text-base uppercase tracking-widest text-gray-400 font-bold shrink-0">Tipologia
+                        Garden</span>
+                    <strong class="text-gold font-serif italic text-xl md:text-3xl text-right">até 286m²</strong>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- INFRAESTRUTURA -->
+    <section class="py-20 md:py-32 lg:py-48 bg-[#F8F9FA] border-b border-gray-100" id="infraestrutura">
+        <div class="max-w-[70rem] mx-auto px-6 w-full">
+
+            <!-- Cabeçalho -->
+            <div data-aos="fade-up">
+                <span
+                    class="inline-block border-b border-navy pb-2 text-navy font-bold text-xs uppercase tracking-[0.3em] mb-10 md:mb-12">Lazer
+                    Absoluto</span>
+                <h2
+                    class="font-serif text-4xl md:text-7xl lg:text-[7.5rem] text-navy mb-8 md:mb-10 leading-[0.9] tracking-tighter text-balance">
+                    Infraestrutura<br><span class="italic font-light text-gold">&amp; Serviços.</span>
+                </h2>
+                <p
+                    class="text-gray-500 font-light text-xl md:text-3xl max-w-4xl mb-4 md:mb-6 leading-relaxed tracking-tight text-balance">
+                    O empreendimento adota o conceito autêntico de condomínio clube, com mais de <strong
+                        class="text-navy border-b-2 border-gold/50">3.000m²</strong> de áreas de lazer.
+                </p>
+                <p
+                    class="text-gray-500 font-light text-lg md:text-2xl max-w-4xl mb-12 md:mb-16 leading-relaxed text-balance">
+                    Uma divisão inteligente do lazer em dois níveis primários: o <strong>Rooftop</strong> dedicado a
+                    vistas deslumbrantes e relaxamento, e o <strong>Térreo</strong> projetado para esportes, atividades
+                    e conveniências essenciais no dia a dia.
+                </p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex gap-2 mb-8 md:mb-10" data-aos="fade-up" data-aos-delay="100">
+                <button id="tab-cobertura" onclick="switchTab('cobertura')"
+                    class="px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] border transition-colors rounded-sm bg-navy text-white border-navy">
+                    Cobertura
+                </button>
+                <button id="tab-terreo" onclick="switchTab('terreo')"
+                    class="px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] border transition-colors rounded-sm bg-transparent text-navy border-navy/30 hover:border-navy">
+                    Térreo
+                </button>
+            </div>
+
+            <!-- Slider wrapper -->
+            <div class="relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div id="slider-track" class="flex transition-transform duration-500 ease-out gap-4 md:gap-6"></div>
+            </div>
+
+            <!-- Controles -->
+            <div class="flex items-center justify-between mt-8 md:mt-10" data-aos="fade-up" data-aos-delay="250">
+                <!-- Dots -->
+                <div id="slider-dots" class="flex gap-2"></div>
+                <!-- Arrows -->
+                <div class="flex gap-3">
+                    <button onclick="slidePrev()"
+                        class="w-10 h-10 md:w-12 md:h-12 border border-navy/20 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors rounded-sm">
+                        <i class="ph ph-arrow-left text-lg"></i>
+                    </button>
+                    <button onclick="slideNext()"
+                        class="w-10 h-10 md:w-12 md:h-12 border border-navy/20 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors rounded-sm">
+                        <i class="ph ph-arrow-right text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- POTENCIAL DE RENDA -->
+    <section class="py-20 md:py-32 lg:py-48 bg-white border-b border-gray-100">
+        <div class="max-w-[70rem] mx-auto px-6 w-full">
+
+            <div class="max-w-3xl" data-aos="fade-right">
+                <span
+                    class="inline-block border-l-2 border-gold pl-4 text-navy font-bold text-xs uppercase tracking-[0.3em] mb-8 md:mb-10">Alta
+                    Liquidez</span>
+                <h2
+                    class="font-serif text-4xl md:text-7xl lg:text-[7rem] text-navy mb-8 md:mb-12 leading-[0.9] tracking-tighter text-balance">
+                    Potencial de<br><span class="italic font-light text-navy/80">uso e renda.</span>
+                </h2>
+                <p class="text-gray-500 text-xl md:text-3xl font-light leading-relaxed mb-6 md:mb-8 text-balance">
+                    A combinação entre localização predatória, tipologia e infraestrutura permite múltiplas estratégias
+                    tangíveis de uso, incluindo a <strong>exploração short stay altamente lucrativa</strong>.
+                </p>
+                <div class="h-px w-24 bg-gray-200 mb-6 md:mb-8"></div>
+                <p
+                    class="text-gray-500 text-lg md:text-xl font-light leading-relaxed text-balance max-w-2xl mb-10 md:mb-12">
+                    Empreendimentos com este perfil apresentam extrema resiliência patrimonial e taxas de ocupação
+                    superiores no circuito do turismo de luxo capixaba.
+                </p>
+                <a href="#contato"
+                    class="inline-flex justify-center items-center gap-4 bg-navy text-white px-8 md:px-10 py-4 md:py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-gold transition-colors shadow-lg">
+                    Falar com consultor estratégico <i class="ph ph-arrow-right text-lg"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS TÉCNICOS -->
+    <section class="py-20 md:py-32 lg:py-48 bg-navy text-white relative overflow-hidden border-b-4 border-gold">
+        <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-gold opacity-5 rounded-full blur-[80px] pointer-events-none">
+        </div>
+
+        <div
+            class="max-w-[70rem] mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row gap-12 md:gap-24 items-start">
+
+            <div class="flex-1 md:sticky md:top-40" data-aos="fade-up">
+                <span class="inline-block text-gold font-bold text-xs uppercase tracking-[0.3em] mb-6">Sustentabilidade
+                    &amp; Engenharia</span>
+                <h2
+                    class="font-serif text-4xl md:text-7xl lg:text-[6.5rem] text-white leading-[0.9] tracking-tighter text-balance">
+                    Diferenciais<br><span class="italic font-light text-white/50">técnicos.</span>
+                </h2>
+            </div>
+
+            <div class="flex-1 w-full" data-aos="fade-left" data-aos-delay="200">
+                <ul class="flex flex-col gap-8 md:gap-10 font-light text-xl md:text-2xl text-white/80">
+                    <li class="flex items-start gap-6 md:gap-8 border-b border-white/10 pb-8">
+                        <i class="ph ph-car-profile text-gold text-3xl md:text-4xl shrink-0 mt-1"></i>
+                        <span class="leading-relaxed">Garagens em pavimentos elevados.<br><span
+                                class="text-sm md:text-base text-white/40 uppercase tracking-widest mt-2 block font-bold">Redução
+                                drástica de impacto da maresia.</span></span>
+                    </li>
+                    <li class="flex items-start gap-6 md:gap-8 border-b border-white/10 pb-8">
+                        <i class="ph ph-sun-dim text-gold text-3xl md:text-4xl shrink-0 mt-1"></i>
+                        <span class="leading-relaxed">Energia fotovoltaica.<br><span
+                                class="text-sm md:text-base text-white/40 uppercase tracking-widest mt-2 block font-bold">Nas
+                                áreas comuns.</span></span>
+                    </li>
+                    <li class="flex items-start gap-6 md:gap-8 border-b border-white/10 pb-8">
+                        <i class="ph ph-gauge text-gold text-3xl md:text-4xl shrink-0 mt-1"></i>
+                        <span class="leading-relaxed">Medição individualizada.<br><span
+                                class="text-sm md:text-base text-white/40 uppercase tracking-widest mt-2 block font-bold">Água
+                                e Gás.</span></span>
+                    </li>
+                    <li class="flex items-start gap-6 md:gap-8">
+                        <i class="ph ph-wrench text-gold text-3xl md:text-4xl shrink-0 mt-1"></i>
+                        <span class="leading-relaxed">Baixa manutenção.<br><span
+                                class="text-sm md:text-base text-white/40 uppercase tracking-widest mt-2 block font-bold">Materiais
+                                focados em durabilidade no litoral.</span></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FECHAMENTO / CTA -->
+    <section id="contato"
+        class="bg-[#020d1e] text-white pt-20 md:pt-32 pb-12 md:pb-16 text-center mt-auto border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6" data-aos="zoom-in" data-aos-duration="1000">
+            <h2
+                class="font-serif text-4xl md:text-8xl lg:text-[7rem] mb-8 md:mb-12 text-gold tracking-tighter leading-[0.9]">
+                Considerações finais.</h2>
+            <p
+                class="text-white/80 font-light text-xl md:text-3xl mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto text-balance">
+                O Residencial Aldeia Beach Clube é um ativo puro de proteção e expansão patrimonial, engastado numa
+                região com elevadíssima restrição de oferta.
+            </p>
+            <p
+                class="text-white/50 font-light text-base md:text-xl mb-12 md:mb-16 leading-relaxed max-w-2xl mx-auto text-balance">
+                A entrada cirúrgica nesta fase de lançamento alavanca o seu ganho de capital, resguardando flexibilidade
+                financeira em 100 meses.
+            </p>
+
+            <!-- Nota consultiva -->
+            <div class="border-t border-white/10 pt-10 md:pt-12 mb-10 md:mb-12 max-w-2xl mx-auto text-center">
+                <p class="text-white/70 font-light text-base md:text-lg leading-relaxed mb-3 text-balance">
+                    A escolha da unidade ideal envolve análise de perfil, estratégia de uso e potencial de valorização.
+                </p>
+                <p class="text-white/40 font-light text-sm md:text-base leading-relaxed text-balance">
+                    Por esse motivo, o atendimento é conduzido de forma consultiva, apresentando as melhores
+                    oportunidades conforme cada objetivo.
+                </p>
+            </div>
+
+            <a href="https://wa.me/5527996524763"
+                class="inline-flex justify-center items-center gap-4 bg-white text-navy px-10 md:px-12 py-5 md:py-6 font-bold uppercase tracking-[0.2em] text-xs lg:text-sm hover:bg-gold hover:text-white transition-all hover:-translate-y-1 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(197,160,89,0.3)] group">
+                <i class="ph ph-whatsapp-logo text-2xl group-hover:scale-110 transition-transform"></i> Acionar
+                Assessoria Executiva
+            </a>
+
+            <div
+                class="mt-16 md:mt-20 pt-8 md:pt-10 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-xs text-white/50 tracking-widest uppercase font-medium">
+                <span>Corretor responsável: Leonardo Almeida</span>
+                <span class="hidden md:inline">•</span>
+                <span>CRECI 11544-F</span>
+                <span class="hidden md:inline">•</span>
+                <span>(27) 99652-4763</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CAPTURA (IN-PAGE REVEAL) -->
+    <div id="capture-wrapper"
+        class="grid grid-rows-[0fr] transition-all duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)] bg-white w-full border-t border-transparent">
+        <div class="overflow-hidden w-full">
+            <section id="capture-section"
+                class="w-full flex flex-col md:flex-row bg-white opacity-0 transition-opacity duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] mx-auto pt-16 md:pt-0">
+                <!-- Text Content -->
+                <div
+                    class="flex-1 p-8 md:p-16 lg:p-24 bg-[#F8F9FA] flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-100">
+                    <div class="max-w-xl mx-auto w-full">
+                        <span
+                            class="inline-block border-l-2 border-gold pl-4 text-navy font-bold text-xs uppercase tracking-[0.3em] mb-8">Atendimento
+                            Exclusivo</span>
+                        <h3
+                            class="font-serif text-4xl md:text-5xl lg:text-7xl text-navy mb-8 leading-[1.05] tracking-tighter text-balance">
+                            Consultoria para seleção das <span class="italic font-light text-navy/70">melhores
+                                unidades.</span>
+                        </h3>
+                        <p class="text-gray-500 font-light text-lg md:text-xl leading-relaxed mb-10 text-balance">
+                            Preencha seus dados para receber o material completo e uma análise das unidades com maior
+                            potencial de valorização, de acordo com seu perfil.
+                        </p>
+
+                        <p class="text-navy font-bold text-sm md:text-base uppercase tracking-widest mb-6">Você
+                            receberá:</p>
+                        <ul class="flex flex-col gap-5 font-light text-base md:text-lg text-gray-600 mb-12">
+                            <li class="flex items-start gap-5"><i
+                                    class="ph ph-check-circle text-gold text-2xl shrink-0 mt-0.5"></i> <span
+                                    class="leading-relaxed">Análise das unidades com melhor posicionamento</span></li>
+                            <li class="flex items-start gap-5"><i
+                                    class="ph ph-check-circle text-gold text-2xl shrink-0 mt-0.5"></i> <span
+                                    class="leading-relaxed">Orientação conforme objetivo (investimento, renda ou
+                                    moradia)</span></li>
+                            <li class="flex items-start gap-5"><i
+                                    class="ph ph-check-circle text-gold text-2xl shrink-0 mt-0.5"></i> <span
+                                    class="leading-relaxed">Material completo com plantas e valores atualizados</span>
+                            </li>
+                            <li class="flex items-start gap-5"><i
+                                    class="ph ph-check-circle text-gold text-2xl shrink-0 mt-0.5"></i> <span
+                                    class="leading-relaxed">Condições de pagamento de lançamento (10% + 100x)</span>
+                            </li>
+                        </ul>
+
+                        <div class="border-l-2 border-gold pl-6">
+                            <p class="text-gray-500 font-light text-base leading-relaxed text-balance">
+                                <strong class="text-navy font-medium">Nem todas as unidades oferecem o mesmo potencial
+                                    de valorização.</strong> As melhores oportunidades são apresentadas de forma
+                                personalizada durante o atendimento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="flex-1 p-8 md:p-16 lg:p-24 flex flex-col justify-center">
+                    <div class="max-w-xl mx-auto w-full">
+                        <form onsubmit="enviarParaWhatsApp(event)" class="flex flex-col gap-8 md:gap-10">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-[0.2em] text-navy/70 mb-4">Nome
+                                    Completo</label>
+                                <input type="text" id="capture-nome" required placeholder="Como deseja ser chamado?"
+                                    class="w-full bg-transparent border-b-2 border-gray-200 py-4 text-navy font-light text-lg md:text-xl placeholder:text-gray-300 focus:outline-none focus:border-gold transition-colors focus:ring-0 rounded-none">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold uppercase tracking-[0.2em] text-navy/70 mb-4">WhatsApp</label>
+                                <input type="tel" id="capture-whatsapp" required placeholder="(00) 00000-0000"
+                                    class="w-full bg-transparent border-b-2 border-gray-200 py-4 text-navy font-light text-lg md:text-xl placeholder:text-gray-300 focus:outline-none focus:border-gold transition-colors focus:ring-0 rounded-none">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold uppercase tracking-[0.2em] text-navy/70 mb-4">E-mail</label>
+                                <input type="email" id="capture-email" required placeholder="seu@email.com"
+                                    class="w-full bg-transparent border-b-2 border-gray-200 py-4 text-navy font-light text-lg md:text-xl placeholder:text-gray-300 focus:outline-none focus:border-gold transition-colors focus:ring-0 rounded-none">
+                            </div>
+
+                            <button type="submit"
+                                class="w-full mt-6 justify-center items-center gap-4 bg-navy text-white px-8 py-6 md:py-7 font-bold uppercase tracking-[0.2em] text-sm hover:bg-gold transition-colors shadow-2xl hover:shadow-[0_20px_40px_-15px_rgba(197,160,89,0.5)] flex">
+                                Quero receber minha análise <i class="ph ph-arrow-right text-xl"></i>
+                            </button>
+
+                            <div class="mt-8 space-y-4">
+                                <p
+                                    class="text-xs md:text-sm text-navy/40 font-bold uppercase tracking-[0.2em] text-center text-balance flex items-center justify-center gap-2">
+                                    <i class="ph ph-shield-check text-xl"></i> Atendimento especialista.
+                                </p>
+                                <p
+                                    class="text-xs md:text-sm text-gray-400 font-light text-center text-balance pb-6 border-b border-gray-100">
+                                    Seus dados serão utilizados exclusivamente para contato e envio das informações
+                                    solicitadas.
+                                </p>
+
+                                <!-- Detalhes do Corretor -->
+                                <div class="pt-2 flex flex-col items-center justify-center gap-1.5 text-center">
+                                    <h4 class="font-serif text-lg md:text-xl text-navy">Leonardo Almeida</h4>
+                                    <span
+                                        class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-gold">Corretor
+                                        Imobiliário</span>
+                                    <span class="text-xs font-light text-gray-400 tracking-wider">CRECI/ES
+                                        11544-F</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Parallax Hero
+        window.addEventListener('scroll', () => {
+            const h = document.getElementById('hero-img');
+            const logo = document.getElementById('hero-logo');
+            const fachada = document.getElementById('hero-fachada');
+            const scroll = window.scrollY;
+
+            if (scroll < window.innerHeight) {
+                if (h) h.style.transform = `translateY(${scroll * 0.3}px) scale(1.05)`;
+                if (logo) {
+                    logo.style.opacity = Math.max(0, 1 - scroll / 300);
+                    logo.style.filter = `blur(${Math.min(15, scroll / 20)}px)`;
+                }
+                if (fachada) fachada.style.transform = `translateY(-${scroll * 0.5}px)`;
+            }
+        });
+
+        // ── SLIDER INFRAESTRUTURA ──────────────────────────────────────
+        const coberturaData = [
+            { title: "Piscina Infinita", desc: "Piscina adulto com borda infinita e vista panorâmica para a praia e montanhas." },
+            { title: "Piscina Infantil", desc: "Espaço aquático seguro e raso, projetado especialmente para a diversão contínua." },
+            { title: "Deck Molhado", desc: "Área perfeita para banho de sol parcial, integrando conforto térmico e descanso." },
+            { title: "Sauna Úmida", desc: "Ambiente termal sofisticado para relaxamento muscular e cuidado com a mente e corpo." },
+            { title: "Spa Premium", desc: "Espaço dedicado ao seu bem-estar profundo, com hidromassagem e tranquilidade." },
+            { title: "Pergolado", desc: "Área sombreada elegante e aconchegante para leitura, bate-papo ou descanso ao ar livre." },
+            { title: "Área Gourmet", desc: "Infraestrutura completa e estruturada para reunir amigos em um ambiente aberto e rico." },
+            { title: "Gourmet Fechado", desc: "Salão privativo climatizado para jantares íntimos e celebrações muito sofisticadas." },
+            { title: "Winebar Exclusivo", desc: "Espaço intimista e requintado, equipado propriamente para a degustação de rótulos." },
+            { title: "Espaço Mulher", desc: "Ambiente iluminado inspirado em centros de bem-estar pensado para o autocuidado." },
+            { title: "Coworking", desc: "Estação silenciosa com infraestrutura de escritório profissional para produtividade total." },
+            { title: "Salão de Jogos", desc: "Diversão imersiva e garantida para jovens e adultos com mesas de alto padrão." },
+            { title: "Espaço Fitness", desc: "Academia climatizada completa com vista panorâmica para inspirar o seu treino." }
+        ];
+
+        const terreoData = [
+            { title: "Quadra Esportiva", desc: "Quadra moderna de alta absorção para a prática de diversos esportes no dia a dia da família." },
+            { title: "Beach Tennis", desc: "Quadra de areia perfeitamente qualificada para você praticar o esporte sem sair de casa." },
+            { title: "Pista de Cooper", desc: "Circuito contínuo e arborizado excelente para caminhadas matinais e também corridas." },
+            { title: "Beach Point", desc: "Ponto higiênico de apoio na chegada da praia para limpeza e facilidade diária." },
+            { title: "Salão de Festas", desc: "Salão nobre com alta capacidade técnica no térreo para celebrações memoráveis." },
+            { title: "Playground", desc: "Parquinho infantil externo com piso emborrachado para máximo desenvolvimento." },
+            { title: "Brinquedoteca", desc: "Sala lúdica e viva rigorosamente desenhada para a imaginação das crianças menores." },
+            { title: "Car Wash", desc: "Espaço coberto e equipado para manutenção estética regular dos seus veículos." },
+            { title: "Lavanderia", desc: "Serviço eficiente industrializado que traz o mais alto nível de praticidade à rotina." },
+            { title: "Bicicletário", desc: "Organização acessível e protegida para os equipamentos de mobilidade dos moradores." },
+            { title: "Mini-mercado", desc: "Conveniência automatizada para comprar aquele item esquecido e se resolver rápido." }
+        ];
+
+        let currentTab = 'cobertura';
+        let currentIndex = 0;
+
+        function visibleCount() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function getCardWidth() {
+            const track = document.getElementById('slider-track');
+            const gap = window.innerWidth >= 768 ? 24 : 16;
+            const n = visibleCount();
+            return (track.parentElement.offsetWidth - gap * (n - 1)) / n;
+        }
+
+        function buildSlider(data) {
+            const track = document.getElementById('slider-track');
+            const dots = document.getElementById('slider-dots');
+            const cw = getCardWidth();
+            const gap = window.innerWidth >= 768 ? 24 : 16;
+
+            track.innerHTML = '';
+            data.forEach((item, i) => {
+                const card = document.createElement('div');
+                card.style.minWidth = cw + 'px';
+                card.style.width = cw + 'px';
+                card.className = 'bg-white border border-gray-100 p-6 flex flex-col gap-4 rounded-sm shadow-sm flex-shrink-0 select-none';
+                card.innerHTML = `
+                    <div class="w-8 h-[2px] bg-gold"></div>
+                    <h3 class="font-serif italic text-xl text-navy leading-tight">${item.title}</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed flex-1">${item.desc}</p>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold/60">${String(i + 1).padStart(2, '0')}</span>
+                `;
+                track.appendChild(card);
+            });
+
+            // Dots — one per page
+            const pages = Math.ceil(data.length / visibleCount());
+            dots.innerHTML = '';
+            for (let p = 0; p < pages; p++) {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${p === 0 ? 'bg-navy w-6' : 'bg-navy/20'}`;
+                dot.onclick = () => goTo(p * visibleCount());
+                dots.appendChild(dot);
+            }
+
+            track.style.gap = gap + 'px';
+            track.style.userSelect = 'none';
+            track.style.cursor = 'grab';
+            goTo(currentIndex, false);
+        }
+
+        // ── DRAG / SWIPE — registrado UMA vez ───────────────────────────
+        function initDrag() {
+            const track = document.getElementById('slider-track');
+            let startX = 0;
+            let dragX = 0;
+            let isDragging = false;
+            let baseOffset = 0;
+
+            function getBaseOffset() {
+                const g = window.innerWidth >= 768 ? 24 : 16;
+                return currentIndex * (getCardWidth() + g);
+            }
+
+            track.addEventListener('pointerdown', (e) => {
+                isDragging = true;
+                dragX = 0;
+                startX = e.clientX;
+                baseOffset = getBaseOffset();
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+                track.setPointerCapture(e.pointerId);
+                e.preventDefault();
+            });
+
+            track.addEventListener('pointermove', (e) => {
+                if (!isDragging) return;
+                dragX = e.clientX - startX;
+                track.style.transform = `translateX(${-(baseOffset - dragX)}px)`;
+            });
+
+            track.addEventListener('pointerup', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.cursor = 'grab';
+                const threshold = 60;
+                if (dragX < -threshold) {
+                    goTo(currentIndex + 1);       // sempre 1 card por vez
+                } else if (dragX > threshold) {
+                    goTo(currentIndex - 1);       // sempre 1 card por vez
+                } else {
+                    goTo(currentIndex);            // snap back
+                }
+                dragX = 0;
+            });
+
+            track.addEventListener('pointercancel', () => {
+                isDragging = false;
+                track.style.cursor = 'grab';
+                goTo(currentIndex);
+                dragX = 0;
+            });
+        }
+
+        function goTo(index, animate = true) {
+            const data = currentTab === 'cobertura' ? coberturaData : terreoData;
+            const n = visibleCount();
+            const max = data.length - n;
+            currentIndex = Math.max(0, Math.min(index, max));
+
+            const track = document.getElementById('slider-track');
+            const gap = window.innerWidth >= 768 ? 24 : 16;
+            const cw = getCardWidth();
+            const offset = currentIndex * (cw + gap);
+
+            track.style.transition = animate ? 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)' : 'none';
+            track.style.transform = `translateX(-${offset}px)`;
+
+            // Update dots
+            const pages = Math.ceil(data.length / n);
+            const currentPage = Math.floor(currentIndex / n);
+            document.querySelectorAll('#slider-dots button').forEach((d, i) => {
+                d.className = `h-2 rounded-full transition-all duration-300 ${i === currentPage ? 'bg-navy w-6' : 'bg-navy/20 w-2'}`;
+            });
+        }
+
+        function slideNext() { goTo(currentIndex + 1); }
+        function slidePrev() { goTo(currentIndex - 1); }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            currentIndex = 0;
+
+            const active = 'bg-navy text-white border-navy';
+            const inactive = 'bg-transparent text-navy border-navy/30 hover:border-navy';
+
+            document.getElementById('tab-cobertura').className = `px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] border transition-colors rounded-sm ${tab === 'cobertura' ? active : inactive}`;
+            document.getElementById('tab-terreo').className = `px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] border transition-colors rounded-sm ${tab === 'terreo' ? active : inactive}`;
+
+            buildSlider(tab === 'cobertura' ? coberturaData : terreoData);
+        }
+
+        // Init
+        buildSlider(coberturaData);
+        initDrag();
+        window.addEventListener('resize', () => buildSlider(currentTab === 'cobertura' ? coberturaData : terreoData));
+
+        // ── SEÇÃO DE CAPTURA ─────────────────────────────────────────
+        const captureWrapper = document.getElementById('capture-wrapper');
+        const captureSection = document.getElementById('capture-section');
+        let isCaptureOpen = false;
+
+        function openCapture(e) {
+            if (e && e.preventDefault) e.preventDefault();
+
+            if (!isCaptureOpen) {
+                captureWrapper.classList.remove('grid-rows-[0fr]');
+                captureWrapper.classList.add('grid-rows-[1fr]', 'border-gray-100');
+
+                setTimeout(() => {
+                    captureSection.classList.remove('opacity-0');
+                    captureSection.classList.add('opacity-100');
+                }, 100);
+
+                isCaptureOpen = true;
+            }
+
+            setTimeout(() => {
+                captureWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+
+        // Intercepta cliques de botões estratégicos na página
+        document.querySelectorAll('a[href^="#contato"], a[href^="https://wa.me/"]').forEach(btn => {
+            btn.addEventListener('click', openCapture);
+        });
+
+        // Setup Submit to WhatsApp
+        function enviarParaWhatsApp(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('capture-nome').value.trim();
+            const whatsapp = document.getElementById('capture-whatsapp').value.trim();
+            const email = document.getElementById('capture-email').value.trim();
+
+            const numCorretor = "5527996524763";
+            const mensagem = `Olá Leonardo, gostaria da análise das melhores unidades do Aldeia Beach Residencial Clube.\n\n*Meus Dados:*\nNome: ${nome}\nWhatsApp: ${whatsapp}\nE-mail: ${email}`;
+
+            const url = `https://wa.me/${numCorretor}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>

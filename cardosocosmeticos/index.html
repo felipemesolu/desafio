@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-4PPX85K3QL', {
+      page_title: 'Cardoso Cosméticos - A sua loja de beleza'
+    });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardoso Cosméticos - A sua loja de beleza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Preload de imagens críticas da dobra inicial (Above the Fold) -->
+    <link rel="preload" href="images/logo-nav.png" as="image">
+    <link rel="preload" href="images/cardoso-cosmeticos-header.jpg" as="image">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            pink: '#e02b78',
+                            lightpink: '#ffe8f2',
+                            hotpink: '#ff4d99',
+                            green: '#6ac56c',
+                            dark: '#4a152d',
+                            white: '#ffffff',
+                            yellow: '#ffcc00'
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                        '5xl': '3rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: theme('colors.brand.lightpink');
+            overflow-x: hidden;
+            color: theme('colors.brand.dark');
+        }
+
+        .bg-pattern {
+            background-color: theme('colors.brand.pink');
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
+
+        .btn-pop {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 0px 0px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-pop:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 0px 0px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-pop:active {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0px 0px rgba(0, 0, 0, 0.12);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 20px 40px rgba(224, 43, 120, 0.15);
+        }
+
+        .marquee-container {
+            display: flex;
+            width: max-content;
+            animation: marqueeScroll 25s linear infinite;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: theme('colors.brand.pink');
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Hide scrollbar for stepper */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- NAVIGATION TIPO PÍLULA FLUTUANTE -->
+    <nav id="navbar"
+        class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 glass-card rounded-full px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300">
+        <div class="flex items-center">
+            <!-- Ensure logo is not too big on small mobiles -->
+            <img src="images/logo-nav.png" alt="Cardoso Cosméticos" class="w-[120px] sm:w-[150px] drop-shadow-lg" fetchpriority="high" decoding="sync">
+        </div>
+
+        <div class="hidden lg:flex items-center gap-x-8 font-bold text-brand-dark">
+            <a href="index.html" class="hover:text-brand-pink transition-colors">Início</a>
+            <a href="#marcas" class="hover:text-brand-pink transition-colors">Marcas</a>
+            <a href="#lancamentos" class="hover:text-brand-pink transition-colors">Mais Amados</a>
+            <a href="produtos.html" class="hover:text-brand-pink transition-colors">Produtos</a>
+            <a href="#dicas" class="hover:text-brand-pink transition-colors">Dicas</a>
+            <a href="#contato" class="hover:text-brand-pink transition-colors">Onde Estamos</a>
+        </div>
+
+        <div class="flex items-center gap-x-3 sm:gap-x-4">
+            <button onclick="window.location.href='carrinho.html'"
+                class="bg-brand-green text-white font-bold py-2 px-3 sm:px-6 rounded-full hover:bg-green-600 transition-colors flex items-center gap-2 text-sm sm:text-base">
+                <i class="fa-solid fa-bag-shopping"></i> <span class="hidden sm:inline">Sacola</span> (<span id="cart-count">0</span>)
+            </button>
+            <button id="mobile-menu-btn" class="lg:hidden text-brand-pink text-2xl p-1 focus:outline-none"
+                aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU LIST (Hidden by default) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-brand-lightpink z-50 flex flex-col pt-24 px-6 items-center transform translate-x-full transition-transform duration-300 lg:hidden">
+        <a href="index.html"
+            class="mobile-link text-2xl font-black text-brand-dark hover:text-brand-pink py-4 w-full text-center border-b border-brand-pink/20">Início</a>
+        <a href="index.html#marcas"
+            class="mobile-link text-2xl font-black text-brand-dark hover:text-brand-pink py-4 w-full text-center border-b border-brand-pink/20">
+            Marcas</a>
+        <a href="index.html#lancamentos"
+            class="mobile-link text-2xl font-black text-brand-dark hover:text-brand-pink py-4 w-full text-center border-b border-brand-pink/20">Mais
+            Amados</a>
+        <a href="produtos.html"
+            class="mobile-link text-2xl font-black text-brand-dark hover:text-brand-pink py-4 w-full text-center border-b border-brand-pink/20">Produtos</a>
+        <a href="index.html#dicas"
+            class="mobile-link text-2xl font-black text-brand-dark hover:text-brand-pink py-4 w-full text-center border-b border-brand-pink/20">Dicas</a>
+        <a href="index.html#contato"
+            class="mobile-link text-2xl font-black text-brand-dark hover:text-brand-pink py-4 w-full text-center">Onde
+            Estamos</a>
+
+        <button id="mobile-close-btn" class="absolute top-6 right-6 text-brand-pink text-4xl p-2">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header
+        class="bg-brand-pink relative pt-32 pb-16 lg:pt-48 lg:pb-32 bg-pattern overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-[0_20px_50px_rgba(224,43,120,0.3)]">
+        
+        <!-- Canvas para partículas -->
+        <canvas id="header-particles" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+        <div
+            class="absolute bottom-10 left-[5%] lg:left-[10%] text-4xl lg:text-7xl text-brand-yellow drop-shadow-lg animate-[bounce_4s_infinite] pointer-events-none">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
+            <div class="text-center lg:text-left">
+                <span
+                    class="inline-block bg-white text-brand-pink font-bold px-4 sm:px-6 py-2 rounded-full mb-6 text-xs sm:text-sm lg:text-base border-2 border-brand-lightpink uppercase tracking-wider">
+                    Beleza Todo Dia
+                </span>
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-lg">
+                    Tudo para o seu <br class="hidden sm:block">
+                    <span class="text-brand-yellow">Cuidado Diário!</span>
+                </h1>
+                <p
+                    class="text-white/90 text-base sm:text-lg lg:text-xl font-medium mb-8 lg:mb-10 max-w-xl mx-auto lg:mx-0 px-2 lg:px-0">
+                    A maior variedade de produtos para pele, cabelo, maquiagem e perfumaria. O ambiente mais alegre da
+                    cidade esperando por você! <i class="fa-solid fa-heart text-brand-lightpink ml-1"></i>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#marcas"
+                        class="btn-pop bg-brand-yellow text-brand-dark font-black text-lg lg:text-xl px-8 lg:px-10 py-4 lg:py-5 rounded-full flex items-center justify-center gap-3 w-full sm:w-auto">
+                        Ver Ofertas <i class="fa-solid fa-gift"></i>
+                    </a>
+                    <a href="https://wa.me/5527999522023"
+                        class="btn-pop bg-white text-brand-pink font-bold text-lg px-8 py-4 lg:py-5 rounded-full flex items-center justify-center hover:bg-brand-lightpink transition-colors gap-2 w-full sm:w-auto">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Falar conosco
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative hidden lg:block">
+                <div
+                    class="w-full h-[500px] bg-brand-lightpink p-4 rounded-[3rem] border-8 border-white shadow-2xl relative rotate-3 hover:rotate-0 transition-transform duration-500">
+                    <img src="images/cardoso-cosmeticos-header.jpg" alt="Cosméticos"
+                        class="w-full h-full object-cover rounded-[2rem]" fetchpriority="high" decoding="sync">
+                    <div
+                        class="absolute text-6xl -bottom-8 -left-8 flex items-center gap-4 animate-bounce bg-white rounded-full p-2 shadow-lg">
+                        😍
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MARCAS -->
+    <section id="marcas" class="pt-32 pb-16 bg-brand-lightpink overflow-hidden">
+        <div class="text-center mb-6 sm:mb-8 px-4">
+            <h2 class="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-widest">Tem de tudo um pouco!
+            </h2>
+        </div>
+
+        <div class="w-full relative">
+            <div class="marquee-container opacity-90">
+                <!-- Group 1 -->
+                <div class="flex items-center gap-4 sm:gap-8 px-2 sm:px-4">
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-brand-pink whitespace-nowrap">
+                        Haskell</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-purple-600 whitespace-nowrap">
+                        Ruby Rose</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-orange-500 whitespace-nowrap">
+                        Lahory</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-blue-500 whitespace-nowrap">
+                        Ricca</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-green-600 whitespace-nowrap">
+                        Bio Extratus</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-sm font-black text-base sm:text-xl text-brand-hotpink flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-baby"></i> Linha Infantil
+                    </div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex items-center gap-4 sm:gap-8 px-2 sm:px-4">
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-brand-pink whitespace-nowrap">
+                        Haskell</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-purple-600 whitespace-nowrap">
+                        Ruby Rose</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-orange-500 whitespace-nowrap">
+                        Lahory</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-blue-500 whitespace-nowrap">
+                        Ricca</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-sm font-black text-lg sm:text-2xl text-green-600 whitespace-nowrap">
+                        Bio Extratus</div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                    <div
+                        class="bg-white px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-sm font-black text-base sm:text-xl text-brand-hotpink flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-baby"></i> Linha Infantil
+                    </div>
+                    <div class="text-xl sm:text-2xl text-brand-green"><i class="fa-solid fa-star-of-life"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS MAIS VENDIDOS -->
+    <section id="lancamentos" class="py-32 bg-white relative">
+        <div
+            class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-brand-lightpink rounded-full blur-3xl opacity-50 -z-10">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-brand-pink rounded-full blur-3xl opacity-20 -z-10">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-10 sm:mb-16 gap-4 sm:gap-6 text-center sm:text-left">
+                <div>
+                    <h2
+                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-pink mb-2 sm:mb-4 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4">
+                        Mais Amados <i class="fa-solid fa-heart text-3xl sm:text-4xl sm:mt-2 text-brand-hotpink"></i>
+                    </h2>
+                    <p class="text-lg sm:text-xl font-medium text-gray-500">Aqueles que não podem faltar na rotina.</p>
+                </div>
+                <button onclick="window.location.href='produtos.html'"
+                    class="font-bold text-brand-pink hover:text-brand-hotpink bg-brand-lightpink px-6 sm:px-8 py-3 rounded-full flex items-center gap-2 transition-colors w-full sm:w-auto justify-center">
+                    Ver todos <span class="hidden sm:inline">os produtos</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Produto 1 -->
+                <div
+                    class="product-card bg-white rounded-[2rem] p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col h-full bg-cover bg-bottom relative">
+                    <div
+                        class="absolute top-4 sm:top-6 right-4 sm:right-6 bg-brand-yellow text-brand-dark text-[10px] sm:text-xs font-black px-3 py-1 rounded-full z-10">
+                        TOP 1
+                    </div>
+                    <img src="images/kit-cavalo-forte.webp" alt="Shampoo"
+                        class="h-48 sm:h-56 w-full object-contain mb-4 sm:mb-6" loading="lazy" decoding="async">
+
+                    <div class="flex-1 text-center sm:text-left">
+                        <p class="text-[10px] sm:text-xs font-bold text-brand-pink uppercase tracking-widest mb-1">
+                            Haskell</p>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 leading-tight">Kit Cavalo Forte</h3>
+                        <div
+                            class="flex items-center justify-center sm:justify-start gap-1 text-brand-yellow text-[10px] sm:text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 text-[10px] sm:text-xs ml-1">(120)</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-3 sm:mb-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand-dark">R$ 139<span
+                                    class="text-base sm:text-lg font-normal">,90</span></span>
+                        </div>
+                        <button onclick="adicionarAoCarrinho({id: 1, nome: 'Kit Cavalo Forte', marca: 'Haskell', preco: 139.90, imagem: 'images/kit-cavalo-forte.webp'})"
+                            class="w-full btn-pop bg-brand-pink text-white font-bold py-3 sm:py-4 rounded-xl text-sm sm:text-base">
+                            Adicionar à Sacola
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div
+                    class="product-card bg-white rounded-[2rem] p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col h-full bg-cover bg-bottom relative">
+                    <img src="images/ruby-rose.webp" alt="Paleta"
+                        class="h-48 sm:h-56 w-full object-contain mb-4 sm:mb-6" loading="lazy" decoding="async">
+
+                    <div class="flex-1 text-center sm:text-left">
+                        <p class="text-[10px] sm:text-xs font-bold text-purple-600 uppercase tracking-widest mb-1">Ruby
+                            Rose</p>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 leading-tight">Lip Oil Fresh Lips</h3>
+                        <div
+                            class="flex items-center justify-center sm:justify-start gap-1 text-brand-yellow text-[10px] sm:text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 text-[10px] sm:text-xs ml-1">(89)</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-3 sm:mb-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand-dark">R$ 34<span
+                                    class="text-base sm:text-lg font-normal">,90</span></span>
+                        </div>
+                        <button onclick="adicionarAoCarrinho({id: 2, nome: 'Lip Oil Fresh Lips', marca: 'Ruby Rose', preco: 34.90, imagem: 'images/ruby-rose.webp'})"
+                            class="w-full btn-pop bg-purple-600 text-white font-bold py-3 sm:py-4 rounded-xl text-sm sm:text-base">
+                            Adicionar à Sacola
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div
+                    class="product-card bg-white rounded-[2rem] p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col h-full bg-cover bg-bottom relative">
+
+                    <img src="images/bio-extratus.webp" alt="Creme"
+                        class="h-48 sm:h-56 w-full object-contain mb-4 sm:mb-6" loading="lazy" decoding="async">
+
+                    <div class="flex-1 text-center sm:text-left">
+                        <p class="text-[10px] sm:text-xs font-bold text-green-600 uppercase tracking-widest mb-1">Bio
+                            Extratus</p>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 leading-tight">Kit Tutano (500mL/g)</h3>
+                        <div
+                            class="flex items-center justify-center sm:justify-start gap-1 text-brand-yellow text-[10px] sm:text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i>
+                            <span class="text-gray-400 text-[10px] sm:text-xs ml-1">(45)</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-3 sm:mb-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand-dark">R$ 119<span
+                                    class="text-base sm:text-lg font-normal">,90</span></span>
+                        </div>
+                        <button onclick="adicionarAoCarrinho({id: 3, nome: 'Kit Tutano (500mL/g)', marca: 'Bio Extratus', preco: 119.90, imagem: 'images/bio-extratus.webp'})"
+                            class="w-full btn-pop bg-green-500 text-white font-bold py-3 sm:py-4 rounded-xl text-sm sm:text-base">
+                            Adicionar à Sacola
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div
+                    class="product-card bg-white rounded-[2rem] p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex flex-col h-full bg-cover bg-bottom relative">
+                    <div
+                        class="absolute top-4 sm:top-6 right-4 sm:right-6 bg-brand-pink text-white text-[10px] sm:text-xs font-black px-3 py-1 rounded-full z-10">
+                        NOVIDADE
+                    </div>
+
+                    <img src="images/salon-line.avif" alt="Infantil"
+                        class="h-48 sm:h-56 w-full object-contain mb-4 sm:mb-6" loading="lazy" decoding="async">
+
+                    <div class="flex-1 text-center sm:text-left">
+                        <p class="text-[10px] sm:text-xs font-bold text-blue-500 uppercase tracking-widest mb-1">Linha
+                            Kids</p>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 leading-tight">Kit Shampoo + Condicionador
+                            Kids 300ml</h3>
+                        <div
+                            class="flex items-center justify-center sm:justify-start gap-1 text-brand-yellow text-[10px] sm:text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 text-[10px] sm:text-xs ml-1">(210)</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-3 sm:mb-4">
+                            <span class="text-2xl sm:text-3xl font-black text-brand-dark">R$ 59<span
+                                    class="text-base sm:text-lg font-normal">,90</span></span>
+                        </div>
+                        <button onclick="adicionarAoCarrinho({id: 4, nome: 'Kit Shampoo + Condicionador Kids 300ml', marca: 'Linha Kids', preco: 59.90, imagem: 'images/salon-line.avif'})"
+                            class="w-full btn-pop bg-blue-500 text-white font-bold py-3 sm:py-4 rounded-xl text-sm sm:text-base">
+                            Adicionar à Sacola
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER DICAS PARA CABELOS -->
+    <section id="dicas" class="py-32 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div
+                class="bg-brand-pink rounded-[2.5rem] lg:rounded-[4rem] p-6 sm:p-10 lg:p-16 text-center text-white relative shadow-[0_20px_40px_rgba(224,43,120,0.2)]">
+                <!-- Decorative backgrounds -->
+                <div class="absolute inset-0 opacity-95"></div>
+                <div
+                    class="absolute rounded-[2.5rem] lg:rounded-[4rem] inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==')] opacity-50 mix-blend-overlay">
+                </div>
+
+                <div class="relative z-10 w-full">
+                    <h2
+                        class="text-2xl sm:text-4xl lg:text-5xl font-black mb-3 sm:mb-4 bg-white text-brand-pink inline-block px-6 sm:px-8 py-2 sm:py-3 rounded-full transform -rotate-2 shadow-lg">
+                        CUIDADO DIÁRIO
+                    </h2>
+                    <p
+                        class="text-lg sm:text-2xl lg:text-3xl font-bold mt-2 sm:mt-4 mb-8 sm:mb-14 text-white drop-shadow-md">
+                        O segredo da lavagem perfeita sem frizz!
+                    </p>
+
+                    <!-- STEPPER WIDGET -->
+                    <div class="max-w-4xl mx-auto w-full">
+
+                        <!-- Mobile-first scrollable stepper container -->
+                        <div class="relative mb-8 sm:mb-10 w-full overflow-hidden">
+                            <!-- Background line (hidden on very small screens if needed, but handled by min-w wrapper) -->
+                            <div
+                                class="absolute top-1/2 left-0 w-full h-1 sm:h-2 bg-white/30 rounded-full -translate-y-1/2 z-0">
+                            </div>
+
+                            <!-- The scrollable list of buttons -->
+                            <div
+                                class="flex justify-between items-center px-1 sm:px-4 z-10 relative overflow-x-auto hide-scrollbar pb-4 pt-2 -mx-2 px-2 snap-x snap-mandatory">
+                                <div class="flex justify-between w-full min-w-[500px] sm:min-w-0">
+                                    <button onclick="showStep(1)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-brand-yellow border-[3px] sm:border-[4px] border-white text-brand-dark font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform scale-110 shadow-xl lg:hover:scale-110">1</button>
+                                    <button onclick="showStep(2)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[3px] sm:border-[4px] border-white/50 text-brand-pink font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform lg:hover:scale-110 shadow-md opacity-90 cursor-pointer">2</button>
+                                    <button onclick="showStep(3)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[3px] sm:border-[4px] border-white/50 text-brand-pink font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform lg:hover:scale-110 shadow-md opacity-90 cursor-pointer">3</button>
+                                    <button onclick="showStep(4)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[3px] sm:border-[4px] border-white/50 text-brand-pink font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform lg:hover:scale-110 shadow-md opacity-90 cursor-pointer">4</button>
+                                    <button onclick="showStep(5)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[3px] sm:border-[4px] border-white/50 text-brand-pink font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform lg:hover:scale-110 shadow-md opacity-90 cursor-pointer">5</button>
+                                    <button onclick="showStep(6)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[3px] sm:border-[4px] border-white/50 text-brand-pink font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform lg:hover:scale-110 shadow-md opacity-90 cursor-pointer">6</button>
+                                    <button onclick="showStep(7)"
+                                        class="step-dot snap-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[3px] sm:border-[4px] border-white/50 text-brand-pink font-black text-sm sm:text-lg lg:text-2xl flex items-center justify-center relative transition-all duration-300 transform lg:hover:scale-110 shadow-md opacity-90 cursor-pointer">
+                                        <i class="fa-solid fa-check"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Cards -->
+                        <div
+                            class="relative bg-white text-brand-dark rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-12 text-left transform transition-all duration-500 border-2 lg:border-4 border-white glass-card shadow-2xl min-h-[220px] flex flex-col justify-center">
+
+                            <!-- Step 1 -->
+                            <div id="step-1" class="step-card block animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-pink font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-pump-medical"></i> 01. Pré-poo
+                                </h3>
+                                <p class="text-sm sm:text-xl text-gray-600 font-medium leading-relaxed">
+                                    Protege intensamente os fios da agressão do shampoo, mantendo a hidratação natural
+                                    perfeitamente balanceada.
+                                </p>
+                            </div>
+
+                            <!-- Step 2 to 7 similarly omitted for brevity here but provided below -->
+                            <div id="step-2" class="step-card hidden animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-pink font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-pump-soap"></i> 02. Shampoo
+                                </h3>
+                                <p class="text-sm sm:text-xl text-gray-600 font-medium leading-relaxed">Limpa
+                                    profundamente o couro cabeludo, removendo todas as impurezas para receber o
+                                    tratamento completo.</p>
+                            </div>
+
+                            <div id="step-3" class="step-card hidden animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-pink font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-jar"></i> 03. Máscara
+                                </h3>
+                                <p class="text-sm sm:text-xl text-gray-600 font-medium leading-relaxed">Momento mágico!
+                                    Tratamento profundo que devolve a saúde extrema, o brilho incrível e nutrientes
+                                    essenciais aos fios.</p>
+                            </div>
+
+                            <div id="step-4" class="step-card hidden animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-pink font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-spray-can"></i> 04. Condicionador
+                                </h3>
+                                <p class="text-sm sm:text-xl text-gray-600 font-medium leading-relaxed">Sela as
+                                    cutículas, traz maciez imediata, facilita o desembaraço e ajuda muito no controle do
+                                    temido frizz.</p>
+                            </div>
+
+                            <div id="step-5" class="step-card hidden animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-pink font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-wind"></i> 05. Finalizador
+                                </h3>
+                                <p class="text-sm sm:text-xl text-gray-600 font-medium leading-relaxed">Formato prático
+                                    de Proteção Térmica e modelagem sem enxágue para manter seu cabelo completamente
+                                    alinhado.</p>
+                            </div>
+
+                            <div id="step-6" class="step-card hidden animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-pink font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-droplet"></i> 06. Reparador
+                                </h3>
+                                <p class="text-sm sm:text-xl text-gray-600 font-medium leading-relaxed">Sela
+                                    perfeitamente as pontas criando uma película de brilho invejável, auxiliando a
+                                    combater friz residual.</p>
+                            </div>
+
+                            <div id="step-7" class="step-card hidden animate-[fadeInScale_0.4s_ease]">
+                                <h3
+                                    class="text-brand-yellow font-black text-xl sm:text-3xl mb-2 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i> Pronto!
+                                </h3>
+                                <p class="text-sm sm:text-lg text-gray-600 font-medium leading-relaxed mb-4 sm:mb-6">
+                                    Agora é só seguir e dizer um tchau definitivo ao Frizz. Você merece brilhar sempre!
+                                    <i class="fa-solid fa-heart text-brand-pink"></i>
+                                </p>
+
+                                <a href="https://www.instagram.com/cardoso.cosmeticos/" target="_blank"
+                                    class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white font-bold py-3 px-4 sm:px-8 rounded-xl sm:rounded-full lg:hover:scale-105 transition-transform btn-pop text-center text-sm sm:text-base">
+                                    <i class="fa-brands fa-instagram text-xl sm:text-2xl"></i> Siga @cardoso.cosmeticos
+                                    <span class="hidden sm:inline">para mais dicas!</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icons Decoration -->
+                <div
+                    class="absolute top-10 left-[5%] text-3xl sm:text-5xl text-white opacity-30 animate-[bounce_3s_infinite] pointer-events-none">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div
+                    class="absolute bottom-10 right-[5%] text-3xl sm:text-5xl text-brand-yellow opacity-30 animate-[bounce_4s_infinite] pointer-events-none">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENDEREÇO E CONTATO -->
+    <section id="contato" class="py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <span
+                    class="text-brand-pink font-black text-lg sm:text-xl uppercase tracking-wider mb-2 flex items-center justify-center lg:justify-start gap-2">
+                    Vem visitar a gente! <i class="fa-solid fa-hand-wave text-brand-yellow"></i>
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 text-brand-dark leading-tight">
+                    Sua loja de cosméticos favorita em Guarapari.
+                </h2>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <div
+                        class="glass-card p-4 sm:p-6 rounded-[2rem] flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 sm:gap-6 text-center sm:text-left">
+                        <div
+                            class="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-brand-pink rounded-full flex items-center justify-center text-xl sm:text-2xl text-white">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg sm:text-xl text-brand-dark">Nossa Loja Física</p>
+                            <p class="text-gray-600 font-medium text-sm sm:text-base mt-1">Av. Padre José de Anchieta,
+                                1229<br>Aeroporto • Guarapari, ES</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card p-4 sm:p-6 rounded-[2rem] flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 sm:gap-6 text-center sm:text-left">
+                        <div
+                            class="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-brand-green rounded-full flex items-center justify-center text-2xl sm:text-3xl text-white">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg sm:text-xl text-brand-dark">WhatsApp</p>
+                            <p class="text-gray-600 font-medium text-sm sm:text-base mt-1">(27) 99952-2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-3 sm:p-4 rounded-[2rem] sm:rounded-[3rem] shadow-xl rotate-0 lg:rotate-[-2deg] hover:rotate-0 transition-transform duration-500 w-full mt-6 lg:mt-0">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.4842578502574!2d-40.511743!3d-20.66224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDM5JzQ0LjEiUyA0MMKwMzAnNDIuMyJX!5e0!3m2!1spt-BR!2sbr!4v1740000000000"
+                    width="100%" height="300" class="sm:h-[400px]" style="border:0; border-radius: 1.5rem;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER DA ALEGRIA -->
+    <footer class="bg-brand-pink text-white pt-16 sm:pt-20 pb-8 sm:pb-10 rounded-t-[3rem] sm:rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10 sm:mb-16 gap-8 sm:gap-10">
+                <div class="text-center md:text-left">
+                    <img src="images/cardoso-cosmeticos-logotipo.png" alt="Logotipo"
+                        class="w-[200px] sm:max-w-[280px] mx-auto md:mx-0 mb-4 sm:mb-6 drop-shadow-lg filter brightness-0 invert" loading="lazy" decoding="async">
+                    <p class="font-medium text-white/90 text-base sm:text-lg max-w-sm mx-auto md:mx-0">
+                        Espalhando beleza e alegria por toda Guarapari desde 2018! <i
+                            class="fa-solid fa-wand-magic-sparkles text-brand-yellow ml-1"></i><i
+                            class="fa-solid fa-heart text-white ml-1"></i>
+                    </p>
+                </div>
+
+                <div class="flex gap-3 sm:gap-4">
+                    <a href="https://www.instagram.com/cardoso.cosmeticos/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center text-lg sm:text-xl hover:bg-white hover:text-brand-pink transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                        class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center text-lg sm:text-xl hover:bg-white hover:text-brand-pink transition-colors"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"
+                        class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center text-lg sm:text-xl hover:bg-white hover:text-brand-pink transition-colors"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div
+                class="border-t-2 border-white/20 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm font-bold uppercase tracking-widest text-center md:text-left gap-4">
+                <p>Feito com muita maquiagem e <i class="fa-solid fa-heart text-brand-lightpink mx-1"></i> em
+                    Guarapari/ES.</p>
+                <p>© 2026 Cardoso Cosméticos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CREDITOS DESAFIO 30 DIAS 30 SITES -->
+    <section class="bg-brand-dark py-6 border-t-[6px] sm:border-t-[8px] border-brand-pink relative overflow-hidden">
+        <div class="absolute inset-y-0 right-4 sm:right-10 flex items-center pointer-events-none" aria-hidden="true">
+            <span class="text-4xl sm:text-5xl md:text-7xl font-black text-white/5 select-none uppercase">30 / 30</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
+                <!-- Box Desafio -->
+                <div
+                    class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-3 sm:gap-4 bg-white/5 border border-white/10 px-4 sm:px-5 py-3 rounded-2xl w-full lg:w-auto justify-center lg:justify-start">
+                    <div class="flex flex-col">
+                        <span
+                            class="text-[8px] sm:text-[9px] text-white/50 uppercase font-black tracking-widest">Projeto
+                            do Desafio</span>
+                        <h5 class="text-white font-bold uppercase text-xs sm:text-sm tracking-tight hidden sm:block">
+                            <span class="text-brand-yellow">30 Dias,</span> 30 Sites
+                        </h5>
+                        <h5 class="text-white font-bold uppercase text-xs tracking-tight sm:hidden">
+                            <span class="text-brand-yellow">30 Dias,</span> 30 Sites
+                        </h5>
+                    </div>
+                    <div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+                    <p
+                        class="text-[9px] sm:text-[10px] text-white/50 max-w-full sm:max-w-[150px] leading-tight hidden sm:block">
+                        Este site foi solicitado via @Instagram
+                    </p>
+                </div>
+
+                <!-- Creditos -->
+                <div class="flex flex-col items-center lg:items-end w-full lg:w-auto mt-2 sm:mt-0">
+                    <span
+                        class="text-[8px] sm:text-[9px] text-white/40 uppercase font-bold tracking-[0.2em] sm:tracking-[0.3em] mb-1">Desenvolvido
+                        por</span>
+                    <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer"
+                        class="group flex items-baseline gap-1 sm:gap-2 cursor-pointer">
+                        <span
+                            class="text-lg sm:text-xl font-black text-white group-hover:text-brand-yellow transition-colors">MESOLU</span>
+                        <span class="text-[9px] sm:text-[10px] text-brand-pink font-mono">.com.br</span>
+                    </a>
+                    <a href="https://mesolu.com.br/desafio/" target="_blank" rel="noopener noreferrer"
+                        class="text-[9px] sm:text-[10px] text-white/60 hover:text-brand-yellow font-bold uppercase tracking-widest mt-1 sm:mt-2 transition-colors flex items-center gap-1">
+                        Acompanhar Projeto <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS MESTRES -->
+    <script>
+        // Lógica do Stepper
+        function showStep(stepNumber) {
+            document.querySelectorAll('.step-card').forEach(card => {
+                card.classList.remove('block');
+                card.classList.add('hidden');
+            });
+            document.getElementById('step-' + stepNumber).classList.remove('hidden');
+            document.getElementById('step-' + stepNumber).classList.add('block');
+
+            const dots = document.querySelectorAll('.step-dot');
+            dots.forEach((dot, index) => {
+                if (index + 1 === stepNumber) {
+                    dot.classList.remove('bg-white', 'text-brand-pink', 'opacity-90', 'border-white/50');
+                    dot.classList.add('bg-brand-yellow', 'text-brand-dark', 'scale-110', 'border-white');
+                    // Scroll active dot into view gently on mobile if necessary
+                    dot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    dot.classList.add('bg-white', 'text-brand-pink', 'opacity-90', 'border-white/50');
+                    dot.classList.remove('bg-brand-yellow', 'text-brand-dark', 'scale-110', 'border-white');
+                }
+            });
+        }
+
+        // Lógica Navegação Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden'; // Impede rolagem
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                document.body.style.overflow = 'auto'; // Retorna rolagem
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        mobileCloseBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Efeito de navibar com vidro ao dar scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.9)';
+                nav.style.boxShadow = '0 20px 40px rgba(224, 43, 120, 0.15)';
+            }
+        });
+
+        // Carrinho de Compras
+        let carrinho = JSON.parse(localStorage.getItem('cardoso_carrinho')) || [];
+
+        function atualizarContadorCarrinho() {
+            const cartCountElement = document.getElementById('cart-count');
+            if (cartCountElement) {
+                const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
+                cartCountElement.innerText = totalItens;
+            }
+        }
+
+        function adicionarAoCarrinho(produto) {
+            const index = carrinho.findIndex(item => item.id === produto.id);
+            if (index > -1) {
+                carrinho[index].quantidade += 1;
+            } else {
+                produto.quantidade = 1;
+                carrinho.push(produto);
+            }
+            
+            localStorage.setItem('cardoso_carrinho', JSON.stringify(carrinho));
+            atualizarContadorCarrinho();
+            
+            mostrarToastFeedback();
+        }
+        
+        function mostrarToastFeedback() {
+            let toast = document.getElementById('cart-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'cart-toast';
+                toast.className = 'fixed bottom-4 right-4 bg-brand-green text-white px-6 py-3 rounded-full font-bold shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2';
+                toast.innerHTML = '<i class="fa-solid fa-check-circle text-xl"></i> Produto adicionado!';
+                document.body.appendChild(toast);
+            }
+            
+            // Força um reflow
+            void toast.offsetWidth;
+            
+            // Animar entrada
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            // Retirar depois de 3 segundos
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Efeito de Partículas na Header
+        const header = document.querySelector('header');
+        const canvas = document.getElementById('header-particles');
+        if (header && canvas) {
+            const ctx = canvas.getContext('2d');
+            
+            let width, height;
+            let particles = [];
+            let mouse = { x: null, y: null };
+            
+            function resize() {
+                width = header.offsetWidth;
+                height = header.offsetHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+            
+            window.addEventListener('resize', resize);
+            resize();
+            
+            header.addEventListener('mousemove', (e) => {
+                const rect = header.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                // Ajusta o Y para considerar o scroll caso a tela tenha scroll e o header esteja no topo, getBoundingClientRect().top costuma ser negativo
+                mouse.y = e.clientY - rect.top;
+                
+                // Adicionar partículas na posição do mouse
+                for (let i = 0; i < 3; i++) {
+                    particles.push(new Particle(mouse.x, mouse.y));
+                }
+            });
+            
+            header.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            // Branco e Verde (tema da loja)
+            const colors = ['#ffffff', '#6ac56c', '#ffffff', '#a8e6cf'];
+            
+            class Particle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.size = Math.random() * 4 + 2; 
+                    this.speedX = Math.random() * 2 - 1;
+                    this.speedY = Math.random() * 2 - 1;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.life = 1;
+                }
+                
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.size > 0.1) this.size -= 0.05;
+                    this.life -= 0.02;
+                }
+                
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = Math.max(0, this.life);
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                }
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    
+                    if (particles[i].life <= 0 || particles[i].size <= 0.1) {
+                        particles.splice(i, 1);
+                        i--;
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            atualizarContadorCarrinho();
+        });
+    </script>
+</body>
+
+</html>

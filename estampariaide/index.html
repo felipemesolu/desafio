@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- DNS prefetch para serviços externos -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://wa.me">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- Google Analytics diferido para não bloquear o render -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4PPX85K3QL', {
+            page_title: 'Estamparia IDE'
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamparia IDE</title>
+    <meta name="description"
+        content="Estamparia IDE — Estamparia e Confecção. Atuação em Silk-Screen, Sublimação, Uniformes, Camisetas Personalizadas, Formandos, Marca Própria, Guarapari · ES.">
+    <meta property="og:title" content="Estamparia IDE">
+    <meta property="og:description"
+        content="Estamparia IDE — Estamparia e Confecção. Atuação em Silk-Screen, Sublimação, Uniformes, Camisetas Personalizadas, Formandos, Marca Própria, Guarapari · ES.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/icone.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap"
+        rel="stylesheet" />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="circle">
+            <div class="text" id="text">
+                • ESTAMPARIA • CONFECÇÃO
+            </div>
+
+            <div class="center-image">
+                <img src="./images/ide.webp" alt="Imagem">
+            </div>
+        </div>
+
+        <!-- ─── TICKER ────────────────────────────────────── -->
+        <div class="ticker-strip" aria-hidden="true">
+            <div class="ticker-track">
+                <span>Silk-Screen</span><span class="ticker-dot">·</span>
+                <span>Sublimação</span><span class="ticker-dot">·</span>
+                <span>Uniformes</span><span class="ticker-dot">·</span>
+                <span>Camisetas Personalizadas</span><span class="ticker-dot">·</span>
+                <span>Formandos</span><span class="ticker-dot">·</span>
+                <span>Marca Própria</span><span class="ticker-dot">·</span>
+                <span>Guarapari · ES</span><span class="ticker-dot">·</span>
+                <span>Silk-Screen</span><span class="ticker-dot">·</span>
+                <span>Sublimação</span><span class="ticker-dot">·</span>
+                <span>Uniformes</span><span class="ticker-dot">·</span>
+                <span>Camisetas Personalizadas</span><span class="ticker-dot">·</span>
+                <span>Formandos</span><span class="ticker-dot">·</span>
+                <span>Marca Própria</span><span class="ticker-dot">·</span>
+                <span>Guarapari · ES</span><span class="ticker-dot">·</span>
+            </div>
+        </div>
+
+    </section>
+    <!-- ─── SERVIÇOS ──────────────────────────────────── -->
+    <section id="servicos">
+        <div class="servicos-layout">
+            <div class="servicos-header">
+                <p class="section-label reveal">O que fazemos</p>
+                <h2 class="section-title reveal">Soluções para <em>todos</em> os momentos.</h2>
+            </div>
+            <div class="servicos-list">
+                <div class="servico-item reveal">
+                    <a href="https://wa.me/5527992032009?text=Olá! Gostaria de saber mais sobre Camisetas Personalizadas."
+                        target="_blank" rel="noopener" class="servico-link">
+                        <span class="servico-num">01</span>
+                        <div class="servico-content">
+                            <h3>Camisetas Personalizadas</h3>
+                            <p>Toque macio e durabilidade recorde.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="servico-arrow"></i>
+                    </a>
+                </div>
+                <div class="servico-item reveal">
+                    <a href="https://wa.me/5527992032009?text=Olá! Gostaria de saber mais sobre Uniformes Empresariais."
+                        target="_blank" rel="noopener" class="servico-link">
+                        <span class="servico-num">02</span>
+                        <div class="servico-content">
+                            <h3>Uniformes Empresariais</h3>
+                            <p>Identidade e resistência para sua equipe.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="servico-arrow"></i>
+                    </a>
+                </div>
+                <div class="servico-item reveal">
+                    <a href="https://wa.me/5527992032009?text=Olá! Gostaria de saber mais sobre Uniformes para Formandos e Escolas."
+                        target="_blank" rel="noopener" class="servico-link">
+                        <span class="servico-num">03</span>
+                        <div class="servico-content">
+                            <h3>Formandos &amp; Escolas</h3>
+                            <p>Designs modernos para marcar o encerramento.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="servico-arrow"></i>
+                    </a>
+                </div>
+                <div class="servico-item reveal">
+                    <a href="https://wa.me/5527992032009?text=Olá! Gostaria de saber mais sobre produção para Marcas e Revendedores."
+                        target="_blank" rel="noopener" class="servico-link">
+                        <span class="servico-num">04</span>
+                        <div class="servico-content">
+                            <h3>Marcas &amp; Revendedores</h3>
+                            <p>Acabamentos de grife para sua própria malharia.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="servico-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── STATEMENT ─────────────────────────────────── -->
+    <section id="statement" data-section-theme="dark">
+        <div class="statement-container">
+            <div class="statement-content">
+                <p class="section-label reveal">Nossa missão</p>
+                <h2 class="section-title reveal">
+                    Estamparia IDE é a <em>solução completa</em> para a sua ideia:
+                </h2>
+                <p class="statement-desc reveal">Da peça pronta à estampa que não desbota.</p>
+                <a href="https://wa.me/5527992032009?text=Olá! Vi o site da Estamparia IDE e gostaria de tirar uma dúvida."
+                    target="_blank" rel="noopener" class="statement-cta reveal">
+                    <i data-lucide="message-circle" class="btn-icon"></i> Fale com a gente →
+                </a>
+            </div>
+            <div class="statement-visual reveal">
+                <picture>
+                    <source srcset="images/estamparia.avif" type="image/avif">
+                    <img src="images/estamparia.webp" alt="Produção de Estamparia" loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PROCESSO ──────────────────────────────────── -->
+    <section id="processo">
+        <p class="section-label reveal">Passo a passo</p>
+        <h2 class="section-title reveal">É muito fácil <em>pedir</em> a sua estampa.</h2>
+        <div class="steps">
+            <div class="step reveal">
+                <span class="step-num">01</span>
+                <div class="step-content">
+                    <h3>Fale Conosco</h3>
+                    <p>Mande um Zap e conte o que você precisa. Envie sua ideia, logo ou referência — qualquer coisa já
+                        serve para começarmos.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <span class="step-num">02</span>
+                <div class="step-content">
+                    <h3>Defina os Detalhes</h3>
+                    <p>Escolha o modelo, a cor da malha e a técnica de estampa. Nossa equipe te ajuda a fazer a melhor
+                        escolha para o seu bolso e necessidade.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <span class="step-num">03</span>
+                <div class="step-content">
+                    <h3>Produção Ágil</h3>
+                    <p>Produzimos as peças e estampamos com todo o cuidado. Silk-screen ou sublimação — usamos a técnica
+                        certa para o resultado que você merece.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <span class="step-num">04</span>
+                <div class="step-content">
+                    <h3>Entrega Garantida</h3>
+                    <p>Você recebe o aviso de "Pronto!" e busca suas peças com qualidade impecável, dobradas e embaladas
+                        com cuidado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── DIFERENCIAIS ──────────────────────────────── -->
+    <section id="diferenciais">
+        <p class="section-label reveal">Por que IDE?</p>
+        <h2 class="section-title reveal">O nosso <em>"pulo do gato".</em></h2>
+        <div class="diff-grid">
+            <div class="diff-item reveal">
+                <h3><span class="diff-check"><i data-lucide="check"></i></span> Solução Completa</h3>
+                <p>Fornecemos as camisetas e os materiais. Você só traz a ideia e nós cuidamos de tudo o mais.</p>
+            </div>
+            <div class="diff-item reveal">
+                <h3><span class="diff-check"><i data-lucide="check"></i></span> Para Todos os Públicos</h3>
+                <p>Atendemos pessoas físicas, pequenas empresas e grandes corporações com o mesmo carinho e qualidade.
+                </p>
+            </div>
+            <div class="diff-item reveal">
+                <h3><span class="diff-check"><i data-lucide="check"></i></span> Tecnologia de Ponta</h3>
+                <p>Domínio total em Silk-screen (Serigrafia) e Sublimação — desde cores sólidas vibrantes até fotos em
+                    alta resolução.</p>
+            </div>
+            <div class="diff-item reveal">
+                <h3><span class="diff-check"><i data-lucide="check"></i></span> +8 Anos de Experiência</h3>
+                <p>Mais de 8 anos transformando marcas e ideias em realidade aqui em Guarapari. Qualidade que o tempo
+                    comprova.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── TERCEIRIZAÇÃO ─────────────────────────────── -->
+    <section id="terceirizacao">
+        <div class="terc-copy reveal">
+            <p class="section-label reveal">Para Parceiros</p>
+            <h2 class="section-title reveal">Você traz o produto, nós cuidamos <em>da arte.</em></h2>
+            <p class="texto-terceirizacao">
+                Já tem as peças e só precisa da estampa? Nós fazemos o serviço de impressão — silk chapado, simulado,
+                cromia ou sublimação — com acabamento profissional de fábrica. Ideal para lojistas e revendedores.
+            </p>
+            <a href="https://wa.me/5527992032009?text=Olá! Gostaria de consultar o pedido mínimo para serviços de estamparia (terceirização)."
+                target="_blank" rel="noopener" class="btn-primary">
+                <i data-lucide="message-circle" class="btn-icon"></i> Consultar pedido mínimo
+            </a>
+        </div>
+        <div class="terc-visual reveal">
+            <picture>
+                <source srcset="images/foto.avif" type="image/avif">
+                <img src="images/foto.webp" alt="Serviço de Estamparia" loading="lazy">
+            </picture>
+        </div>
+    </section>
+
+    <!-- ─── FAQ ───────────────────────────────────────── -->
+    <section id="faq">
+        <div class="faq-header reveal">
+            <p class="section-label reveal">Dúvidas frequentes</p>
+            <h2 class="section-title">FAQ.</h2>
+            <p class="texto-faq">Ainda com dúvidas? Fale com a gente pelo WhatsApp.</p>
+        </div>
+        <div class="accordion reveal">
+            <div class="acc-item">
+                <button class="acc-trigger" aria-expanded="false">
+                    <span class="acc-question">Vocês fornecem as camisetas ou preciso trazer?</span>
+                    <span class="acc-icon"><i data-lucide="plus"></i></span>
+                </button>
+                <div class="acc-body">
+                    <p>Fornecemos tudo! Temos uma ampla variedade de malhas, modelos e cores. Você não precisa trazer
+                        nada — só a sua ideia ou arte.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-trigger" aria-expanded="false">
+                    <span class="acc-question">Qual o pedido mínimo para camisetas personalizadas?</span>
+                    <span class="acc-icon"><i data-lucide="plus"></i></span>
+                </button>
+                <div class="acc-body">
+                    <p>Atendemos pedidos pequenos e grandes. Consulte nosso WhatsApp para saber o mínimo específico
+                        conforme a técnica e o produto escolhido.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-trigger" aria-expanded="false">
+                    <span class="acc-question">Quais técnicas de estampa vocês utilizam?</span>
+                    <span class="acc-icon"><i data-lucide="plus"></i></span>
+                </button>
+                <div class="acc-body">
+                    <p>Trabalhamos com Silk-screen (Serigrafia) nos formatos chapado, simulado e cromia, e também com
+                        Sublimação para estampas fotográficas e cheias de detalhe.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-trigger" aria-expanded="false">
+                    <span class="acc-question">Vocês estampam em outros produtos além de camisetas?</span>
+                    <span class="acc-icon"><i data-lucide="plus"></i></span>
+                </button>
+                <div class="acc-body">
+                    <p>Sim! Personalizamos caixas de papel (silk), potes de vidro com tinta epóxi, e outras peças
+                        têxteis como coletes e uniformes.</p>
+                </div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-trigger" aria-expanded="false">
+                    <span class="acc-question">Qual o prazo médio de produção?</span>
+                    <span class="acc-icon"><i data-lucide="plus"></i></span>
+                </button>
+                <div class="acc-body">
+                    <p>O prazo varia de acordo com a quantidade e técnica escolhida. Entre em contato pelo WhatsApp para
+                        receber uma estimativa personalizada para o seu pedido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER / CONTATO ──────────────────────────── -->
+    <footer id="contato" data-section-theme="dark">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2 class="section-title">Não deixe sua ideia <em>apenas no papel.</em></h2>
+                <a href="https://wa.me/5527992032009?text=Olá! Gostaria de solicitar um orçamento para estamparia."
+                    target="_blank" rel="noopener" class="footer-cta">
+                    <i data-lucide="message-circle" class="btn-icon"></i> Solicitar Orçamento
+                </a>
+            </div>
+            <div class="footer-info">
+                <div class="info-block">
+                    <p class="info-label">Endereço</p>
+                    <p>R. Emanuel de Almeida, 61<br>Santa Margarida, Guarapari — ES<br>CEP 29201&#8209;412</p>
+                </div>
+                <div class="info-block">
+                    <p class="info-label">Horário</p>
+                    <p>Segunda a Sexta, das 09h às 18h</p>
+                </div>
+                <div class="info-block">
+                    <p class="info-label">Contato</p>
+                    <a href="https://wa.me/5527992032009?text=Olá! Gostaria de falar com a equipe da Estamparia IDE."
+                        target="_blank" rel="noopener">(27) 99203-2009</a>
+                </div>
+                <div class="info-block">
+                    <p class="info-label">Políticas</p>
+                    <p class="copyright-text">&copy; 2026 Estamparia IDE.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- CRÉDITOS 30 DIAS 30 SITES -->
+    <section class="credits-bar blur-section">
+        <div class="credits-bg-text" aria-hidden="true">30 / 30</div>
+        <div class="container credits-inner">
+            <div class="credits-badge">
+                <div class="credits-badge-text">
+                    <span class="credits-label">Projeto do Desafio</span>
+                    <h5 class="credits-title"><span class="credits-highlight">30 Dias,</span> 30 Sites</h5>
+                </div>
+                <div class="credits-divider"></div>
+                <p class="credits-desc">Este site foi solicitado via @Instagram</p>
+            </div>
+            <div class="credits-author">
+                <span class="credits-by">Desenvolvido por</span>
+                <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer" class="credits-brand">
+                    <span class="credits-brand-name">MESOLU</span>
+                    <span class="credits-brand-tld">.com.br</span>
+                </a>
+                <a href="https://mesolu.com.br/desafio/" target="_blank" rel="noopener noreferrer"
+                    class="credits-all-link">
+                    Ver todos os 30 sites &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

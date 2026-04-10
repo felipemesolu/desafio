@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldeia Beach | Coastal Luxury Living - Investimento e Qualidade de Vida</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="antialiased selection:bg-[#C5A059] selection:text-white">
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/5527996524763" target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 hover:shadow-2xl transition-all flex items-center justify-center group">
+        <i class="ph ph-whatsapp-logo text-3xl"></i>
+        <!-- Tooltip -->
+        <span
+            class="absolute right-full mr-4 bg-white text-navy text-xs font-bold py-2 px-4 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            Fale com Leonardo Almeida
+        </span>
+    </a>
+
+    <!-- NAVBAR
+    <nav class="fixed top-0 w-full z-40 transition-all duration-300" id="navbar">
+        <div class="absolute inset-0 bg-white/80 backdrop-blur-lg border-b border-gray-100/50 shadow-sm" id="nav-bg">
+        </div>
+        <div class="max-w-[90rem] mx-auto px-6 py-4 relative flex justify-between items-center">
+
+            <a href="#" class="flex flex-col relative z-10 group">
+                <span
+                    class="font-serif text-2xl font-bold text-navy leading-none tracking-tight group-hover:text-gold transition-colors">Aldeia
+                    Beach</span>
+                <span class="text-[8px] font-bold tracking-[0.35em] text-slate-400 uppercase mt-1">Construtora
+                    Laviola</span>
+            </a>
+
+            <div class="hidden lg:flex space-x-12 relative z-10">
+                <a href="#projeto"
+                    class="text-[10px] font-bold uppercase tracking-widest text-[#041E42] hover:text-[#C5A059] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-[#C5A059] after:transition-all">O
+                    Projeto</a>
+                <a href="#lazer"
+                    class="text-[10px] font-bold uppercase tracking-widest text-[#041E42] hover:text-[#C5A059] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-[#C5A059] after:transition-all">Clube
+                    & Lazer</a>
+                <a href="#unidades"
+                    class="text-[10px] font-bold uppercase tracking-widest text-[#041E42] hover:text-[#C5A059] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-[#C5A059] after:transition-all">Plantas</a>
+                <a href="#investimento"
+                    class="text-[10px] font-bold uppercase tracking-widest text-[#041E42] hover:text-[#C5A059] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-[#C5A059] after:transition-all">Visão
+                    do Investidor</a>
+            </div>
+
+            <a href="https://wa.me/5527996524763" class="btn-premium hidden md:flex">
+                Agendar Reunião <i class="ph ph-arrow-up-right text-lg"></i>
+            </a>
+
+             Mobile Menu Toggler 
+            <button class="lg:hidden relative z-10 text-navy p-2">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </nav> -->
+
+    <!-- HERO IMMERSIVE (CLEAN ESTILO PLANTAS.HTML) -->
+    <header
+        class="relative min-h-[100vh] md:h-screen bg-[#FDFDFD] flex flex-col items-center justify-between pt-24 lg:pt-32 overflow-hidden border-b border-gray-100">
+
+        <!-- Fundo Parallax -->
+        <div class="absolute inset-0 z-0 opacity-80" data-aos="fade-in" data-aos-duration="2000">
+            <img src="images/fundo.png" alt="Fundo" class="w-full h-[120%] object-cover object-top -translate-y-10"
+                id="hero-img">
+        </div>
+
+        <!-- Logo Centralizado -->
+        <div class="relative z-20 flex flex-col items-center" data-aos="fade-down" data-aos-duration="1200"
+            id="hero-logo">
+            <img src="images/logo-aldeia-beach-club.png" alt="Aldeia Beach Logo" class="w-32 h-auto drop-shadow-sm">
+        </div>
+
+        <!-- Imagem Fachada Base -->
+        <div class="relative z-10 w-full max-w-[50rem] px-4 mx-auto mt-auto flex justify-center items-end"
+            data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+            <img src="images/fachada2.png" alt="Residencial Aldeia Beach"
+                class="w-full md:w-11/12 lg:w-[85%] h-auto object-contain object-bottom drop-shadow-[0_-30px_60px_rgba(0,0,0,0.15)] relative -bottom-2"
+                id="hero-fachada">
+        </div>
+
+        <!-- Scroll Indicator Discreto -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 animate-bounce">
+            <a href="#projeto" class="hidden md:flex text-navy/60 hover:text-gold transition-colors drop-shadow-md">
+                <i class="ph ph-caret-down text-3xl"></i>
+            </a>
+        </div>
+
+        <!-- Efeito Degradê de Transição -->
+        <div
+            class="absolute bottom-0 left-0 w-full h-32 md:h-56 bg-gradient-to-t from-white via-white/70 to-transparent z-20 pointer-events-none">
+        </div>
+    </header>
+
+    <!-- COUNTER SECTION (STYLE STUDIO.ARCH) -->
+    <section class="py-24 lg:py-32 bg-white relative z-20 border-b border-gray-100">
+        <div class="max-w-[90rem] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24">
+
+                <!-- Large Typography Left -->
+                <div class="lg:w-1/2" data-aos="fade-up" data-aos-duration="1000">
+                    <h2
+                        class="text-4xl md:text-5xl lg:text-[4.5rem] leading-[1.05] font-serif text-navy uppercase tracking-tight mb-8 text-balance">
+                        <span class="text-gray-400 italic normal-case">Um oásis particular</span><br>
+                        com mais de 3.000m² de clube estruturado -
+                    </h2>
+                    <a href="#projeto"
+                        class="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-navy transition-all hover:gap-5 hover:text-gold border-b-2 border-navy hover:border-gold pb-2 w-max">
+                        Explorar o Projeto <i class="ph ph-arrow-right text-lg"></i>
+                    </a>
+                </div>
+
+                <!-- Stats Grid Right -->
+                <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16 pt-4 lg:pt-2">
+
+                    <!-- Stat 1 -->
+                    <div class="border-t border-gray-200 pt-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-baseline mb-4 text-navy">
+                            <span class="font-sans font-light text-6xl lg:text-7xl tracking-tighter">02</span>
+                            <span class="font-serif text-3xl ml-1 text-gold">+</span>
+                        </div>
+                        <h4 class="text-[11px] font-bold text-navy uppercase tracking-widest mb-3">Torres Modernas</h4>
+                        <p class="text-sm text-text-muted font-light leading-relaxed">
+                            Torres arquitetônicas imponentes, desenhadas para maximizar a ventilação e as vistas
+                            panorâmicas.
+                        </p>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="border-t border-gray-200 pt-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-baseline mb-4 text-navy">
+                            <span class="font-sans font-light text-6xl lg:text-7xl tracking-tighter">286</span>
+                            <span class="font-serif text-3xl ml-1 text-gold font-light">m²</span>
+                        </div>
+                        <h4 class="text-[11px] font-bold text-navy uppercase tracking-widest mb-3">Unidades Premium</h4>
+                        <p class="text-sm text-text-muted font-light leading-relaxed">
+                            Espaço equivalente a uma casa nas exclusivas unidades Garden, com toda a segurança de um
+                            condomínio.
+                        </p>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="border-t border-gray-200 pt-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-baseline mb-4 text-navy">
+                            <span class="font-sans font-light text-6xl lg:text-7xl tracking-tighter">20</span>
+                            <span class="font-serif text-3xl ml-1 text-gold">+</span>
+                        </div>
+                        <h4 class="text-[11px] font-bold text-navy uppercase tracking-widest mb-3">Ambientes de Lazer
+                        </h4>
+                        <p class="text-sm text-text-muted font-light leading-relaxed">
+                            Do Rooftop com piscina infinita até ambientes térreos focados em esportes e comodidades
+                            diárias.
+                        </p>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="border-t border-gray-200 pt-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex items-baseline mb-4 text-navy">
+                            <span class="font-sans font-light text-6xl lg:text-7xl tracking-tighter">100</span>
+                            <span class="font-serif text-3xl ml-1 text-gold">%</span>
+                        </div>
+                        <h4 class="text-[11px] font-bold text-navy uppercase tracking-widest mb-3">Exclusividade</h4>
+                        <p class="text-sm text-text-muted font-light leading-relaxed">
+                            Posicionado estrategicamente para te proteger da aglomeração, oferecendo paz a poucos
+                            minutos do mar.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O PROJETO (EDITORIAL BROWSER STYLE) -->
+    <section id="projeto" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-[90rem] mx-auto px-6">
+            
+            <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-20">
+                
+                <!-- Coluna Esquerda: Título -->
+                <div class="lg:w-5/12" data-aos="fade-right">
+                    <span class="inline-block px-3 py-1 bg-navy text-gold font-bold text-[10px] uppercase tracking-widest mb-8 border border-navy/10 rounded-sm">Arquitetura</span>
+                    <h2 class="font-serif text-4xl lg:text-[4rem] text-navy leading-[1.05] tracking-tight text-balance">
+                        Onde a sofisticação encontra a <span class="text-gray-400 italic font-serif font-light">paz litorânea.</span>
+                    </h2>
+                </div>
+
+                <!-- Coluna Direita: Descrição e Grid -->
+                <div class="lg:w-7/12 flex flex-col justify-end" data-aos="fade-left" data-aos-delay="100">
+                    <p class="text-lg lg:text-xl text-text-muted font-light leading-relaxed mb-12 max-w-2xl">
+                        O <strong>Residencial Aldeia Beach Clube</strong> redefine o cenário imobiliário de Guarapari. Estrategicamente posicionado em área nobre e vizinho ao renomado Condomínio Aldeia da Praia, o empreendimento garante o balanço perfeito: a tranquilidade intocada pela alta temporada e a valorização segura que seu patrimônio exige.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-14 pt-8 border-t border-gray-100">
+                        <div>
+                            <div class="w-8 h-[1px] bg-gold mb-4"></div>
+                            <h4 class="text-[11px] font-bold text-navy uppercase tracking-widest mb-3">Garagem Elevada</h4>
+                            <p class="text-sm text-text-muted font-light leading-relaxed">Pavimentos de garagem alocados no 2º, 3º e 4º andares, blindando seus veículos contra os efeitos da maresia.</p>
+                        </div>
+                        <div>
+                            <div class="w-8 h-[1px] bg-gold mb-4"></div>
+                            <h4 class="text-[11px] font-bold text-navy uppercase tracking-widest mb-3">Varanda Gourmet</h4>
+                            <p class="text-sm text-text-muted font-light leading-relaxed">Infraestrutura completa incluída rigorosamente em 100% das unidades do empreendimento para suas celebrações.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+    <!-- LAZER (BENTO GRID - CONCEITO CLUBE) -->
+    <section id="lazer" class="py-24 lg:py-32 bg-white flex justify-center">
+        <div class="max-w-[90rem] w-full px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="subtitle-elegant justify-center mb-6">Conceito Clube Privativo</span>
+                <h2 class="font-serif text-4xl lg:text-6xl text-navy mb-6 leading-tight">
+                    Mais de 20 ambientes para o seu bem-estar.
+                </h2>
+                <p class="text-text-muted text-lg font-light">
+                    Uma divisão inteligente do lazer em dois níveis primários: o <strong>Rooftop</strong> dedicado a
+                    vistas deslumbrantes e relaxamento, e o <strong>Térreo</strong> projetado para esportes, atividades
+                    e conveniências essenciais no dia a dia.
+                </p>
+            </div>
+
+            <!-- Bungee-Style Sliders -->
+            <div class="relative w-full" data-aos="fade-up" data-aos-delay="200">
+
+                <!-- Divisão 1: Lazer Cobertura -->
+                <div class="mb-12 slider-wrapper overflow-hidden pb-4">
+                    <div class="flex items-center gap-4 md:gap-6 mb-8 mt-4">
+                        <h3 class="font-serif text-2xl md:text-3xl text-navy whitespace-nowrap">Lazer Cobertura</h3>
+                        <span
+                            class="text-gray-400 font-sans text-[10px] md:text-xs tracking-widest uppercase border border-gray-200 px-3 py-1 rounded-full whitespace-nowrap">Rooftop
+                            • Nível 01</span>
+                        <div class="h-[1px] bg-gray-200 w-full hidden sm:block"></div>
+                    </div>
+
+                    <div class="swiper lazer-swiper-cobertura overflow-visible cursor-grab active:cursor-grabbing">
+                        <div class="swiper-wrapper" id="cobertura-wrapper">
+                            <!-- JS injeta os cards da cobertura -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Cênico / Galeria (Movido) -->
+                <div class="w-full h-[50vh] md:h-[60vh] overflow-hidden relative mb-12 mt-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper projeto-swiper h-full w-full z-10">
+                        <div class="swiper-wrapper" id="projeto-gallery-wrapper">
+                            <!-- JS injeta as imagens -->
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Action Button Overlay -->
+                    <a href="https://wa.me/5527996524763" class="absolute bottom-8 right-8 z-30 bg-white/90 backdrop-blur text-navy px-8 py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-navy hover:text-white transition-all shadow-lg hidden sm:block border border-white">
+                        Explorar Ambientes <i class="ph ph-arrow-right ml-2 text-gold"></i>
+                    </a>
+                </div>
+
+                <!-- Divisão 2: Lazer Térreo -->
+                <div class="slider-wrapper overflow-hidden pb-4">
+                    <div class="flex items-center gap-4 md:gap-6 mb-8 mt-4">
+                        <h3 class="font-serif text-2xl md:text-3xl text-navy whitespace-nowrap">Lazer Térreo</h3>
+                        <span
+                            class="text-gray-400 font-sans text-[10px] md:text-xs tracking-widest uppercase border border-gray-200 px-3 py-1 rounded-full whitespace-nowrap">Térreo
+                            • Nível 02</span>
+                        <div class="h-[1px] bg-gray-200 w-full hidden sm:block"></div>
+                    </div>
+
+                    <div class="swiper lazer-swiper-terreo overflow-visible cursor-grab active:cursor-grabbing">
+                        <div class="swiper-wrapper" id="terreo-wrapper">
+                            <!-- JS injeta os cards do térreo -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIDADES INTERATIVO COM SWIPER -->
+    <section id="unidades" class="py-24 lg:py-32 bg-navy text-white border-y border-white/5">
+        <div class="max-w-[90rem] mx-auto px-6 overflow-hidden">
+
+            <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16" data-aos="fade-in">
+                <div class="max-w-2xl">
+                    <span class="subtitle-elegant mb-4">Catálogo de Plantas</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl mb-4">Arquitetura de Interiores.</h2>
+                    <p class="text-white/70 font-light text-sm md:text-base">Diferentes tipologias desenhadas para
+                        atender a plurais necessidades familiares e estratégias de investimento. Plantas padrão e opções
+                        <strong>Garden Super Premium</strong>.
+                    </p>
+                </div>
+
+                <!-- Custom Tabs -->
+                <div class="bg-white/10 p-1 rounded-full inline-flex md:shrink-0 ring-1 ring-white/20">
+                    <button onclick="blockTab(1)" id="bnav-1"
+                        class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all bg-gold text-white">Bloco
+                        01</button>
+                    <button onclick="blockTab(2)" id="bnav-2"
+                        class="px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all text-white/50 hover:text-white">Bloco
+                        02</button>
+                </div>
+            </div>
+
+            <!-- Swiper Slider Container -->
+            <div class="slider-wrapper relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper unit-swiper py-10! px-4! -mx-4!">
+                    <div class="swiper-wrapper" id="swiper-wrapper-units">
+                        <!-- Injetado via JS -->
+                    </div>
+                </div>
+
+                <!-- Navegação Custom Swiper -->
+                <div class="flex items-center gap-4 mt-8 justify-center lg:justify-end pr-4">
+                    <button
+                        class="swiper-btn-prev w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-navy transition">
+                        <i class="ph ph-arrow-left text-xl"></i>
+                    </button>
+                    <button
+                        class="swiper-btn-next w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-navy transition">
+                        <i class="ph ph-arrow-right text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INVESTIMENTO E PITCH DE VENDAS -->
+    <section id="investimento" class="py-24 lg:py-32 bg-bg-sand relative overflow-hidden">
+
+        <!-- Elemento Decorativo Background -->
+        <h2
+            class="absolute top-10 right-0 text-[15rem] leading-none font-sans font-black text-black/[0.02] tracking-tighter pointer-events-none whitespace-nowrap">
+            PREMIUM ASSET
+        </h2>
+
+        <div class="max-w-[90rem] mx-auto px-6 relative z-10">
+
+            <div class="mb-20 text-center md:text-left">
+                <span class="subtitle-elegant mb-4 md:justify-start justify-center">Inteligência Financeira</span>
+                <h2 class="font-serif text-4xl lg:text-6xl text-navy">
+                    Tese de Investimento.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+                <!-- Lista de Pitch -->
+                <div class="space-y-12">
+                    <div class="flex gap-6 group" data-aos="fade-up">
+                        <div
+                            class="shrink-0 text-3xl text-gray-200 font-serif font-bold group-hover:text-gold transition-colors duration-500">
+                            01.</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-navy mb-2">Escassez e o "Efeito Península"</h3>
+                            <p class="text-text-muted font-light leading-relaxed text-sm md:text-base">
+                                A área nobre e silenciosa da Praia do Morro está se esgotando. Adquirindo uma das
+                                últimas reservas lindeiras ao Aldeia da Praia, você garante um ativo protegido da
+                                deflação por escassez de terrenos e consolidação de um m² ultra-premium.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 group" data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="shrink-0 text-3xl text-gray-200 font-serif font-bold group-hover:text-gold transition-colors duration-500">
+                            02.</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-navy mb-2">Apart-Hotel Híbrido</h3>
+                            <p class="text-text-muted font-light leading-relaxed text-sm md:text-base">
+                                Com facilities como Lavanderia, Mini-mercado e Car Wash, as unidades ganham vocação de
+                                serviço, permitindo a gestão em short-stay (AirBnb de alto padrão) aumentando a margem
+                                da diária em até 25% comparado à concorrência da região.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 group" data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="shrink-0 text-3xl text-gray-200 font-serif font-bold group-hover:text-gold transition-colors duration-500">
+                            03.</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-navy mb-2">Liquididez no Produto Garden</h3>
+                            <p class="text-text-muted font-light leading-relaxed text-sm md:text-base">
+                                Famílias de alto padrão estão preferindo as áreas externas de térreos (Gardens com até
+                                286m²) pela sensação de "casa com segurança arquitetônica". É historicamente o produto
+                                que gera a maior inflação positiva no mercado secundário local.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Card -->
+                <div class="glass-card bg-white p-10 lg:p-14 border border-gold/20 flex flex-col justify-center h-full text-center relative"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <div class="absolute -top-4 -left-4 w-20 h-20 bg-gold/10 rounded-full blur-2xl"></div>
+
+                    <i class="ph ph-chart-line-up text-5xl text-gold mb-6 mx-auto"></i>
+
+                    <blockquote class="font-serif text-2xl text-navy italic leading-snug mb-8">
+                        "O Aldeia Beach não é apenas um imóvel físico. É um ativo de blindagem financeira com forte
+                        upside na maturação do bairro."
+                    </blockquote>
+
+                    <div class="w-12 h-[2px] bg-gold mx-auto mb-8"></div>
+
+                    <div class="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-6">Status da Oferta:
+                        Pré-Lançamento</div>
+
+                    <a href="https://wa.me/5527996524763"
+                        class="btn-premium py-4 shadow-[0_15px_30px_-5px_rgba(197,160,89,0.3)] bg-gold border border-gold hover:bg-navy hover:border-navy hover:shadow-none w-full max-w-sm mx-auto">
+                        Acessar Tabela Preços <i class="ph ph-file-pdf"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER FINAL / CONTATO -->
+    <footer class="bg-navy text-white pt-24 pb-10 border-t-8 border-gold">
+        <div class="max-w-[90rem] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20 border-b border-white/10 pb-20">
+
+                <div class="md:col-span-5">
+                    <div class="flex flex-col mb-8">
+                        <span class="font-serif text-3xl md:text-4xl font-bold text-white leading-none">Aldeia
+                            Beach</span>
+                        <span class="text-[9px] font-bold tracking-[0.3em] text-gold uppercase mt-2">Construtora
+                            Laviola</span>
+                    </div>
+                    <p class="text-white/60 font-light text-sm max-w-md leading-relaxed mb-8">
+                        A união impecável entre o vigor da praia e a tranquilidade de clube em um projeto que transforma
+                        o morar em celebração.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-gold hover:border-gold transition"><i
+                                class="ph ph-instagram-logo"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-gold hover:border-gold transition"><i
+                                class="ph ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-[11px] font-bold uppercase tracking-widest text-gold mb-6">Contato Oficial</h4>
+                    <ul class="space-y-4 text-sm font-light text-white/80">
+                        <li class="flex items-center gap-3"><i class="ph ph-user text-gold text-lg"></i> Leonardo
+                            Almeida</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-identification-card text-gold text-lg"></i>
+                            CRECI/ES 011618</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-whatsapp-logo text-gold text-lg"></i> (27)
+                            99652-4763</li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 bg-white/5 p-8 rounded-3xl border border-white/10">
+                    <h4 class="text-[11px] font-bold uppercase tracking-widest text-white mb-4">Agende uma Visita</h4>
+                    <p class="text-xs text-white/60 mb-6">Local do Empreendimento: Rua Atenas, Praia do Morro -
+                        Guarapari/ES.</p>
+                    <a href="https://wa.me/5527996524763"
+                        class="btn-outline w-full bg-transparent hover:bg-white hover:text-navy border-white text-white">
+                        Falar com o Especialista
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 uppercase tracking-widest font-bold font-sans">
+                <span>© 2026 Aldeia Beach Residencial Clube.</span>
+                <span class="mt-4 md:mt-0">Desenvolvimento Exclusivo de Design</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

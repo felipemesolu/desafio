@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luciana Carvalho - Moda e Confecções | Ateliê de Costura em Guarapari</title>
+    <meta name="description"
+        content="Luciana Carvalho - Moda e Confecções. Ateliê de costura em Guarapari/ES. Roupas sob medida, ajustes e consertos gerais desde 2002. Qualidade e carinho em cada ponto.">
+
+    <!-- SEO: Canonical -->
+    <link rel="canonical" href="https://lumodas.com.br/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Luciana Carvalho - Moda e Confecções | Ateliê de Costura em Guarapari">
+    <meta property="og:description"
+        content="Roupas sob medida, ajustes e consertos com carinho desde 2002. Guarapari/ES.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Performance: Preconnect para fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Performance: Preload de recursos críticos (acima da dobra) -->
+    <link rel="preload" href="images/webp/logo.webp" as="image">
+    <link rel="preload" href="video/video03.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="style.css" as="style">
+
+    <!-- Fontes (display=swap para não bloquear renderização) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (não bloqueia renderização) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Luciana Carvalho - Moda e Confecções",
+        "description": "Ateliê de costura com roupas sob medida, ajustes e consertos desde 2002.",
+        "url": "https://lumodas.com.br",
+        "telephone": "+5527995017841",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Guarapari",
+            "addressRegion": "ES",
+            "addressCountry": "BR"
+        },
+        "founder": { "@type": "Person", "name": "Luciana Carvalho" },
+        "foundingDate": "2002"
+    }
+    </script>
+</head>
+
+<body>
+    <!-- ────── NAVBAR ────── -->
+    <nav id="navbar" aria-label="Navegação principal">
+        <div class="nav-inner">
+            <a href="#inicio" class="logo" aria-label="Lu Moda - Voltar ao início">
+                <!-- Logo: PNG simples, acima da dobra, sem lazy -->
+                <picture>
+                    <source srcset="images/avif/logo.avif" type="image/avif">
+                    <img src="images/webp/logo.webp" alt="Logo Luciana Carvalho Moda e Confecções" id="logo-img"
+                        width="52" height="52" fetchpriority="high" decoding="sync">
+                </picture>
+                <div class="logo-text">
+                    <span class="logo-name">Luciana Carvalho</span>
+                    <span class="logo-sub">Moda e Confecções</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">A Luciana</a></li>
+                <li><a href="#galeria">Trabalhos</a></li>
+                <li><a href="https://wa.me/5527995017841" target="_blank" rel="noopener noreferrer" class="btn-cta">
+                        Falar com Lu <i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+            </ul>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+    <div class="sidebar" id="sidebar" aria-hidden="true">
+        <button class="sidebar-close" id="sidebar-close" aria-label="Fechar menu">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">A Luciana</a></li>
+            <li><a href="#galeria">Trabalhos</a></li>
+            <li><a href="https://wa.me/5527995017841" target="_blank" rel="noopener noreferrer">
+                    Falar com Lu <i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- ────── HERO ────── -->
+    <section id="inicio" class="hero" aria-label="Apresentação">
+
+        <!-- Canvas de fios/costura animados -->
+        <canvas id="thread-canvas" aria-hidden="true"></canvas>
+
+        <!-- Partículas de tecido -->
+        <div class="fabric-particles" id="fabric-particles" aria-hidden="true"></div>
+
+        <div class="hero-wrapper">
+            <!-- Conteúdo esquerdo -->
+            <div class="hero-left">
+                <picture>
+                    <source srcset="images/avif/logo.avif" type="image/avif">
+                    <img src="images/webp/logo.webp" alt="Símbolo Lu Moda" class="hero-logo-symbol" width="80"
+                        height="80" loading="eager" fetchpriority="high" decoding="sync">
+                </picture>
+
+
+                <div class="hero-brand-text">
+                    <h1 class="hero-title">Luciana Carvalho</h1>
+                    <p class="hero-tagline">Moda e Confecção</p>
+                </div>
+
+                <p class="hero-sub">Peças sob medida e reformas com o carinho de quem ama o que faz há mais de 20 anos.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://wa.me/5527995017841" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        Solicitar Orçamento <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="#servicos" class="btn-ghost">Ver Serviços</a>
+                </div>
+
+                <!-- Linha decorativa de costura -->
+                <div class="stitch-bar" aria-hidden="true">
+                    <svg viewBox="0 0 400 12" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="6" x2="400" y2="6" stroke="rgba(255,255,255,0.3)" stroke-width="1"
+                            stroke-dasharray="8 6" />
+                    </svg>
+                    <span class="stitch-label">
+                        <i class="fas fa-cut" aria-hidden="true"></i>
+                        Roupas sob medida · Ajustes · Consertos
+                    </span>
+                </div>
+            </div>
+
+            <!-- Vídeo direita -->
+            <div class="hero-right">
+                <div class="video-wrap">
+                    <div class="video-ring" aria-hidden="true"></div>
+                    <div class="video-ring ring-2" aria-hidden="true"></div>
+                    <!-- Vídeo hero: autoplay, sem lazy (above the fold) -->
+                    <video autoplay muted loop playsinline id="hero-video"
+                        aria-label="Vídeo de costura no ateliê de Luciana Carvalho">
+                        <source src="video/video03.mp4" type="video/mp4">
+                    </video>
+                    <div class="badge badge-tl">+20 anos</div>
+                    <div class="badge badge-br">Sob medida</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span>Deslize</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ────── TICKER ────── -->
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <span>✦ Roupas Sob Medida</span>
+            <span>✦ Ajustes e Consertos</span>
+            <span>✦ Vestuário Masculino</span>
+            <span>✦ Vestuário Feminino</span>
+            <span>✦ Moda Infantil</span>
+            <span>✦ Bainhas &amp; Reformas</span>
+            <span>✦ Zíperes &amp; Botões</span>
+            <span>✦ Roupas Festivas</span>
+            <!-- duplicata para loop contínuo -->
+            <span>✦ Roupas Sob Medida</span>
+            <span>✦ Ajustes e Consertos</span>
+            <span>✦ Vestuário Masculino</span>
+            <span>✦ Vestuário Feminino</span>
+            <span>✦ Moda Infantil</span>
+            <span>✦ Bainhas &amp; Reformas</span>
+            <span>✦ Zíperes &amp; Botões</span>
+            <span>✦ Roupas Festivas</span>
+        </div>
+    </div>
+
+    <!-- ────── SERVIÇOS ────── -->
+    <section id="servicos" class="services" aria-labelledby="servicos-titulo">
+        <div class="container">
+            <div class="section-head">
+                <span class="label-tag">O que fazemos</span>
+                <h2 id="servicos-titulo">Nossa Arte</h2>
+                <p>Do rascunho ao acabamento final, entregamos perfeição em cada detalhe.</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4L6 18v26h12V30h12v14h12V18L24 4z" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Sob Medida</h3>
+                    <p>Roupas feitas do zero, totalmente adaptadas ao seu corpo e estilo. Traga sua inspiração e nós a
+                        transformamos em realidade.</p>
+                    <div class="card-stitch" aria-hidden="true"></div>
+                </article>
+                <article class="service-card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 42l8-8M14 34l20-20M34 14l4-4a4 4 0 015.66 5.66l-4 4M14 34l-2 6 6-2"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Ajustes &amp; Consertos</h3>
+                    <p>Sua roupa favorita precisa de um ajuste? Realizamos reformas, barras, trocas de zíper e ajustes
+                        finos em geral.</p>
+                    <div class="card-stitch" aria-hidden="true"></div>
+                </article>
+                <article class="service-card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Para Todos</h3>
+                    <p>Atendemos o público masculino e feminino, desde crianças até adultos, em todos os tamanhos e
+                        modelos.</p>
+                    <div class="card-stitch" aria-hidden="true"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────── SOBRE ────── -->
+    <section id="sobre" class="about" aria-labelledby="sobre-titulo">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrap reveal-left">
+                    <div class="img-decoration" aria-hidden="true"></div>
+                    <!-- Foto da Luciana: AVIF → WebP → JPG, lazy -->
+                    <picture>
+                        <source srcset="images/avif/luciana.avif" type="image/avif">
+                        <img src="images/webp/luciana.webp"
+                            alt="Luciana Carvalho trabalhando em seu ateliê de costura em Guarapari" loading="lazy"
+                            decoding="async" width="560" height="560">
+                    </picture>
+                    <div class="years-badge">
+                        <span class="num">20+</span>
+                        <span class="txt">anos de<br>experiência</span>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <span class="label-tag">Conheça a artesã</span>
+                    <h2 id="sobre-titulo">Luciana Carvalho</h2>
+                    <p>Me chamo Luciana e minha jornada com a costura começou em 2002. Desde então, nunca parei de
+                        transformar tecidos em sonhos e confiança.</p>
+                    <p>Acredito que cada peça carrega uma história e merece ser tratada com dedicação máxima. Meu
+                        compromisso é com a qualidade e o caimento perfeito, independentemente do desafio.</p>
+                    <blockquote class="bible-verse">
+                        <i class="fas fa-quote-left" aria-hidden="true"></i>
+                        Todas as vossas coisas sejam feitas com amor
+                        <cite>1 Coríntios 16:14</cite>
+                    </blockquote>
+                    <a href="https://wa.me/5527995017841" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        Agendar Visita <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────── GALERIA ────── -->
+    <section id="galeria" class="gallery" aria-labelledby="galeria-titulo">
+        <div class="container">
+            <div class="section-head">
+                <span class="label-tag">Portfólio</span>
+                <h2 id="galeria-titulo">Galeria de Projetos</h2>
+                <p>Um pouco do que passa pelas nossas mãos.</p>
+            </div>
+
+            <div class="gallery-masonry">
+                <!-- Imagem 01 — AVIF → WebP → JPG, lazy -->
+                <div class="gal-item tall reveal">
+                    <picture>
+                        <source srcset="images/avif/01.avif" type="image/avif">
+                        <img src="images/webp/01.webp" alt="Peça sob medida - roupa feminina" loading="lazy"
+                            decoding="async" width="400" height="480">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+                <!-- Imagem 02 -->
+                <div class="gal-item reveal">
+                    <picture>
+                        <source srcset="images/avif/02.avif" type="image/avif">
+                        <img src="images/webp/02.webp" alt="Detalhe de costura artesanal" loading="lazy"
+                            decoding="async" width="400" height="240">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+                <!-- Imagem 03 -->
+                <div class="gal-item reveal">
+                    <picture>
+                        <source srcset="images/avif/07.avif" type="image/avif">
+                        <img src="images/webp/07.webp" alt="Peça sob medida - roupa feminina" loading="lazy"
+                            decoding="async" width="400" height="480">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+
+                <!-- Imagem 04 -->
+                <div class="gal-item reveal">
+                    <picture>
+                        <source srcset="images/avif/05.avif" type="image/avif">
+                        <img src="images/webp/05.webp" alt="Ajuste e reforma de roupas" loading="lazy" decoding="async"
+                            width="400" height="240">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+                <!-- Imagem 05 -->
+                <div class="gal-item tall reveal">
+                    <picture>
+                        <source srcset="images/avif/04.avif" type="image/avif">
+                        <img src="images/webp/04.webp" alt="Vestido sob medida em Guarapari ES" loading="lazy"
+                            decoding="async" width="400" height="480">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+                <!-- Imagem 02 -->
+                <div class="gal-item reveal">
+                    <picture>
+                        <source srcset="images/avif/02.avif" type="image/avif">
+                        <img src="images/webp/02.webp" alt="Detalhe de costura artesanal" loading="lazy"
+                            decoding="async" width="400" height="240">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+                <!-- Imagem 06 -->
+                <div class="gal-item reveal">
+                    <picture>
+                        <source srcset="images/avif/06.avif" type="image/avif">
+                        <img src="images/webp/06.webp" alt="Costura artesanal com qualidade" loading="lazy"
+                            decoding="async" width="400" height="240">
+                    </picture>
+                    <div class="gal-overlay"><span>Ver Peça</span></div>
+                </div>
+            </div>
+
+            <!-- Vídeos da galeria: lazy load via JS -->
+            <div class="gallery-videos">
+                <div class="vid-wrap reveal">
+                    <video autoplay muted loop playsinline loading="lazy" aria-label="Processo de costura no ateliê">
+                        <source data-src="video/video02.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="vid-wrap reveal">
+                    <video autoplay muted loop playsinline loading="lazy"
+                        aria-label="Trabalho de ajuste e reforma de roupas">
+                        <source data-src="video/video01.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────── CTA ────── -->
+    <section class="cta" aria-labelledby="cta-titulo">
+        <div class="cta-bg" aria-hidden="true"></div>
+        <div class="container cta-content reveal">
+            <span class="label-tag light">Vamos criar juntos</span>
+            <h2 id="cta-titulo">Tem uma inspiração?</h2>
+            <p>Pode mandar pra gente! Fazemos exatamente como você quiser — do modelo mais simples ao mais elaborado.
+            </p>
+            <a href="https://wa.me/5527995017841" target="_blank" rel="noopener noreferrer"
+                class="btn-primary btn-glow">
+                Enviar Inspiração <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ────── FOOTER ────── -->
+    <footer aria-label="Rodapé">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo-wrap">
+                    <picture>
+                        <source srcset="images/avif/logo.avif" type="image/avif">
+                        <img src="images/webp/logo.webp" alt="Logo Lu Moda e Confecções" class="footer-logo" width="52"
+                            height="52" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="footer-logo-text">
+                        <span class="footer-logo-name">Luciana Carvalho</span>
+                        <span class="footer-logo-sub">Moda e Confecções</span>
+                    </div>
+                </div>
+                <p class="footer-addr"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Guarapari — ES</p>
+            </div>
+            <nav class="footer-nav" aria-label="Links do rodapé">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">A Luciana</a></li>
+                    <li><a href="#galeria">Trabalhos</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+5527995017841">(27) 99501-7841</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/lu_modaeconfeccoes2/" aria-label="Instagram da Luciana Carvalho">
+                        <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/5527995017841" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp da Luciana Carvalho">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luciana Carvalho - Moda e Confecções · Feito com <i class="fas fa-heart"
+                    aria-hidden="true"></i> em Guarapari
+            </p>
+        </div>
+    </footer>
+
+    <!-- CRÉDITOS -->
+    <section class="credits-section">
+        <div class="credits-bg-text" aria-hidden="true">30 / 30</div>
+        
+        <div class="credits-container">
+            <div class="credits-flex">
+                <div class="credits-badge">
+                    <div class="badge-info">
+                        <span class="badge-label">Projeto do Desafio</span>
+                        <h5 class="badge-title">
+                            <span>30 Dias,</span> 30 Sites
+                        </h5>
+                    </div>
+                    <div class="badge-divider"></div>
+                    <p class="badge-desc">Este site foi solicitado via @Instagram</p>
+                </div>
+
+                <div class="credits-dev">
+                    <span class="dev-label">Desenvolvido por</span>
+                    <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer" class="dev-brand">
+                        <span class="dev-main">MESOLU</span>
+                        <span class="dev-ext">.com.br</span>
+                    </a>
+                    <a href="https://mesolu.com.br/desafio/" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        Acompanhar Projeto →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5527995017841" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Falar com Lu Moda no WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Fechar galeria">&times;</button>
+        <div class="lightbox-content">
+            <picture id="lightbox-picture">
+                <!-- Preenchido via JS -->
+            </picture>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

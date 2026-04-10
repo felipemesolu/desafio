@@ -1,0 +1,15 @@
+# Ignore everything
+/*
+
+# Unignore the chosen projects
+!/arquiteta/
+!/cardosocosmeticos/
+!/estampariaide/
+!/ifv/
+!/jcb-adv/
+!/leonardo-almeida/
+!/lumodas/
+!/oliverconfeitaria/
+
+# Important: Don't ignore the gitignore itself
+!.gitignore

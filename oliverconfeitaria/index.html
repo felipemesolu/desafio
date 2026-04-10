@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4PPX85K3QL', {
+            page_title: 'Oliver Confeitaria'
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Confeitaria</title>
+    <meta name="description"
+        content="Oliver Confeitaria - Atendimento artesanal em Guarapari/ES. Tortas, brigadeiros gourmet, bolos personalizados e muito mais. Transformamos ingredientes nobres em experiências inesquecíveis.">
+    <meta property="og:title" content="Oliver Confeitaria">
+    <meta property="og:description"
+        content="Oliver Confeitaria - Atendimento artesanal em Guarapari/ES. Tortas, brigadeiros gourmet, bolos personalizados e muito mais. Transformamos ingredientes nobres em experiências inesquecíveis.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg">
+    <link rel="icon" type="image/png" href="images/icon-32.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Prata&family=Luckiest+Guy&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F8EFD8',
+                        'cream-light': '#FDFBF3',
+                        marrom: '#5D3A26',
+                        dourado: '#B18A48',
+                        sepia: '#3C2415',
+                        'accent-red': '#EA4335',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Prata', 'serif'],
+                        luckiest: ['Luckiest Guy', 'cursive'],
+                        script: ['Dancing Script', 'cursive'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(10deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(10deg)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8EFD8;
+        }
+
+        .rt-button-v1-circle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .rt-btn:hover .rt-button-v1-circle {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Ocultar barra de rolagem */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Mouse Drag Styles */
+        #product-slider {
+            cursor: grab;
+        }
+
+        #product-slider:active {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+
+<body class="text-sepia">
+
+
+    <section class="relative min-h-screen lg:h-screen flex items-center overflow-hidden bg-cream-light py-12 lg:py-0">
+        <!-- Background Pattern (Subtle) -->
+        <div
+            class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://cdn.prod.website-files.com/683948647d80a2f677804c9e/687ef753556c0738e4a9e52c_hero-bg-pattern-v2.png')] bg-cover">
+        </div>
+
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Left Column: Branding & CTA -->
+                <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <img src="images/logo-oliverconfeitaria.png"
+                        class="w-40 md:w-48 lg:w-56 mb-6 lg:mb-8 animate-fade-in" alt="Oliver Confeitaria">
+
+                    <h1
+                        class="font-sans font-black text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-marrom leading-[1.05] mb-6 tracking-tighter uppercase">
+                        Onde cada mordida <br class="hidden xl:block"> <span class="text-dourado">é uma festa.</span>
+                    </h1>
+
+                    <p class="text-base lg:text-lg text-marrom/70 mb-8 max-w-xl font-medium leading-relaxed">
+                        Artesanal, autêntica e inesquecível. Transformamos ingredientes nobres em experiências que
+                        adoçam sua história em cada detalhe.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a href="https://wa.me/5527995204822?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20informações"
+                            target="_blank"
+                            class="rt-btn relative overflow-hidden bg-marrom text-white px-8 py-4 rounded-full text-xs font-extrabold uppercase tracking-widest transition-all hover:scale-105 hover:shadow-xl text-center">
+                            <span class="relative z-10">Fazer meu pedido</span>
+                            <div class="rt-button-v1-circle left-1/2 top-1/2"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image Container (Stacks below text at 768px/md) -->
+                <div class="w-full lg:w-1/2 flex justify-center mt-16 lg:mt-0 lg:static">
+                    <div
+                        class="relative lg:absolute -right-12 md:-right-16 lg:-right-24 xl:-right-32 lg:top-1/2 lg:-translate-y-1/2 w-[280px] md:w-[480px] lg:w-[544px] xl:w-[672px] pointer-events-none z-0 overflow-visible">
+                        <!-- Subtle Glow -->
+                        <div class="absolute inset-0 bg-dourado/10 rounded-full blur-[100px] animate-pulse scale-110">
+                        </div>
+
+                        <picture class="relative z-10 block">
+                            <source srcset="images/bolo-hero.avif" type="image/avif">
+                            <source srcset="images/bolo-hero.webp" type="image/webp">
+                            <img src="images/bolo-hero.webp" alt="Bolo Oliver Confeitaria"
+                                class="w-full h-auto object-contain animate-float"
+                                style="filter: drop-shadow(0 35px 60px rgba(93, 58, 38, 0.4));" fetchpriority="high">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator (Subtle) -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-30">
+            <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-marrom">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-marrom to-transparent"></div>
+        </div>
+    </section>
+
+    <div class="relative z-20 w-full">
+
+
+        <!-- About Section -->
+        <section id="sobre" class="bg-cream-light py-24 px-6 relative overflow-hidden w-full">
+            <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-16">
+                <!-- About Video (Dual Source) -->
+                <div
+                    class="lg:w-1/2 relative bg-marrom/10 rounded-2xl overflow-hidden flex items-center justify-center aspect-video md:aspect-square">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center text-marrom/20 font-bold uppercase tracking-widest text-xs animate-pulse">
+                        Carregando Vídeo...</div>
+                    <video autoplay loop muted playsinline class="w-full h-full shadow-2xl relative z-10 object-cover">
+                        <source src="videos/doces-gourmet.webm" type="video/webm">
+                        <source src="videos/doces-gourmet.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+                </div>
+
+                <!-- About: Some Delights -->
+                <div class="lg:w-1/2">
+                    <span
+                        class="inline-block font-sans text-dourado font-bold uppercase tracking-[0.4em] mb-4 text-sm">Algumas
+                        Delícias</span>
+                    <h2
+                        class="font-sans font-black text-4xl md:text-5xl text-marrom leading-tight uppercase mb-6 tracking-tighter">
+                        O Encontro Perfeito<br>do Sabor
+                    </h2>
+
+                    <p class="text-marrom/70 text-lg mb-10 max-w-md">
+                        Abaixo, algumas de nossas delícias para você se lambuzar e se encantar com o verdadeiro sabor
+                        artesanal.
+                    </p>
+
+                    <div class="border-l-4 border-dourado pl-8 py-2">
+                        <ul class="space-y-4">
+                            <li class="font-sans font-extrabold text-marrom uppercase tracking-widest text-lg">Tortas
+                                Artesanais</li>
+                            <li class="font-sans font-extrabold text-marrom uppercase tracking-widest text-lg">
+                                Brigadeiros Gourmet</li>
+                            <li class="font-sans font-extrabold text-marrom uppercase tracking-widest text-lg">Copo
+                                Felicidade</li>
+                            <li class="font-sans font-extrabold text-marrom uppercase tracking-widest text-lg">Bolos
+                                Acetato</li>
+                            <li class="font-sans font-extrabold text-marrom uppercase tracking-widest text-lg">Lembrança
+                                em Caixinha Personalizada</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-12">
+                        <a href="https://wa.me/5527995204822?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20informações"
+                            target="_blank"
+                            class="rt-btn relative overflow-hidden bg-marrom text-white px-12 py-6 rounded-full text-sm font-extrabold uppercase tracking-widest transition-all hover:scale-105 hover:shadow-2xl">
+                            <span class="relative z-10">Eu quero!</span>
+                            <div class="rt-button-v1-circle left-1/2 top-1/2"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Promo Section (Faithful to rt-contact-v2) -->
+        <section id="contato-promo" class="bg-cream-light py-24 px-6 overflow-hidden">
+            <div class="container mx-auto flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-2/5">
+                    <span
+                        class="inline-block font-sans text-dourado font-bold uppercase tracking-[0.4em] mb-4 text-sm">Clientes
+                        Felizes</span>
+                    <h2
+                        class="font-sans font-black text-4xl md:text-5xl text-marrom leading-tight uppercase mb-8 tracking-tighter">
+                        Histórias Doces,<br>Clientes Felizes
+                    </h2>
+                    <p class="text-marrom/80 text-xl font-medium italic mb-6">
+                        “O segredo está no carinho de quem faz. A felicidade vem em potes, e cada detalhe é moldado à
+                        mão
+                        para surpreender.”
+                    </p>
+                    <p class="text-marrom/60 text-lg mb-10">
+                        Veja o que nossos clientes dizem sobre a experiência Oliver Confeitaria através de nossos
+                        atendimentos e redes sociais.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-8">
+                        <a href="https://wa.me/5527995204822?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20informações"
+                            target="_blank"
+                            class="rt-btn relative overflow-hidden bg-marrom text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest transition-transform hover:scale-105">
+                            <span class="relative z-10">Eu quero</span>
+                            <div class="rt-button-v1-circle left-1/2 top-1/2"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Testimonials Grid (3x2 Symmetric Gallery) -->
+                <div class="lg:w-3/5 w-full mt-10 lg:mt-0">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <!-- Image 1 -->
+                        <div
+                            class="aspect-[4/5] rounded-xl overflow-hidden shadow-md hover:scale-[1.03] transition-transform duration-500 bg-marrom/10">
+                            <picture>
+                                <source srcset="images/depoimentos/depoimento01.avif" type="image/avif">
+                                <source srcset="images/depoimentos/depoimento01.webp" type="image/webp">
+                                <img src="images/depoimentos/depoimento01.webp" alt="Depoimento 1"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </picture>
+                        </div>
+                        <!-- Image 2 -->
+                        <div
+                            class="aspect-[4/5] rounded-xl overflow-hidden shadow-md hover:scale-[1.03] transition-transform duration-500 bg-marrom/10">
+                            <picture>
+                                <source srcset="images/depoimentos/depoimento02.avif" type="image/avif">
+                                <source srcset="images/depoimentos/depoimento02.webp" type="image/webp">
+                                <img src="images/depoimentos/depoimento02.webp" alt="Depoimento 2"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </picture>
+                        </div>
+                        <!-- Image 3 -->
+                        <div
+                            class="aspect-[4/5] rounded-xl overflow-hidden shadow-md hover:scale-[1.03] transition-transform duration-500 bg-marrom/10">
+                            <picture>
+                                <source srcset="images/depoimentos/depoimento03.avif" type="image/avif">
+                                <source srcset="images/depoimentos/depoimento03.webp" type="image/webp">
+                                <img src="images/depoimentos/depoimento03.webp" alt="Depoimento 3"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </picture>
+                        </div>
+                        <!-- Image 4 -->
+                        <div
+                            class="aspect-[4/5] rounded-xl overflow-hidden shadow-md hover:scale-[1.03] transition-transform duration-500 bg-marrom/10">
+                            <picture>
+                                <source srcset="images/depoimentos/depoimento04.avif" type="image/avif">
+                                <source srcset="images/depoimentos/depoimento04.webp" type="image/webp">
+                                <img src="images/depoimentos/depoimento04.webp" alt="Depoimento 4"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </picture>
+                        </div>
+                        <!-- Image 5 -->
+                        <div
+                            class="aspect-[4/5] rounded-xl overflow-hidden shadow-md hover:scale-[1.03] transition-transform duration-500 bg-marrom/10">
+                            <picture>
+                                <source srcset="images/depoimentos/depoimento05.avif" type="image/avif">
+                                <source srcset="images/depoimentos/depoimento05.webp" type="image/webp">
+                                <img src="images/depoimentos/depoimento05.webp" alt="Depoimento 5"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </picture>
+                        </div>
+                        <!-- Image 6 -->
+                        <div
+                            class="aspect-[4/5] rounded-xl overflow-hidden shadow-md hover:scale-[1.03] transition-transform duration-500 bg-marrom/10">
+                            <picture>
+                                <source srcset="images/depoimentos/depoimento06.avif" type="image/avif">
+                                <source srcset="images/depoimentos/depoimento06.webp" type="image/webp">
+                                <img src="images/depoimentos/depoimento06.webp" alt="Depoimento 6"
+                                    class="w-full h-full object-cover" loading="lazy">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Journey Section (Trilha do Pedido) -->
+        <section id="processo" class="bg-cream py-24 px-6 relative overflow-hidden">
+            <div class="container mx-auto">
+                <div class="text-center mb-20">
+                    <span
+                        class="inline-block font-sans text-dourado font-bold uppercase tracking-[0.4em] mb-4 text-base">Passo
+                        a Passo</span>
+                    <h2
+                        class="font-sans font-black text-5xl md:text-6xl text-marrom leading-tight uppercase tracking-tighter">
+                        Como Encomendar<br>Sua Felicidade
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-marrom/5 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                fill="none" stroke="#5D3A26" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                                <path d="M3 6h18" />
+                                <path d="M16 10a4 4 0 0 1-8 0" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-black text-marrom uppercase mb-4 tracking-widest text-xl">1. Escolha
+                        </h3>
+                        <p class="text-marrom/80 text-base font-semibold leading-relaxed max-w-[240px]">Navegue por
+                            nossas delícias e selecione seus itens favoritos.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-marrom/5 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                fill="none" stroke="#5D3A26" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                                <path d="M12 18h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-black text-marrom uppercase mb-4 tracking-widest text-xl">2. WhatsApp
+                        </h3>
+                        <p class="text-marrom/80 text-base font-semibold leading-relaxed max-w-[240px]">Clique em
+                            qualquer botão e fale direto no nosso chat.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-marrom/5 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                fill="none" stroke="#5D3A26" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" />
+                                <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1" />
+                                <path d="M2 21h20" />
+                                <path d="M7 8v2" />
+                                <path d="M12 7v2" />
+                                <path d="M17 8v2" />
+                                <path d="M7 4h.01" />
+                                <path d="M12 3h.01" />
+                                <path d="M17 4h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-black text-marrom uppercase mb-4 tracking-widest text-xl">3. Combine
+                        </h3>
+                        <p class="text-marrom/80 text-base font-semibold leading-relaxed max-w-[240px]">Alinhamos
+                            sabores, datas e todos os detalhes do seu pedido.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div
+                            class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-marrom/5 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                fill="none" stroke="#5D3A26" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-black text-marrom uppercase mb-4 tracking-widest text-xl">4. Aproveite
+                        </h3>
+                        <p class="text-marrom/80 text-base font-semibold leading-relaxed max-w-[240px]">Agora é só
+                            aguardar para receber sua doçura fresquinha.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section videos -->
+        <section id="delicias" class="bg-marrom py-24 overflow-hidden relative">
+            <div
+                class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://cdn.prod.website-files.com/683948647d80a2f677804c9e/687ef753556c0738e4a9e52c_hero-bg-pattern-v2.png')] bg-repeat">
+            </div>
+
+            <div
+                class="container mx-auto px-6 mb-16 text-center lg:text-left flex flex-col lg:flex-row justify-between items-end gap-8">
+                <div class="max-w-xl">
+                    <span class="font-sans text-dourado font-bold uppercase tracking-[0.4em] mb-4 text-sm block">não
+                        passe
+                        vontade</span>
+                    <h2
+                        class="font-sans font-black text-4xl md:text-6xl text-white leading-tight uppercase tracking-tighter">
+                        Hummm... Deu água na boca?
+                    </h2>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Navigation Buttons -->
+                    <div class="hidden md:flex gap-3 mr-4">
+                        <button
+                            onclick="document.getElementById('product-slider').scrollBy({left: -400, behavior: 'smooth'})"
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-marrom transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m15 18-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <button
+                            onclick="document.getElementById('product-slider').scrollBy({left: 400, behavior: 'smooth'})"
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-marrom transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Scroll Grid (Clean Video Slider) -->
+            <div id="product-slider"
+                class="flex space-x-6 px-6 overflow-x-auto pb-12 scroll-smooth snap-x snap-mandatory scrollbar-hide cursor-grab">
+
+                <!-- Video 1: Bolo Acetato Chocolate -->
+                <div class="min-w-[280px] md:min-w-[400px] snap-start">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-[4/5] bg-marrom relative flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-bold uppercase tracking-widest animate-pulse">
+                            Carregando Vídeo...</div>
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover relative z-10">
+                            <source src="videos/bolo-acetato-chocolate.webm" type="video/webm">
+                            <source src="videos/bolo-acetato-chocolate.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Video 2: Bolo Acetato Morango -->
+                <div class="min-w-[280px] md:min-w-[400px] snap-start">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-[4/5] bg-marrom relative flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-bold uppercase tracking-widest animate-pulse">
+                            Carregando Vídeo...</div>
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover relative z-10">
+                            <source src="videos/torta-limao.webm" type="video/webm">
+                            <source src="videos/torta-limao.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Video 3: Bolo Confeitado -->
+                <div class="min-w-[280px] md:min-w-[400px] snap-start">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-[4/5] bg-marrom relative flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-bold uppercase tracking-widest animate-pulse">
+                            Carregando Vídeo...</div>
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover relative z-10">
+                            <source src="videos/bolo-confeitado.webm" type="video/webm">
+                            <source src="videos/bolo-confeitado.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Video 4: Copo Felicidade -->
+                <div class="min-w-[280px] md:min-w-[400px] snap-start">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-[4/5] bg-marrom relative flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-bold uppercase tracking-widest animate-pulse">
+                            Carregando Vídeo...</div>
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover relative z-10">
+                            <source src="videos/copo-felicidade-maracuja.webm" type="video/webm">
+                            <source src="videos/copo-felicidade-maracuja.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Video 5: Torta Limão -->
+                <div class="min-w-[280px] md:min-w-[400px] snap-start">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-[4/5] bg-marrom relative flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-bold uppercase tracking-widest animate-pulse">
+                            Carregando Vídeo...</div>
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover relative z-10">
+                            <source src="videos/bolo-acetato-morango.webm" type="video/webm">
+                            <source src="videos/bolo-acetato-morango.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Video 6: Torta Maracujá -->
+                <div class="min-w-[280px] md:min-w-[400px] snap-start">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-[4/5] bg-marrom relative flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-bold uppercase tracking-widest animate-pulse">
+                            Carregando Vídeo...</div>
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover relative z-10">
+                            <source src="videos/torta-maracujá.webm" type="video/webm">
+                            <source src="videos/torta-maracujá.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- CTA: Doubts & Urgency -->
+        <section class="bg-cream-light py-20 px-6 relative overflow-hidden">
+            <div class="container mx-auto text-center relative z-10">
+                <h2
+                    class="font-sans font-black text-3xl md:text-5xl text-marrom uppercase tracking-tighter mb-8 leading-tight">
+                    Não passe vontade<br>nem fique com dúvidas!
+                </h2>
+                <p class="text-marrom/70 text-lg mb-10 max-w-2xl mx-auto font-medium">
+                    Estamos prontos para transformar seu desejo em uma experiência inesquecível. Clique abaixo e fale
+                    direto
+                    com a gente.
+                </p>
+                <a href="https://wa.me/5527995204822?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20informações"
+                    target="_blank"
+                    class="rt-btn relative inline-flex items-center overflow-hidden bg-marrom text-white px-12 py-6 rounded-full text-sm font-black uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(93,58,38,0.2)]">
+                    <span class="relative z-10 flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                            <path d="m8.5 8.5 7 7" />
+                            <path d="M8.5 15.5 15.5 8.5" />
+                        </svg>
+                        Tire suas dúvidas agora
+                    </span>
+                    <div class="rt-button-v1-circle left-1/2 top-1/2"></div>
+                </a>
+            </div>
+            <!-- Decorative Background Element -->
+            <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-dourado/5 rounded-full blur-[100px]"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contato" class="bg-sepia text-cream-light py-16 px-6">
+            <div class="container mx-auto">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 text-center md:text-left">
+                    <!-- Left Column: Branding & Social -->
+                    <div class="flex flex-col items-center md:items-start space-y-6 max-w-sm">
+                        <img src="images/logo-oliverconfeitaria.png" alt="Oliver Confeitaria"
+                            class="h-20 md:h-24 brightness-0 invert opacity-90" loading="lazy">
+                        <p class="font-serif italic text-xl text-dourado-light/90">Seu sabor, nossa identidade!</p>
+
+                        <a href="https://www.instagram.com/oliverconfeittaria/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] hover:text-dourado transition-all border border-cream/10 px-6 py-3 rounded-full hover:bg-cream/5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="transition-transform group-hover:scale-110">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+
+                    <!-- Right Column: SEO & Copyright -->
+                    <div class="flex flex-col items-center md:items-end space-y-6 max-w-lg">
+                        <p
+                            class="text-[11px] md:text-xs opacity-50 leading-relaxed uppercase tracking-wider font-medium md:text-right">
+                            Doces Gourmet • Buffet de Eventos • Bolos Personalizados • Confeitaria Artesanal •
+                            Guarapari/ES
+                            e Região. Levamos sofisticação e o melhor do sabor artesanal para o seu momento especial.
+                        </p>
+                        <div class="text-[9px] opacity-20 uppercase tracking-[0.5em] md:text-right">
+                            &copy; 2026 Oliver Confeitaria. Todos os direitos reservados.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- CRÉDITOS -->
+        <section class="bg-zinc-950 py-6 md:py-8 border-t border-zinc-900/50 px-4 md:px-6 relative overflow-hidden">
+            <div class="absolute inset-y-0 right-10 flex items-center" aria-hidden="true">
+                <span class="text-5xl md:text-7xl font-black text-white/[0.03] select-none uppercase">30 / 30</span>
+            </div>
+            <div class="container mx-auto max-w-6xl relative z-10">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-4 md:gap-6">
+                    <div
+                        class="flex items-center gap-4 bg-black/40 border border-zinc-800 px-4 md:px-5 py-3 rounded-2xl">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-zinc-500 uppercase font-black tracking-widest">Projeto do
+                                Desafio</span>
+                            <h5 class="text-white font-bold uppercase text-sm tracking-tight">
+                                <span class="text-ifv-cyan">30 Dias,</span> 30 Sites
+                            </h5>
+                        </div>
+                        <div class="h-8 w-[1px] bg-zinc-800 hidden sm:block"></div>
+                        <p class="text-[10px] text-zinc-500 max-w-[150px] leading-tight hidden sm:block">Este site foi
+                            solicitado via @Instagram</p>
+                    </div>
+                    <div class="flex flex-col items-center lg:items-end">
+                        <span class="text-[9px] text-zinc-600 uppercase font-bold tracking-[0.3em] mb-1">Desenvolvido
+                            por</span>
+                        <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer"
+                            class="group flex items-baseline gap-2">
+                            <span
+                                class="text-xl font-black text-white group-hover:text-ifv-cyan transition-colors">MESOLU</span>
+                            <span class="text-[10px] text-zinc-500 font-mono">.com.br</span>
+                        </a>
+                        <a href="https://mesolu.com.br/desafio/" target="_blank" rel="noopener noreferrer"
+                            class="text-[10px] text-ifv-blue hover:text-ifv-cyan font-bold uppercase tracking-widest mt-2 transition-colors">
+                            Acompanhar Projeto →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        // Mouse Drag Functionality for Slider
+        const slider = document.getElementById('product-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            // Disable smooth scroll during drag for better responsiveness
+            slider.style.scrollBehavior = 'auto';
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            // Re-enable smooth scroll after drag
+            slider.style.scrollBehavior = 'smooth';
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+
+</html>

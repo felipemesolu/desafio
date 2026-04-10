@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4PPX85K3QL', {
+            page_title: 'Nicole Araújo Arquitetura e Interiores'
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicole Araújo Arquitetura e Interiores</title>
+    <meta name="description"
+        content="Nicole Araújo Arquiteta — Projetos de arquitetura e interiores com elegância, funcionalidade e identidade. Atendimento presencial e online em Itaúna - MG.">
+    <meta property="og:title" content="Nicole Araújo Arquitetura e Interiores">
+    <meta property="og:description"
+        content="Nicole Araújo Arquiteta — Projetos de arquitetura e interiores com elegância, funcionalidade e identidade. Atendimento presencial e online em Itaúna - MG.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        'arch-dark': '#1A1B1D',
+                        'arch-gray': '#EBEBEB',
+                        'arch-light': '#F4F4F4',
+                        'arch-white': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            background-color: #F4F4F4;
+            color: #1A1B1D;
+            overflow-x: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Archvista Hover Effect */
+        .project-img-container {
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .project-img-container img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+
+
+        /* Sasha-style Menu Drawer */
+        .drawer-content {
+            transform: translateX(100%);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .drawer-content.active {
+            transform: translateX(0);
+        }
+
+        .menu-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 0.5;
+            pointer-events: auto;
+        }
+
+        .hamburger-btn.active {
+            color: #1A1B1D !important;
+        }
+
+        /* Hamburger Animation */
+        .hamburger-btn .line {
+            width: 24px;
+            height: 1.5px;
+            background-color: currentColor;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .hamburger-btn.active .line-top {
+            transform: translateY(3.5px) rotate(45deg);
+        }
+
+        .hamburger-btn.active .line-bottom {
+            transform: translateY(-3.5px) rotate(-45deg);
+        }
+
+        /* Scrolled Header Style */
+        header.scrolled {
+            background-color: rgba(244, 244, 244, 0.9);
+            backdrop-filter: blur(10px);
+            color: #1A1B1D !important;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        header.scrolled .line {
+            background-color: #1A1B1D;
+        }
+
+        header .header-logo {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+        }
+
+        header.scrolled .header-logo {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- NAVIGATION -->
+    <header
+        class="fixed top-0 left-0 w-full z-[130] px-6 py-6 flex items-center justify-between text-arch-dark transition-all duration-500 ease-in-out">
+        <a href="/" class="text-2xl font-light tracking-tighter header-logo">NICOLE ARAÚJO</a>
+
+        <button id="menu-btn"
+            class="hamburger-btn pointer-events-auto flex flex-col gap-1.5 focus:outline-none p-4 -mr-4">
+            <div class="line line-top"></div>
+            <div class="line line-bottom"></div>
+        </button>
+    </header>
+
+    <!-- MENU DRAWER -->
+    <div id="drawer"
+        class="fixed top-0 right-0 h-screen w-full md:w-[450px] bg-[#F4F4F4] z-[120] drawer-content px-12 py-24 flex flex-col justify-between text-arch-dark shadow-2xl overflow-y-auto">
+        <div>
+            <span class="text-[10px] uppercase tracking-widest text-arch-dark/40 block mb-12 font-bold">Páginas</span>
+            <nav class="flex flex-col gap-6">
+                <a href="#home"
+                    class="drawer-link group flex items-baseline justify-between py-4 border-b border-arch-dark/10">
+                    <span class="text-4xl font-quicksand tracking-tight">Início</span>
+                    <span
+                        class="text-[10px] uppercase font-bold opacity-30 group-hover:opacity-100 transition-opacity">01.</span>
+                </a>
+
+                <a href="#filosofia"
+                    class="drawer-link group flex items-baseline justify-between py-4 border-b border-arch-dark/10">
+                    <span class="text-4xl font-quicksand tracking-tight">Filosofia</span>
+                    <span
+                        class="text-[10px] uppercase font-bold opacity-30 group-hover:opacity-100 transition-opacity">02.</span>
+                </a>
+
+                <a href="#sobre"
+                    class="drawer-link group flex items-baseline justify-between py-4 border-b border-arch-dark/10">
+                    <span class="text-4xl font-quicksand tracking-tight">Sobre</span>
+                    <span
+                        class="text-[10px] uppercase font-bold opacity-30 group-hover:opacity-100 transition-opacity">05.</span>
+                </a>
+
+                <a href="#servicos"
+                    class="drawer-link group flex items-baseline justify-between py-4 border-b border-arch-dark/10">
+                    <span class="text-4xl font-quicksand tracking-tight">Serviços</span>
+                    <span
+                        class="text-[10px] uppercase font-bold opacity-30 group-hover:opacity-100 transition-opacity">03.</span>
+                </a>
+
+                <a href="#projetos"
+                    class="drawer-link group flex items-baseline justify-between py-4 border-b border-arch-dark/10">
+                    <span class="text-4xl font-quicksand tracking-tight">Projetos</span>
+                    <span
+                        class="text-[10px] uppercase font-bold opacity-30 group-hover:opacity-100 transition-opacity">04.</span>
+                </a>
+
+                <a href="#cta"
+                    class="drawer-link group flex items-baseline justify-between py-4 border-b border-arch-dark/10">
+                    <span class="text-4xl font-quicksand tracking-tight">Contato</span>
+                    <span
+                        class="text-[10px] uppercase font-bold opacity-30 group-hover:opacity-100 transition-opacity">06.</span>
+                </a>
+            </nav>
+        </div>
+
+    </div>
+
+    <!-- MENU OVERLAY -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-[115] menu-overlay backdrop-blur-sm"></div>
+
+    <!-- HERO SECTION -->
+    <section id="home"
+        class="relative pt-44 pb-20 px-6 isolate before:absolute before:inset-0 before:bg-[url('images/bg.svg')] before:bg-cover before:bg-center before:opacity-70 before:-z-10 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto text-center">
+            <h1
+                class="text-7xl md:text-[8rem] font-light leading-[0.9] mb-12 reveal font-quicksand tracking-wider uppercase">
+                Nicole Araújo <br>
+                <span
+                    class="opacity-50 italic text-6xl md:text-8xl block mt-4 font-sans tracking-tighter lowercase">Arquitetura
+                    & Interiores</span>
+            </h1>
+
+            <div class="w-full max-w-[600px] mx-auto reveal" style="transition-delay: 200ms;">
+                <picture>
+                    <source srcset="images/avif/08.avif" type="image/avif">
+                    <source srcset="images/webp/08.webp" type="image/webp">
+                    <img src="images/webp/08.webp" alt="Nicole Araújo Arquitetura"
+                        class="w-full aspect-square object-cover rounded-sm shadow-2xl" loading="lazy">
+                </picture>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-start mt-20 max-w-[1200px] mx-auto text-left reveal">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-normal leading-snug tracking-tight mb-8">
+                        Arquitetura que acolhe e representa. Busco criar espaços únicos que unem funcionalidade,
+                        elegância e identidade.
+                    </h2>
+                    <a href="#filosofia"
+                        class="text-sm uppercase tracking-widest border-b border-arch-dark pb-1 hover:opacity-50 transition-all font-semibold">minha
+                        Filosofia &rarr;</a>
+                </div>
+                <p class="md:w-1/3 text-arch-dark/60 mt-8 md:mt-0 leading-relaxed">
+                    Cada projeto é pensado com intenção para refletir quem você é e melhorar a forma como você vive.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONEXÃO SECTION -->
+    <section id="filosofia" class="bg-arch-white py-32 px-6">
+        <div class="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal text-arch-dark">
+                <span
+                    class="text-xs uppercase tracking-[0.2em] text-arch-dark/40 block mb-6 font-bold">Philosophy</span>
+                <h2 class="text-4xl md:text-5xl font-medium tracking-tight mb-8">
+                    Sua casa é a sua cara?
+                </h2>
+                <p class="text-xl text-arch-dark/70 leading-relaxed mb-8">
+                    Ambientes bonitos existem aos milhares. Mas poucos realmente traduzem quem você é.
+                </p>
+                <p class="text-arch-dark/60 leading-relaxed">
+                    Um espaço bem projetado vai além da estética. Ele acolhe, organiza e transforma a forma como você
+                    vive todos os dias.
+                    Cada escolha — das texturas à iluminação — tem o poder de criar sensações, memórias e pertencimento.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 200ms;">
+                <picture>
+                    <source srcset="images/avif/06---.avif" type="image/avif">
+                    <source srcset="images/webp/06---.webp" type="image/webp">
+                    <img src="images/webp/06---.webp" alt="Detalhe 1" class="w-full h-80 object-cover" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="images/avif/06.avif" type="image/avif">
+                    <source srcset="images/webp/06.webp" type="image/webp">
+                    <img src="images/webp/06.webp" alt="Detalhe 2" class="w-full h-80 object-cover mt-12"
+                        loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="py-32 px-6 bg-arch-white">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid md:grid-cols-12 gap-12 items-center text-arch-dark">
+                <div class="md:col-span-7 reveal">
+                    <picture>
+                        <source srcset="images/avif/nicolearaujo-arq.avif" type="image/avif">
+                        <source srcset="images/webp/nicolearaujo-arq.webp" type="image/webp">
+                        <img src="images/webp/nicolearaujo-arq.webp" alt="Nicole Araújo"
+                            class="w-full h-[80vh] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
+                            loading="lazy">
+                    </picture>
+                </div>
+                <div class="md:col-span-5 reveal" style="transition-delay: 200ms;">
+                    <span class="text-xs uppercase tracking-[0.2em] text-arch-dark/40 block mb-6 font-bold">About
+                        Us</span>
+                    <h2 class="text-4xl md:text-6xl font-medium tracking-tighter mb-8 leading-tight">
+                        Arquitetura com intenção, leveza e significado.
+                    </h2>
+                    <p class="text-arch-dark/70 mb-8 leading-relaxed text-lg">
+                        Busco desenvolver projetos que equilibram estética, funcionalidade e identidade.
+                        Com um olhar sensível e atenção aos detalhes, cada ambiente é pensado para refletir o estilo de
+                        vida de quem vive ali.
+                    </p>
+                    <p class="text-arch-dark/50 mb-12">
+                        Participação em mostras como CASACOR Minas 2025, desenvolvendo ambientes que unem estética,
+                        funcionalidade e sensibilidade.
+                    </p>
+                    <a href="#cta"
+                        class="inline-block bg-arch-dark text-white px-10 py-5 rounded-full text-sm uppercase tracking-widest hover:scale-105 transition-transform duration-300">Vamos
+                        conversar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-32 px-6">
+        <div class="max-w-[1400px] mx-auto text-arch-dark">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+                <div class="md:w-1/2">
+                    <span class="text-xs uppercase tracking-[0.2em] text-arch-dark/40 block mb-6 font-bold">Our
+                        Services</span>
+                    <h2 class="text-5xl md:text-6xl font-medium tracking-tighter">
+                        Como posso te ajudar.
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Service 1 -->
+                <div class="reveal group">
+                    <div class="border-t border-arch-dark/10 pt-8 mt-8">
+                        <span class="text-xs font-bold text-arch-dark/30 mb-4 block">01</span>
+                        <h3 class="text-2xl font-medium mb-6 group-hover:pl-4 transition-all duration-300">Projetos
+                            residenciais completos</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-sm">
+                            Do conceito à execução, cada detalhe é pensado para criar um espaço harmonioso, funcional e
+                            com identidade.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="reveal group" style="transition-delay: 150ms;">
+                    <div class="border-t border-arch-dark/10 pt-8 mt-8">
+                        <span class="text-xs font-bold text-arch-dark/30 mb-4 block">02</span>
+                        <h3 class="text-2xl font-medium mb-6 group-hover:pl-4 transition-all duration-300">Design de
+                            interiores</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-sm">
+                            Ambientes que equilibram estética e conforto, com escolhas que valorizam materiais, luz e
+                            proporções.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="reveal group" style="transition-delay: 300ms;">
+                    <div class="border-t border-arch-dark/10 pt-8 mt-8">
+                        <span class="text-xs font-bold text-arch-dark/30 mb-4 block">03</span>
+                        <h3 class="text-2xl font-medium mb-6 group-hover:pl-4 transition-all duration-300">Consultoria
+                            personalizada</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-sm">
+                            Atendimento presencial ou online para orientar decisões e transformar seu espaço com mais
+                            segurança e clareza.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION (CMS SLIDER STYLE) -->
+    <section id="projetos" class="relative bg-white pt-32 md:h-[550vh]">
+
+        <div class="max-w-[1400px] mx-auto px-6 w-full mb-20 text-arch-dark">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div class="md:w-1/2">
+                    <span class="text-xs uppercase tracking-[0.2em] text-arch-dark/40 block mb-6 font-bold">Highlighted
+                        work</span>
+                    <h2 class="text-5xl md:text-6xl font-medium tracking-tighter">Projetos que acolhem.</h2>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-container"
+            class="md:sticky md:top-0 md:h-screen md:overflow-hidden flex flex-col md:justify-center">
+
+            <!-- Horizontal Wrapper -->
+            <div class="flex flex-col md:flex-row gap-12 px-6 md:px-[10vw]" id="projects-slider">
+                <!-- Project 1 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw]">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/02.avif" type="image/avif">
+                            <source srcset="images/webp/02.webp" type="image/webp">
+                            <img src="images/webp/02.webp" alt="Pacific beach house" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Refúgio de calma e elegância</h3>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw]">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/04.avif" type="image/avif">
+                            <source srcset="images/webp/04.webp" type="image/webp">
+                            <img src="images/webp/04.webp" alt="Hood view cabin" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Espaços com propósito</h3>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw]">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/05-.avif" type="image/avif">
+                            <source srcset="images/webp/05-.webp" type="image/webp">
+                            <img src="images/webp/05-.webp" alt="Bend suburban living"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Luz e Madeira</h3>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw] md:mr-[10vw]">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/06-.avif" type="image/avif">
+                            <source srcset="images/webp/06-.webp" type="image/webp">
+                            <img src="images/webp/06-.webp" alt="Olympic park home" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Reconhecer-se na Arte</h3>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw] md:mr-[10vw]">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/06--.avif" type="image/avif">
+                            <source srcset="images/webp/06--.webp" type="image/webp">
+                            <img src="images/webp/06--.webp" alt="Olympic park home" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Refúgio acolhedor</h3>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw] hidden md:block">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/06---.avif" type="image/avif">
+                            <source srcset="images/webp/06---.webp" type="image/webp">
+                            <img src="images/webp/06---.webp" alt="Olympic park home" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Conforto sutil</h3>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw] hidden md:block">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/08--.avif" type="image/avif">
+                            <source srcset="images/webp/08--.webp" type="image/webp">
+                            <img src="images/webp/08--.webp" alt="Olympic park home" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Descanso elegante</h3>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="flex-shrink-0 w-full md:w-[45vw] hidden md:block">
+                    <div class="project-img-container mb-6 aspect-[4/3]">
+                        <picture>
+                            <source srcset="images/avif/08-.avif" type="image/avif">
+                            <source srcset="images/webp/08-.webp" type="image/webp">
+                            <img src="images/webp/08-.webp" alt="Olympic park home" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="flex justify-between items-baseline border-t border-arch-dark/10 pt-4">
+                        <h3 class="text-xl font-medium">Interação com modernidade</h3>
+                    </div>
+                </div>
+                <!-- Ghost Card for End Padding -->
+                <div class="flex-shrink-0 w-full md:w-[60vw] hidden md:block"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ / PROCESS SECTION -->
+    <section class="py-32 px-6 bg-arch-gray">
+        <div class="max-w-[1000px] mx-auto text-arch-dark">
+            <span class="text-xs uppercase tracking-[0.2em] text-arch-dark/40 block mb-12 text-center font-bold">How it
+                works</span>
+            <div class="space-y-12">
+                <div class="reveal flex gap-12 border-b border-arch-dark/10 pb-12">
+                    <span class="text-lg font-bold opacity-30">01</span>
+                    <div>
+                        <h3 class="text-3xl font-medium mb-4">Entendimento</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-lg">Escuta atenta para compreender suas
+                            necessidades, desejos e estilo de vida.</p>
+                    </div>
+                </div>
+                <div class="reveal flex gap-12 border-b border-arch-dark/10 pb-12">
+                    <span class="text-lg font-bold opacity-30">02</span>
+                    <div>
+                        <h3 class="text-3xl font-medium mb-4">Conceito</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-lg">Criação de uma proposta que traduz
+                            identidade, funcionalidade e estética.</p>
+                    </div>
+                </div>
+                <div class="reveal flex gap-12 border-b border-arch-dark/10 pb-12">
+                    <span class="text-lg font-bold opacity-30">03</span>
+                    <div>
+                        <h3 class="text-3xl font-medium mb-4">Desenvolvimento</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-lg">Detalhamento do projeto com soluções
+                            práticas e escolhas alinhadas ao conceito.</p>
+                    </div>
+                </div>
+                <div class="reveal flex gap-12 pb-12">
+                    <span class="text-lg font-bold opacity-30">04</span>
+                    <div>
+                        <h3 class="text-3xl font-medium mb-4">Acompanhamento</h3>
+                        <p class="text-arch-dark/60 leading-relaxed text-lg">Suporte durante a execução para garantir
+                            que tudo aconteça conforme planejado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-44 px-6 text-center">
+        <div class="max-w-[1000px] mx-auto reveal text-arch-dark">
+            <h2 class="text-5xl md:text-7xl font-medium tracking-tighter leading-tight mb-12">
+                Vamos criar um espaço que realmente represente você?
+            </h2>
+            <p class="text-xl text-arch-dark/60 mb-12">Seu projeto começa com uma conversa. Insira seu nome abaixo:</p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-2xl mx-auto mb-8">
+                <input type="text" id="user-name" placeholder="Seu nome aqui..."
+                    class="w-full md:w-auto flex-grow bg-white border border-arch-dark/10 rounded-full py-6 px-10 text-lg focus:outline-none focus:border-arch-dark/30 transition-all font-quicksand shadow-sm">
+
+                <button onclick="sendWhatsApp()"
+                    class="w-full md:w-auto bg-arch-dark text-white px-12 py-6 rounded-full text-sm uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-xl whitespace-nowrap">
+                    Iniciar Conversa
+                </button>
+            </div>
+            <p class="text-xs text-arch-dark/30 uppercase tracking-widest font-bold">Respostas em até 24 horas úteis</p>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-arch-dark text-white pt-24 pb-16 px-6">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                <a href="#" class="text-4xl font-light tracking-tighter block mb-6 font-quicksand uppercase">Nicole
+                    Araújo</a>
+                <p class="text-white/40 leading-relaxed uppercase text-[10px] tracking-[0.3em] max-w-sm mb-10">
+                    Arquitetura que acolhe e representa sua história.
+                </p>
+                <a href="https://www.instagram.com/nicolearaujo.arq/" target="_blank"
+                    class="text-xs uppercase tracking-[0.3em] font-medium hover:text-white/60 transition-colors inline-flex items-center gap-2">
+                    Instagram <span class="text-xs opacity-30">&rarr;</span>
+                </a>
+            </div>
+
+            <div
+                class="border-t border-white/5 md:border-none pt-10 md:pt-0 w-full md:w-auto text-center md:text-right text-[10px] text-white/20 uppercase tracking-[0.3em] font-bold">
+                <p>© 2026 Nicole Araújo. Arquiteta e Urbanista.<br class="hidden md:block"> Todos os direitos
+                    reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CRÉDITOS -->
+    <section class="bg-[#1A1B1D] py-12 border-t border-white/5 px-6 relative overflow-hidden">
+        <div class="absolute inset-y-0 right-10 flex items-center" aria-hidden="true">
+            <span class="text-7xl md:text-9xl font-quicksand font-bold text-white/[0.02] select-none uppercase">30 /
+                30</span>
+        </div>
+        <div class="max-w-[1400px] mx-auto relative z-10">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-6 bg-white/[0.02] border border-white/10 px-6 py-4 rounded-sm">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] text-white/40 uppercase font-bold tracking-[0.2em] mb-1">Projeto do
+                            Desafio</span>
+                        <h5 class="text-white font-quicksand font-medium uppercase text-sm tracking-widest">
+                            <span class="opacity-60">30 Dias,</span> 30 Sites
+                        </h5>
+                    </div>
+                    <div class="h-10 w-[1px] bg-white/10 hidden sm:block"></div>
+                    <p
+                        class="text-[10px] text-white/30 max-w-[180px] leading-tight hidden sm:block uppercase tracking-wider">
+                        Este site foi solicitado via @Instagram</p>
+                </div>
+
+                <div class="flex flex-col items-center lg:items-end">
+                    <span class="text-[9px] text-white/20 uppercase font-bold tracking-[0.3em] mb-2">Desenvolvido
+                        por</span>
+                    <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer"
+                        class="group flex items-baseline gap-2">
+                        <span
+                            class="text-2xl font-quicksand font-bold text-white group-hover:text-white/60 transition-colors tracking-tighter">MESOLU</span>
+                        <span class="text-[10px] text-white/20 font-mono">.com.br</span>
+                    </a>
+                    <a href="https://mesolu.com.br/desafio/" target="_blank" rel="noopener noreferrer"
+                        class="text-[10px] text-white/40 hover:text-white font-bold uppercase tracking-[0.2em] mt-3 transition-colors border-b border-white/10 pb-1">
+                        Acompanhar Projeto →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <script>
+        // GSAP Implementation for Horizontal Scroll
+        gsap.registerPlugin(ScrollTrigger);
+
+        const scrollWrapper = document.querySelector('#projetos');
+        const sliderContent = document.querySelector('#projects-slider');
+
+        if (window.innerWidth > 768) {
+            gsap.to(sliderContent, {
+                x: () => -(sliderContent.scrollWidth - window.innerWidth),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#sticky-container",
+                    start: "top top",
+                    end: () => "+=" + (scrollWrapper.offsetHeight - window.innerHeight),
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+        }
+
+        // Intersection Observer for reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Sasha-style Menu Toggle Logic
+        const menuBtn = document.querySelector('#menu-btn');
+        const drawer = document.querySelector('#drawer');
+        const overlay = document.querySelector('#menu-overlay');
+        const drawerLinks = document.querySelectorAll('.drawer-link');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('active');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            if (drawer.classList.contains('active')) {
+                gsap.from(".drawer-link", {
+                    y: 50,
+                    opacity: 0,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    ease: "power4.out",
+                    delay: 0.3
+                });
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        drawerLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // WhatsApp Custom Message Logic
+        function sendWhatsApp() {
+            const name = document.getElementById('user-name').value.trim();
+            if (!name) {
+                alert('Por favor, digite seu nome para conversarmos.');
+                document.getElementById('user-name').focus();
+                return;
+            }
+
+            const phoneNumber = "553798430143";
+            const message = `Olá Nicole, me chamo ${name}, e gostaria de conversar sobre um projeto.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+
+</html>
