@@ -4,7 +4,7 @@ let pendingImageBlob = null;
 
 // CONFIGURAÇÃO
 const ADMIN_PASS = "jullya2026";
-const IMGBB_API_KEY = "SUA_CHAVE_IMGBB_AQUI"; // Cole sua chave aqui: https://imgbb.com/api
+const IMGBB_API_KEY = "52f67476a2dffc4f391f30e9112da4ba"; // Cole sua chave aqui: https://imgbb.com/api
 
 async function checkAuth() {
     const input = document.getElementById('admin-pass').value;
@@ -57,7 +57,7 @@ function renderAdminList() {
     container.innerHTML = filtered.map(p => {
         const isExternal = p.image.startsWith('http');
         const imgPath = isExternal ? p.image : `../images/produtos/${p.image}.webp`;
-        
+
         return `
             <div class="admin-card rounded-[30px] p-6 border border-white/5 flex flex-col gap-4">
                 <div class="h-40 bg-white shadow-inner rounded-2xl overflow-hidden flex items-center justify-center p-4">
@@ -84,15 +84,15 @@ async function uploadToImgBB(blob) {
     if (IMGBB_API_KEY === "SUA_CHAVE_IMGBB_AQUI" || !IMGBB_API_KEY) {
         throw new Error("Configuração Necessária: Você precisa colar sua chave da API do ImgBB no arquivo admin.js para enviar novas imagens.");
     }
-    
+
     const formData = new FormData();
     formData.append("image", blob);
-    
+
     const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
         method: "POST",
         body: formData
     });
-    
+
     const data = await response.json();
     if (data.success) {
         return data.data.url; // Retorna o link da imagem
@@ -110,7 +110,7 @@ document.getElementById('field-file').addEventListener('change', async (event) =
     try {
         const placeholder = document.getElementById('upload-placeholder');
         placeholder.innerHTML = `<span class="text-[8px] animate-pulse">Otimizando...</span>`;
-        
+
         const compressedFile = await imageCompression(file, options);
         pendingImageBlob = compressedFile;
 
@@ -130,17 +130,17 @@ document.getElementById('field-file').addEventListener('change', async (event) =
 async function saveChanges() {
     const btn = document.getElementById('btn-save');
     const originalText = btn.innerText;
-    
+
     try {
         btn.innerText = "Salvando no Banco...";
         btn.classList.add('animate-pulse');
-        
+
         const response = await fetch('/api/jullya', {
             method: 'POST',
             body: JSON.stringify(adminProducts),
             headers: { 'Content-Type': 'application/json' }
         });
-        
+
         if (response.ok) {
             btn.innerText = "Salvo com Sucesso!";
             btn.classList.remove('bg-green-500', 'animate-pulse');
@@ -227,7 +227,7 @@ function openEditModal(id) {
     document.getElementById('field-brand').value = p.brand;
     document.getElementById('field-image').value = p.image;
     document.getElementById('field-desc').value = p.description;
-    
+
     const preview = document.getElementById('image-preview');
     const isExternal = p.image.startsWith('http');
     preview.src = isExternal ? p.image : `../images/produtos/${p.image}.webp`;
@@ -237,5 +237,5 @@ function openEditModal(id) {
 }
 
 function closeModal() { document.getElementById('product-modal').classList.add('hidden'); }
-function filterBrand(brand) { currentFilter = brand; renderAdminList(); document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.innerText.toLowerCase().includes(brand === 'all' ? 'todas' : brand)));}
-function deleteProduct(id) { if(confirm("Excluir produto?")) { adminProducts = adminProducts.filter(x => x.id !== id); renderAdminList(); document.getElementById('btn-save').classList.remove('hidden'); }}
+function filterBrand(brand) { currentFilter = brand; renderAdminList(); document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.innerText.toLowerCase().includes(brand === 'all' ? 'todas' : brand))); }
+function deleteProduct(id) { if (confirm("Excluir produto?")) { adminProducts = adminProducts.filter(x => x.id !== id); renderAdminList(); document.getElementById('btn-save').classList.remove('hidden'); } }
