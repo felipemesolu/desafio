@@ -18,24 +18,41 @@ const brandColors = {
 };
 
 async function loadProducts() {
+    let data = [];
+    
+    // 1. Tenta carregar da API (Cloudflare KV via Page Function)
     try {
-        // Primeiro tenta carregar da API (Cloudflare KV)
         const response = await fetch('/api/jullya');
-        let data = await response.json();
-        
-        // Se o banco estiver vazio (primeiro acesso), tenta carregar do JSON estático
-        if (!data || data.length === 0) {
-            const staticRes = await fetch('products.json');
-            data = await staticRes.json();
+        if (response.ok) {
+            const contentType = response.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                data = await response.json();
+            }
         }
-
-        products = data;
-        renderBrandedSections();
-        reorderSections();
-        initSwipers();
-    } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
+    } catch (apiError) {
+        console.warn("API de gerenciamento offline, usando dados estáticos.");
     }
+    
+    // 2. Fallback: Se o banco estiver vazio ou falhar, usa o JSON local
+    if (!data || data.length === 0) {
+        try {
+            const staticRes = await fetch('products.json');
+            if (staticRes.ok) {
+                data = await staticRes.json();
+            }
+        } catch (staticError) {
+            console.error("Falha crítica ao carregar base de produtos:", staticError);
+        }
+    }
+
+    products = data;
+    
+    // 3. Processamento visual
+    renderBrandedSections();
+    reorderSections();
+    
+    // 4. Inicialização do Swiper (essencial para a rolagem funcionar)
+    initSwipers();
 }
 
 function updateCartBarVisibility(slide) {
