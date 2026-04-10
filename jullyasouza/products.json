@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "brand": "eudora",
+        "name": "Diva Absolut Eau de Parfum",
+        "oldPrice": 135.00,
+        "price": 110.00,
+        "description": "Uma fragrância vibrante para mulheres que amam brilhar.",
+        "image": "eldora-diva"
+    },
+    {
+        "id": 2,
+        "brand": "boticario",
+        "name": "Glamour Secrets Black",
+        "oldPrice": 189.00,
+        "price": 170.00,
+        "description": "Mistério e sedução em uma fragrância feminina icônica.",
+        "image": "boticario-glamour"
+    },
+    {
+        "id": 3,
+        "brand": "boticario",
+        "name": "Hidratante Floratta Rose",
+        "oldPrice": 119.99,
+        "price": 99.99,
+        "description": "Toque aveludado com a delicadeza das flores.",
+        "image": "boticario-hidratante-floratta"
+    },
+    {
+        "id": 4,
+        "brand": "boticario",
+        "name": "Her Code Tradicional",
+        "price": 239.99,
+        "description": "Desperte seu prazer com uma fragrância instigante.",
+        "image": "boticario-her-code"
+    },
+    {
+        "id": 5,
+        "brand": "eudora",
+        "name": "Siàge Oil Nutri Rose",
+        "price": 79.99,
+        "description": "Nutrição profunda e brilho absoluto para seus fios.",
+        "image": "eldora-oil-nutri-rose"
+    },
+    {
+        "id": 6,
+        "brand": "eudora",
+        "name": "Hidratante Instante Baunilha",
+        "price": 59.00,
+        "description": "Pele macia e perfumada com o conforto da baunilha.",
+        "image": "eudora-hidratante-baunilha"
+    },
+    {
+        "id": 7,
+        "brand": "eudora",
+        "name": "Body Splash Baunilha",
+        "oldPrice": 72.99,
+        "price": 50.00,
+        "description": "Refrescância para o corpo todo a qualquer hora.",
+        "image": "eudora-body-splash-baunilha"
+    },
+    {
+        "id": 8,
+        "brand": "boticario",
+        "name": "Nativa SPA Ameixa",
+        "price": 86.00,
+        "description": "Poderosa hidratação com gotas purificadas de quinoa.",
+        "image": "boticario-nativa-spa"
+    },
+    {
+        "id": 9,
+        "brand": "boticario",
+        "name": "Spray Íntimo",
+        "price": 45.00,
+        "description": "Cuidado e frescor para sua rotina diária.",
+        "image": "boticario-spray-intimo"
+    },
+    {
+        "id": 10,
+        "brand": "boticario",
+        "name": "Malbec Icon",
+        "oldPrice": 220.00,
+        "price": 199.99,
+        "description": "A intensidade do Malbec em uma versão icônica.",
+        "image": "boticario-malbec-icon"
+    },
+    {
+        "id": 11,
+        "brand": "boticario",
+        "name": "Malbec Magnetic",
+        "oldPrice": 249.99,
+        "price": 229.99,
+        "description": "Magnetismo e força inspirados nas terras de Malbec.",
+        "image": "boticario-malbec-magnetic"
+    },
+    {
+        "id": 12,
+        "brand": "eudora",
+        "name": "Hidratante Frutas Vermelhas",
+        "price": 59.00,
+        "description": "Explosão de fragrância e hidratação intensa.",
+        "image": "eudora-hidratante-frutas-vermelhas"
+    }
+]

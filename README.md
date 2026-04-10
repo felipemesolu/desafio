@@ -48,6 +48,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **SETE - Segurança Eletrônica** | Segurança Eletrônica | External Project |
 | **Luciana Carvalho** | Estética Fashion & Moderna | Tailwind/Refining |
 | **Oliver Confeitaria** | Visual Premium & Gourmet | IA + Refinamento |
+| **Jullya Souza** | Catálogo de Beleza & Admin | Vanilla CSS + IA |
 
 ---
 

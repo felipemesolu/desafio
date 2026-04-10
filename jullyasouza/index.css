@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --navy-deep: #0B1320;
+    --rose-gold: #D4A373;
+    --rose-gold-light: #E0B07A;
+    --gold-soft: #F2C38B;
+    
+    /* Brand Colors */
+    --eudora-purple: #652f4a;
+    --boticario-green: #49a478;
+    --oui-red: #971a2e;
+    --qdb-pink: #d11450;
+}
+
+body {
+    background-color: var(--navy-deep);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    font-size: 18px; /* Aumentado para melhor legibilidade */
+}
+
+h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Novo Layout Acessível */
+.brand-section-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.brand-header {
+    padding: 1.5rem 1.5rem 1rem;
+}
+
+.brand-content-white {
+    background-color: #ffffff;
+    padding: 2.5rem 0px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.brand-footer-offset {
+    height: 120px; /* Espaço para a barra flutuante */
+}
+
+/* Tipografia Acessível */
+.text-accessible-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0B1320;
+}
+
+.text-accessible-price {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #0B1320;
+}
+
+.text-accessible-desc {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #4b5563;
+}
+.gold-shimmer {
+    background: linear-gradient(
+        to right,
+        var(--rose-gold) 0%,
+        var(--gold-soft) 50%,
+        var(--rose-gold) 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+@keyframes bounceSubtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-subtle {
+    animation: bounceSubtle 2s infinite ease-in-out;
+}
+
+/* Utility Colors */
+.bg-rose-gold { background-color: var(--rose-gold); }
+.text-rose-gold { color: var(--rose-gold); }
+.border-rose-gold { border-color: var(--rose-gold); }
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}

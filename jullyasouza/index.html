@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jullya Souza | Curadoria de Beleza Premium</title>
+  <meta name="description"
+    content="Jullya Souza - Revendedora Consultora Boticário, Eudora, Quem Disse Berenice e O.U.I em Martins Soares/MG">
+
+  <!-- SEO & OGP -->
+  <meta property="og:title" content="Jullya Souza | Curadoria de Beleza">
+  <meta property="og:description" content="Sua consultora de beleza premium das marcas Boticário, Eudora e O.U.I.">
+  <meta property="og:image" content="images/og-image.png">
+  <link rel="icon" type="image/png" href="images/favicon-16.png">
+
+  <!-- Styles & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Google Analytics -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4PPX85K3QL');
+  </script>
+</head>
+
+<body class="bg-[#0B1320] text-white">
+  <div class="swiper mainVerticalSwiper h-screen w-full">
+    <div class="swiper-wrapper">
+
+      <!-- SLIDE 1: HERO -->
+      <section class="swiper-slide relative flex flex-col items-center justify-center px-6 overflow-hidden"
+        data-hide-cart="true">
+        <div class="absolute inset-0 z-0">
+          <img src="images/hero-bg.png" alt="Plano de fundo luxo" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0B1320] via-[#0B1320]/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-lg mt-10 animate-fade-in px-4">
+          <picture class="inline-block mb-8">
+            <source srcset="images/logo-jullyasouza.avif" type="image/avif">
+            <source srcset="images/logo-jullyasouza.webp" type="image/webp">
+            <img src="images/logo-jullyasouza.png" alt="Jullya Souza Logotipo"
+              class="h-48 md:h-64 w-auto mx-auto object-contain">
+          </picture>
+          <h1 class="sr-only">Jullya Souza</h1>
+          <p class="text-sm font-light text-zinc-400 mb-12 leading-relaxed tracking-[0.2em] uppercase">
+            Curadoria de Beleza <br>
+            <span class="text-rose-gold font-bold">Martins Soares • MG</span>
+          </p>
+          <div class="flex flex-col items-center gap-6">
+            <button onclick="mainSwiper.slideNext()"
+              class="group relative px-8 py-4 bg-transparent border border-rose-gold/30 rounded-full overflow-hidden transition-all duration-500 hover:border-rose-gold">
+              <span
+                class="relative z-10 text-[10px] uppercase tracking-[0.3em] font-bold group-hover:text-white">Explorar
+                Catálogo</span>
+              <div
+                class="absolute inset-0 bg-rose-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: EUDORA -->
+      <section class="swiper-slide bg-[#652f4a]" data-brand="eudora" data-has-stock="unknown">
+        <div class="brand-section-container w-full">
+          <div class="brand-header">
+            <img src="images/logo-eudora.svg" alt="Eudora" class="h-10 brightness-0 invert opacity-90 mx-auto">
+          </div>
+          <div class="brand-content-white">
+            <div id="eudora-products" class="w-full"></div>
+          </div>
+          <div class="brand-footer-offset"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: O.U.I -->
+      <section class="swiper-slide bg-[#971a2e]" data-brand="oui" data-has-stock="unknown">
+        <div class="brand-section-container w-full">
+          <div class="brand-header">
+            <img src="images/logo-oui.svg" alt="O.U.I" class="h-6 brightness-0 invert opacity-90 mx-auto">
+          </div>
+          <div class="brand-content-white">
+            <div id="oui-products" class="w-full"></div>
+          </div>
+          <div class="brand-footer-offset"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: BOTICÁRIO -->
+      <section class="swiper-slide bg-[#49a478]" data-brand="boticario" data-has-stock="unknown">
+        <div class="brand-section-container w-full">
+          <div class="brand-header">
+            <img src="images/logo-oboticario.svg" alt="O Boticário" class="h-10 brightness-0 invert opacity-90 mx-auto">
+          </div>
+          <div class="brand-content-white">
+            <div id="boticario-products" class="w-full"></div>
+          </div>
+          <div class="brand-footer-offset"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: QDB -->
+      <section class="swiper-slide bg-[#d11450]" data-brand="qdb" data-has-stock="unknown">
+        <div class="brand-section-container w-full">
+          <div class="brand-header">
+            <img src="images/logo-quemdisseberenice.svg" alt="Quem Disse Berenice"
+              class="h-10 brightness-0 invert opacity-90 mx-auto">
+          </div>
+          <div class="brand-content-white">
+            <div id="qdb-products" class="w-full"></div>
+          </div>
+          <div class="brand-footer-offset"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: RODAPÉ INSTITUCIONAL JULLYA -->
+      <section class="swiper-slide bg-[#0B1320] flex flex-col justify-center px-6 relative overflow-hidden"
+        data-hide-cart="true">
+        <div class="absolute inset-0 opacity-10 grayscale pointer-events-none">
+          <img src="images/hero-bg.png" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-10 w-full max-w-lg mx-auto text-center">
+          <img src="images/logo-jullyasouza.png" alt="Jullya Souza Beauty" class="h-32 mx-auto mb-6 object-contain">
+          <h2 class="text-3xl font-serif mb-2 leading-tight italic text-rose-gold">Você, sempre deslumbrante.</h2>
+          <p class="text-[11px] text-zinc-500 uppercase tracking-[0.4em] font-bold mb-10">Martins Soares • MG</p>
+
+          <div class="grid grid-cols-2 gap-4 mb-10">
+            <a href="https://www.instagram.com/jullyasouza.beauty/" target="_blank"
+              class="flex flex-col items-center gap-2 py-4 bg-white/5 border border-white/10 rounded-3xl hover:border-rose-gold transition-all group">
+              <span class="text-[11px] text-rose-gold uppercase font-black tracking-widest">Instagram</span>
+              <span class="text-[14px] text-white-500 uppercase font-bold tracking-tighter">Beauty</span>
+            </a>
+            <a href="https://www.instagram.com/_eujullyasouza/" target="_blank"
+              class="flex flex-col items-center gap-2 py-4 bg-white/5 border border-white/10 rounded-3xl hover:border-rose-gold transition-all group">
+              <span class="text-[11px] text-white/80 uppercase font-black tracking-widest">Instagram</span>
+              <span class="text-[14px] text-white-500 uppercase font-bold tracking-tighter">Pessoal</span>
+            </a>
+            <a href="https://www.tiktok.com/@eujullyasouza_" target="_blank"
+              class="flex flex-col items-center gap-2 py-4 bg-white/5 border border-white/10 rounded-3xl hover:border-rose-gold transition-all group">
+              <span class="text-[11px] text-white/80 uppercase font-black tracking-widest">TikTok</span>
+              <span class="text-[14px] text-white-500 uppercase font-bold tracking-tighter">@eujullyasouza_</span>
+            </a>
+            <a href="https://collshp.com/jullyasouza672448" target="_blank"
+              class="flex flex-col items-center gap-2 py-4 bg-white/5 border border-white/10 rounded-3xl hover:border-rose-gold transition-all group">
+              <span class="text-[11px] text-rose-gold uppercase font-black tracking-widest">Achadinhos</span>
+              <span class="text-[14px] text-white-500 uppercase font-bold tracking-tighter">Minha Loja</span>
+            </a>
+          </div>
+
+          <div class="pt-8 border-t border-white/5 text-[10px] text-zinc-600 uppercase tracking-widest font-bold">
+            © 2026 Jullya Souza Beauty.
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE FINAL: CRÉDITOS DO DESAFIO -->
+      <section
+        class="swiper-slide bg-[#0B1320] py-12 md:py-20 flex items-center justify-center relative overflow-hidden"
+        data-hide-cart="true">
+        <div class="container mx-auto max-w-2xl px-6 relative z-10">
+          <div class="flex flex-col items-center text-center gap-10">
+            <!-- Badge Desafio -->
+            <div class="bg-white/5 border border-white/10 px-6 py-6 rounded-3xl backdrop-blur-md">
+              <span class="text-[11px] text-zinc-500 uppercase font-black tracking-[0.4em] mb-3 block">Projeto do
+                Desafio</span>
+              <h5 class="text-white font-black uppercase text-2xl md:text-3xl tracking-tighter">
+                <span class="text-rose-gold italic font-serif normal-case">30 Dias,</span> 30 Sites
+              </h5>
+              <div class="h-[1px] w-12 bg-rose-gold/30 mx-auto my-6"></div>
+              <p class="text-xs text-zinc-400 leading-relaxed max-w-[250px] mx-auto opacity-70">
+                Site solicitado via Instagram para o portfólio MESOLU.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <span class="text-[11px] text-zinc-600 uppercase font-bold tracking-[0.4em] mb-4">Desenvolvido por</span>
+              <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer"
+                class="group flex items-baseline gap-2">
+                <span
+                  class="text-3xl md:text-4xl font-black text-white group-hover:text-rose-gold transition-colors duration-500">MESOLU</span>
+                <span class="text-sm text-zinc-500 font-mono">.com.br</span>
+              </a>
+
+              <div class="mt-10">
+                <a href="https://mesolu.com.br/desafio/" target="_blank" rel="noopener noreferrer"
+                  class="px-8 py-4 border border-rose-gold/20 rounded-full text-xs text-rose-gold hover:border-rose-gold hover:bg-rose-gold/10 transition-all duration-500 font-black uppercase tracking-[0.3em]">
+                  Acompanhar Projeto →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm z-50 transition-all duration-300">
+    <button onclick="toggleModal()"
+      class="w-full glass rounded-full px-6 py-4 flex items-center justify-between shadow-2xl shadow-black/20 border-white/20">
+      <div class="flex flex-col text-left">
+        <span class="text-[9px] uppercase tracking-widest text-[#0B1320] font-black opacity-60">Meu Pedido</span>
+        <span class="cart-count text-xs font-black text-[#0B1320]">0 itens selecionados</span>
+      </div>
+      <div id="btn-show-cart"
+        class="bg-[#0B1320] text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-tight opacity-50 pointer-events-none transition-all">
+        Ver Lista
+      </div>
+    </button>
+  </div>
+
+  <!-- MODAL DE RESUMO / CARRINHO -->
+  <div id="cart-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal()"></div>
+    <div
+      class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[40px] p-8 animate-slide-up max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-serif text-[#0B1320]">Seu Pedido</h2>
+        <button onclick="toggleModal()" class="w-10 h-10 bg-zinc-100 rounded-full flex items-center justify-center">
+          <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="cart-items" class="space-y-4 mb-8">
+        <!-- Itens carregados via JS -->
+      </div>
+
+      <div class="border-t border-zinc-100 pt-6 mb-8">
+        <div class="flex justify-between items-center">
+          <span class="text-zinc-500 font-bold uppercase text-xs tracking-widest">Total Estimado</span>
+          <span id="cart-total" class="text-2xl font-black text-[#0B1320]">R$ 0,00</span>
+        </div>
+      </div>
+
+      <button onclick="sendToWhatsApp()"
+        class="w-full py-5 bg-[#0B1320] text-white rounded-2xl text-xs uppercase tracking-[0.2em] font-black shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-3">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.022-.014-.45-.223-.52-.247-.07-.024-.121-.037-.172.037-.052.074-.197.247-.242.3-.045.051-.091.06-.176.017-.084-.043-.356-.131-.678-.418-.25-.222-.418-.497-.467-.582-.05-.084-.005-.13.037-.172.038-.039.085-.1.127-.148.043-.05.058-.084.087-.14.03-.057.015-.107-.008-.148-.024-.042-.172-.411-.236-.563-.062-.15-.124-.129-.172-.129-.044 0-.095-.004-.145-.004-.05 0-.131.02-.2.096-.068.077-.26.254-.26.621 0 .366.267.72.305.772.037.052.525.801 1.272 1.12.178.076.317.122.426.157.18.057.344.049.474.03.145-.022.45-.184.513-.362.064-.178.064-.331.045-.362-.02-.03-.07-.05-.155-.092zM12.004 20.122l-.001.001-1.053-.001c-1.027 0-2.033-.277-2.91-.801l-.209-.124-2.162.567.577-2.108-.137-.217c-.575-.916-.88-1.977-.88-3.067 0-3.193 2.597-5.791 5.792-5.791 1.547 0 3.001.603 4.094 1.698 1.093 1.094 1.696 2.547 1.696 4.093 0 3.194-2.598 5.791-5.792 5.791zM12 2C6.477 2 2 6.477 2 12c0 1.891.527 3.659 1.439 5.163L2 22l4.981-1.31c1.455.834 3.138 1.31 4.956 1.31a10 10 0 0010-10C21.937 6.477 17.523 2 12 2z" />
+        </svg>
+        Enviar para WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

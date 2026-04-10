@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Jullya Souza Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        .admin-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px border-white/10;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0B1320] text-white min-h-screen">
+    <!-- LOGIN OVERLAY -->
+    <div id="login-overlay" class="fixed inset-0 z-[100] bg-[#0B1320] flex items-center justify-center p-6 transition-opacity duration-500">
+        <div class="w-full max-w-sm text-center bg-[#0B1320] p-10 rounded-[40px] border border-white/10 shadow-2xl">
+            <img src="../images/logo-jullyasouza.png" class="h-24 mx-auto mb-8 object-contain">
+            <h1 class="text-xl font-serif text-rose-gold mb-8 italic">Acesso Restrito</h1>
+            <input type="password" id="admin-pass" onkeyup="if(event.key==='Enter') checkAuth()" placeholder="Senha de Acesso" class="w-full bg-[#151f2e] border border-white/20 rounded-2xl px-6 py-5 mb-6 text-center focus:border-rose-gold outline-none transition-all text-white placeholder-zinc-500 font-bold">
+            <button onclick="checkAuth()" class="w-full py-5 bg-rose-gold text-[#0B1320] rounded-2xl font-black uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all shadow-xl">
+                Entrar no Painel
+            </button>
+            <p id="login-error" class="text-rose-500 text-[10px] mt-4 uppercase font-bold tracking-widest hidden">Senha incorreta</p>
+        </div>
+    </div>
+
+    <!-- MAIN ADMIN PANEL -->
+    <div id="admin-panel" class="hidden opacity-0 transition-opacity duration-1000 max-w-5xl mx-auto p-6 md:p-10">
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-white/5 pb-10 font-bold">
+            <div>
+                <span class="text-[10px] text-zinc-500 uppercase tracking-[0.4em] mb-2 block">Painel de Gestão</span>
+                <h2 class="text-3xl font-serif text-rose-gold italic">Olá, Jullya!</h2>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="openAddModal()" class="px-6 py-3 bg-rose-gold text-[#0B1320] rounded-xl text-[10px] uppercase font-black tracking-widest hover:scale-105 transition-all">
+                    + Novo Produto
+                </button>
+                <button onclick="saveChanges()" id="btn-save" class="px-6 py-3 bg-green-500 text-white rounded-xl text-[10px] uppercase font-black tracking-widest hover:scale-105 transition-all hidden">
+                    Salvar Mudanças
+                </button>
+            </div>
+        </header>
+
+        <!-- FILTROS -->
+        <div class="flex gap-2 overflow-x-auto pb-6 mb-8 no-scrollbar">
+            <button onclick="filterBrand('all')" class="filter-btn active px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase font-black tracking-widest hover:border-rose-gold transition-all whitespace-nowrap">Todas</button>
+            <button onclick="filterBrand('eudora')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase font-black tracking-widest hover:border-rose-gold transition-all whitespace-nowrap">Eudora</button>
+            <button onclick="filterBrand('boticario')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase font-black tracking-widest hover:border-rose-gold transition-all whitespace-nowrap">Boticário</button>
+            <button onclick="filterBrand('oui')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase font-black tracking-widest hover:border-rose-gold transition-all whitespace-nowrap">O.U.I</button>
+            <button onclick="filterBrand('qdb')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase font-black tracking-widest hover:border-rose-gold transition-all whitespace-nowrap">QDB</button>
+        </div>
+
+        <!-- LISTA DE PRODUTOS -->
+        <div id="admin-product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gerado via JS -->
+        </div>
+    </div>
+
+    <!-- MODAL ADD/EDIT -->
+    <div id="product-modal" class="fixed inset-0 z-[110] bg-[#0B1320]/90 backdrop-blur-md flex items-center justify-center p-4 md:p-6 hidden">
+        <div class="w-full max-w-lg bg-white rounded-[40px] p-6 md:p-10 text-[#0B1320] relative max-h-[95vh] flex flex-col shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-zinc-400 hover:text-rose-gold z-20">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            
+            <h2 id="modal-title" class="text-2xl font-serif mb-6 italic sticky top-0 bg-white pb-2 z-10">Adicionar Produto</h2>
+            
+            <form id="product-form" class="space-y-4 overflow-y-auto pr-2 custom-scrollbar">
+                <input type="hidden" id="field-id">
+                
+                <div>
+                    <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Nome do Produto</label>
+                    <input type="text" id="field-name" required class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all text-sm">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Preço (R$)</label>
+                        <input type="number" step="0.01" id="field-price" required class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all text-sm">
+                    </div>
+                    <div>
+                        <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Preço Promo</label>
+                        <input type="number" step="0.01" id="field-oldPrice" class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Foto do Produto</label>
+                        <div id="image-upload-zone" class="relative h-28 bg-zinc-50 border-2 border-dashed border-zinc-200 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-rose-gold transition-all overflow-hidden group">
+                            <input type="file" id="field-file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-10">
+                            <div id="upload-placeholder" class="text-center">
+                                <svg class="w-5 h-5 mx-auto text-zinc-300 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="2" stroke-linecap="round"/></svg>
+                                <span class="text-[8px] uppercase font-bold text-zinc-400">Trocar Foto</span>
+                            </div>
+                            <img id="image-preview" class="hidden absolute inset-0 w-full h-full object-contain p-2 bg-white">
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Marca</label>
+                            <select id="field-brand" class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all text-sm">
+                                <option value="eudora">Eudora</option>
+                                <option value="boticario">Boticário</option>
+                                <option value="oui">O.U.I</option>
+                                <option value="qdb">QDB</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Nome do Arquivo</label>
+                            <input type="text" id="field-image" placeholder="Ex: perfume-diva" required class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all text-[10px]">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-[9px] uppercase font-black tracking-widest text-zinc-400 mb-2 block">Descrição</label>
+                    <textarea id="field-desc" class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl px-5 py-3 outline-none focus:border-rose-gold transition-all resize-none h-20 text-xs"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full py-4 bg-[#0B1320] text-white rounded-2xl text-[10px] uppercase font-black tracking-[0.2em] shadow-xl hover:brightness-110 active:scale-95 transition-all sticky bottom-0">
+                    Salvar Produto
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
