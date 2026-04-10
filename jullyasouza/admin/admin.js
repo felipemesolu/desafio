@@ -23,21 +23,32 @@ async function checkAuth() {
 }
 
 async function loadAdminProducts() {
+    let data = [];
     try {
         const response = await fetch('/api/jullya');
-        let data = await response.json();
-        
-        // Fallback para arquivo estático se o banco estiver vazio
-        if(!data || data.length === 0) {
-            const staticRes = await fetch('../products.json');
-            data = await staticRes.json();
+        if (response.ok) {
+            const contentType = response.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                data = await response.json();
+            }
         }
-        
-        adminProducts = data;
-        renderAdminList();
-    } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
+    } catch (apiError) {
+        console.warn("API offline, tentando carregar dados estáticos...");
     }
+
+    if (!data || data.length === 0) {
+        try {
+            const staticRes = await fetch('../products.json');
+            if (staticRes.ok) {
+                data = await staticRes.json();
+            }
+        } catch (staticError) {
+            console.error("Falha ao carregar produtos:", staticError);
+        }
+    }
+
+    adminProducts = data;
+    renderAdminList();
 }
 
 function renderAdminList() {
@@ -70,6 +81,10 @@ function renderAdminList() {
 
 // IMAGE UPLOAD TO IMGBB
 async function uploadToImgBB(blob) {
+    if (IMGBB_API_KEY === "SUA_CHAVE_IMGBB_AQUI" || !IMGBB_API_KEY) {
+        throw new Error("Configuração Necessária: Você precisa colar sua chave da API do ImgBB no arquivo admin.js para enviar novas imagens.");
+    }
+    
     const formData = new FormData();
     formData.append("image", blob);
     
@@ -82,7 +97,7 @@ async function uploadToImgBB(blob) {
     if (data.success) {
         return data.data.url; // Retorna o link da imagem
     } else {
-        throw new Error("Erro no upload para ImgBB");
+        throw new Error("Erro no upload para ImgBB: Verifique sua chave de API.");
     }
 }
 
