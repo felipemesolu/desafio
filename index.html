@@ -294,46 +294,73 @@
 
             // Simulação de lógicas de "entrega" adaptada ao Light Mode
             const getStatusData = (dayIndex) => {
-                if (dayIndex === 1) return {
-                    status: 'concluido',
-                    title: 'Igreja Fortalecendo Vidas - Guarapari',
-                    text: 'Concluído • Visualizar Projeto',
-                    badge: 'bg-brand-50 text-brand-600 border border-brand-100',
-                    linkText: 'text-brand-600 hover:text-brand-700',
-                    link: 'https://mesolu.com.br/desafio/ifv/index.html'
+                const projects = {
+                    1: {
+                        title: 'Igreja Fortalecendo Vidas',
+                        link: '/ifv/index.html',
+                        badge: 'bg-brand-50 text-brand-600 border border-brand-100'
+                    },
+                    2: {
+                        title: 'Cardoso Cosméticos',
+                        link: '/cardosocosmeticos/',
+                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
+                    },
+                    3: {
+                        title: 'Jéssica Carvalho Barreto',
+                        link: '/jcb-adv/',
+                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
+                    },
+                    4: {
+                        title: 'Leonardo Almeida',
+                        link: '/leonardo-almeida/',
+                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
+                    },
+                    5: {
+                        title: 'Arquiteta - Portfólio',
+                        link: '/arquiteta/',
+                        badge: 'bg-brand-50 text-brand-600 border border-brand-100'
+                    },
+                    6: {
+                        title: 'Estamparia Ide',
+                        link: '/estampariaide/',
+                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
+                    },
+                    7: {
+                        title: 'Lu Modas',
+                        link: '/lumodas/',
+                        badge: 'bg-brand-50 text-brand-600 border border-brand-100'
+                    },
+                    8: {
+                        title: 'Oliver Confeitaria',
+                        link: '/oliverconfeitaria/',
+                        badge: 'bg-blue-50 text-blue-600 border border-blue-100'
+                    },
+                    9: {
+                        title: 'Modelo de Catálogo (PHP)',
+                        link: 'https://mesolu.com.br/desafio/modelo-catalogo/',
+                        badge: 'bg-slate-100 text-slate-600 border border-slate-200'
+                    }
                 };
-                if (dayIndex === 2) return {
-                    status: 'concluido',
-                    title: 'Cardoso Cosméticos - Guarapari',
-                    text: 'Concluído • Visualizar Projeto',
-                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
-                    linkText: 'text-blue-600 hover:text-blue-700',
-                    link: 'https://mesolu.com.br/desafio/cardosocosmeticos/'
-                };
-                if (dayIndex === 3) return {
-                    status: 'concluido',
-                    title: 'Jéssica Carvalho Barreto - Advogada e Consultora Jurídica',
-                    text: 'Concluído • Visualizar Projeto',
-                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
-                    linkText: 'text-blue-600 hover:text-blue-700',
-                    link: 'https://mesolu.com.br/desafio/jcb-adv/'
-                };
-                if (dayIndex === 4) return {
-                    status: 'concluido',
-                    title: 'Leonardo Almeida - Corretor Imobiliário',
-                    text: 'Concluído • Visualizar Projeto',
-                    badge: 'bg-blue-50 text-blue-600 border border-blue-100',
-                    linkText: 'text-blue-600 hover:text-blue-700',
-                    link: 'https://mesolu.com.br/desafio/leonardoalmeida/'
-                };
+
+                if (projects[dayIndex]) {
                     return {
-                        status: 'pendente',
-                        title: 'aguardando',
-                        text: 'Agendado',
-                        badge: 'bg-slate-100 text-slate-500 border border-slate-200',
-                        linkText: 'text-slate-400',
-                        link: 'javascript:void(0)'
+                        status: 'concluido',
+                        title: projects[dayIndex].title,
+                        text: 'Concluído • Visualizar Projeto',
+                        badge: projects[dayIndex].badge,
+                        linkText: 'text-brand-600 hover:text-brand-700',
+                        link: projects[dayIndex].link
                     };
+                }
+
+                return {
+                    status: 'pendente',
+                    title: 'Aguardando',
+                    text: 'Agendado',
+                    badge: 'bg-slate-100 text-slate-500 border border-slate-200',
+                    linkText: 'text-slate-400',
+                    link: 'javascript:void(0)'
+                };
             };
 
             let timelineHTML = '';
