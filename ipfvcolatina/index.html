@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPFV Colatina - Igreja Pentecostal Fortalecendo Vidas</title>
+    <meta name="description"
+        content="Bem-vindo à Igreja Pentecostal Fortalecendo Vidas em Colatina. Aqui Deus fortalece vidas e renova a esperança!">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="IPFV Colatina - Fortalecendo Vidas">
+    <meta property="og:description" content="Aqui Deus fortalece vidas e renova a esperança!">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- 1. Hero Section (No Menu) -->
+    <section class="hero" id="hero">
+        <video autoplay muted loop playsinline class="video-background">
+            <source src="videos/video-bg-hero.webm" type="video/webm">
+            <source src="videos/video-bg-hero-opt.mp4" type="video/mp4">
+        </video>
+        <picture class="mobile-background">
+            <source srcset="images/bg-mobile.avif" type="image/avif">
+            <img src="images/bg-mobile.webp" alt="Background Mobile" class="bg-img">
+        </picture>
+        <div class="hero-content">
+            <picture>
+                <source srcset="images/logo-ipfv-350x190.avif" type="image/avif">
+                <img src="images/logo-ipfv-350x190.webp" alt="IPFV Logo" class="hero-logo">
+            </picture>
+        </div>
+    </section>
+
+    <!-- 2. Sticky Navbar (Hidden initially) -->
+    <header class="navbar hidden-nav" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">
+                <img src="images/logo-ipfv-198x198.webp" alt="IPFV Mini Logo" loading="lazy" width="50" height="50">
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#apresentacao">Início</a></li>
+                    <li><a href="#cultos">Cultos</a></li>
+                    <li><a href="#pastor">Pastor</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#versiculo">Palavra</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/5527998899167" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
+            </div>
+
+            <a href="javascript:void(0)" class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 3. Greeting & Highlights -->
+        <section id="apresentacao">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h1 style="color: var(--primary-dark); font-weight: 700; margin-bottom: 2rem;">Aqui Deus fortalece
+                        vidas e renova a esperança!</h1>
+                </div>
+                <div class="pastor-grid">
+                    <div class="reveal">
+                        <span class="text-accent"
+                            style="font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Seja
+                            Bem-vindo</span>
+                        <h2 style="font-size: 3rem; margin: 1rem 0;">Um lugar de <span
+                                class="text-accent">Recomeços</span></h2>
+                        <p style="font-size: 1.125rem; margin-bottom: 2rem;">
+                            A Igreja Pentecostal Fortalecendo Vidas é uma família dedicada a espalhar o amor de Cristo e
+                            fortalecer a fé de cada pessoa que cruza nossas portas. Estamos prontos para caminhar ao seu
+                            lado.
+                        </p>
+                    </div>
+                    <div class="reveal">
+                        <div class="next-event-feature"
+                            style="border-left: 4px solid var(--accent); padding: 1rem 0 1rem 2.5rem; margin-left: 1rem;">
+                            <span
+                                style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.875rem;">Fique
+                                por dentro</span>
+                            <h3
+                                style="font-size: 2.25rem; margin: 0.5rem 0 1.5rem; color: var(--primary-dark); font-family: var(--font-heading);">
+                                Próximo Evento</h3>
+                            <p
+                                style="font-size: 1.125rem; margin-bottom: 2rem; line-height: 1.7; color: var(--text-muted);">
+                                Prepare-se para o nosso <strong>11º Aniversário</strong> com o tema "O Chamado a
+                                Estatura de Cristo". Serão dias de glória e renovação!</p>
+                            <a href="#eventos" class="btn btn-primary"
+                                style="padding: 1rem 2.5rem;">Ver programação completa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Church Times (Tabs) -->
+        <section id="cultos" style="background: var(--bg-alt);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Horários de <span class="text-accent">Culto</span></h2>
+                    <p>Selecione uma localização para ver a programação completa e como chegar.</p>
+                </div>
+
+                <div class="location-buttons">
+                    <a href="javascript:void(0)" class="btn-location btn-colatina reveal" onclick="openChurchModal('colatina')" style="text-decoration: none;">
+                        <span>SEDE Colatina</span>
+                    </a>
+                    <a href="javascript:void(0)" class="btn-location btn-joaoneiva reveal" onclick="openChurchModal('joaoneiva')" style="text-decoration: none;">
+                        <span>FILIAL João Neiva</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. About the Pastor (Analyzed text) -->
+        <section id="pastor">
+            <div class="container">
+                <div class="pastor-grid">
+                    <h2 class="pastor-title reveal">Liderança com <span class="text-accent">Propósito</span></h2>
+
+                    <div class="pastor-image-wrapper reveal">
+                        <picture>
+                            <source srcset="images/pr-wanderley-e-familia.avif" type="image/avif">
+                            <img src="images/pr-wanderley-e-familia.webp" alt="Pr. Wanderley Coutinho e Família" loading="lazy">
+                        </picture>
+                        <div class="pastor-badge">
+                            <strong>Pr. Wanderley Coutinho</strong>
+                            <small>Pastor Responsável</small>
+                        </div>
+                    </div>
+                    <div class="pastor-text reveal">
+                        <p style="margin-bottom: 1.5rem; font-size: 1.125rem;">
+                            Sou o Pr. Wanderley Coutinho de Andrade, um líder dedicado e apaixonado por fortalecer
+                            vidas.
+                            Pautado no valor da família, ao lado de minha esposa Débora e meus filhos Magdyel e Sammyla,
+                            conduzo a IPFV com a convicção de que "os filhos são herança do Senhor" (Salmos 127:3).
+                        </p>
+                        <p style="margin-bottom: 1.5rem;">
+                            Minha missão vai além das palavras; é um compromisso diário em ser exemplo do amor de Cristo
+                            através da ação. Convido a todos para viverem uma jornada de fé genuína, buscando a
+                            vontade de Deus e crescendo juntos em união e serviço.
+                        </p>
+                        <div class="social-links-pastor" style="display: flex; gap: 1rem;">
+                            <a href="https://www.instagram.com/wanderleycoutinhooficial/" target="_blank"
+                                class="social-link" style="background: var(--primary); color: white;"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/wanderley.coutinho.16" target="_blank" class="social-link"
+                                style="background: var(--primary); color: white;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.youtube.com/@PastorWanderleyCoutinho" target="_blank"
+                                class="social-link" style="background: var(--primary); color: white;"><i
+                                    class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Prayer Room Section (Youtube Channel) -->
+        <section id="oracao-diaria" style="background: linear-gradient(to right, #f8faff, #ffffff);">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Quartinho de Oração <span class="text-accent">Visão de Águia</span></h2>
+                    <p>Junte-se ao Pastor Wanderley em nossos encontros diários de clamor e renovação espiritual no
+                        YouTube.</p>
+                </div>
+
+                <div class="prayer-grid">
+                    <div class="prayer-card reveal">
+                        <div class="prayer-time">05H</div>
+                        <div class="prayer-info">
+                            <h3><i class="fas fa-mug-hot"></i> Café com Deus</h3>
+                            <p>Comece o seu dia em paz, recebendo uma palavra de força.</p>
+                        </div>
+                    </div>
+                    <div class="prayer-card reveal">
+                        <div class="prayer-time">12H</div>
+                        <div class="prayer-info">
+                            <h3><i class="fas fa-sun"></i> Pausa para o Espírito</h3>
+                            <p>Renovação e força no meio da sua jornada diária.</p>
+                        </div>
+                    </div>
+                    <div class="prayer-card reveal">
+                        <div class="prayer-time">22H</div>
+                        <div class="prayer-info">
+                            <h3><i class="fas fa-bed"></i> Descanso no Senhor</h3>
+                            <p>Encerre o dia com gratidão e prepare-se para uma noite tranquila.</p>
+                        </div>
+                    </div>
+                    <div class="prayer-card reveal">
+                        <div class="prayer-time">00H</div>
+                        <div class="prayer-info">
+                            <h3><i class="fas fa-moon"></i> Oração da Meia-Noite</h3>
+                            <p>Um momento de intercessão profética pelo seu milagre.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;" class="reveal">
+                    <a href="https://www.youtube.com/@PastorWanderleyCoutinho" target="_blank" class="btn btn-primary"
+                        style="padding: 1.25rem 3rem;">
+                        <i class="fab fa-youtube"></i> Acompanhar Orações no Youtube
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="eventos"
+            style="background: radial-gradient(circle at top right, var(--primary-light), var(--primary-dark)); color: var(--white); padding: 6rem 1rem;">
+            <div class="container">
+                <div class="event-grid-modern reveal"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative;">
+                    <!-- Coluna Esquerda: Texto Principal -->
+                    <div class="event-brand" style="text-align: left;">
+                        <span
+                            style="color: var(--accent); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 1rem;">11º
+                            Aniversário IPFV</span>
+                        <h2
+                            style="color: var(--white); font-size: 4rem; line-height: 1.1; margin-bottom: 2rem; font-family: var(--font-heading); text-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            O Chamado a <span class="text-accent">Estatura</span> de Cristo</h2>
+                        <div
+                            style="font-size: 1.5rem; display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,0.8);">
+                            <i class="far fa-calendar-alt text-accent event-calendar-icon"></i> 01, 02 e 03 de Maio •
+                            18h
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita: Programação e Vídeo (Sem wrapper de card) -->
+                    <div class="event-details-right-clean" style="text-align: left;">
+                        <div class="event-program"
+                            style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;">
+                            <div class="program-item" style="font-size: 1.125rem; display: flex; gap: 1rem;">
+                                <span class="text-accent" style="font-weight: 700;">01/05:</span> Pr. Angelo Calvão (SP)
+                            </div>
+                            <div class="program-item" style="font-size: 1.125rem; display: flex; gap: 1rem;">
+                                <span class="text-accent" style="font-weight: 700;">02/05:</span> Pr. Marcos Paulo (ES)
+                            </div>
+                            <div class="program-item" style="font-size: 1.125rem; display: flex; gap: 1rem;">
+                                <span class="text-accent" style="font-weight: 700;">03/05:</span> Cantor Micael do Carmo
+                                (BA)
+                            </div>
+                        </div>
+
+                        <a href="javascript:void(0)" class="btn btn-accent" onclick="loadYoutubeVideo()"
+                            style="width: 100%; padding: 1.25rem; font-size: 1.125rem;">
+                            <i class="fas fa-play-circle"></i> Assistir Convite em Vídeo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Word of the Day -->
+        <section id="versiculo">
+            <div class="container">
+                <div class="daily-verse reveal">
+                    <h2 style="margin-bottom: 3rem; font-size: 3rem;">Palavra do <span class="text-accent">Dia</span>
+                    </h2>
+                    <div id="verse-container">
+                        <p class="verse-text" id="verse-text">"Carregando promessas..."</p>
+                        <p class="verse-ref" id="verse-ref">Bíblia ACF</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CTA Section -->
+        <section id="visita" style="background: var(--accent); text-align: center; padding: 4rem 1rem;">
+            <div class="container">
+                <h2 style="color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 1.5rem;">Venha nos visitar!
+                </h2>
+                <p
+                    style="color: var(--primary-dark); font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Sempre há um lugar para você em nossa mesa. Escolha a congregação mais próxima e seja fortalecido
+                    pela palavra.
+                </p>
+                <a href="#cultos" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.125rem;">Ver
+                    Localizações</a>
+            </div>
+        </section>
+
+        <section id="privacidade"
+            style="font-size: 0.9rem; color: var(--text-muted); background: var(--bg-light); padding: 4rem 1rem;">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                    <h3
+                        style="margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 700; color: var(--primary-dark);">
+                        <i class="fas fa-circle-exclamation" style="color: var(--accent); margin-right: 0.5rem;"></i>
+                        AVISO DE PRIVACIDADE E USO DE IMAGEM E VOZ
+                    </h3>
+                    <p style="margin-bottom: 1rem;">A Igreja Pentecostal Fortalecendo Vidas, em conformidade com a Lei
+                        nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD), informa a todos os membros, visitantes e
+                        participantes de suas atividades que, durante os cultos e eventos realizados em suas
+                        dependências, poderão ser realizadas captações de imagens, vídeos e áudios.</p>
+                    <p style="margin-bottom: 1rem;">Esses registros têm como finalidade a divulgação institucional das
+                        atividades da igreja em seus canais oficiais, incluindo, mas não se limitando, a redes sociais,
+                        site e materiais informativos. Ao ingressar e permanecer nas dependências da igreja, o
+                        participante declara estar ciente e concorda, de forma livre, informada e inequívoca, com a
+                        captação e eventual utilização de sua imagem e/ou voz para as finalidades acima descritas.</p>
+                    <p>Caso o participante não concorde com a utilização de sua imagem ou voz, orienta-se que procure
+                        previamente a equipe responsável, para que sejam adotadas as medidas cabíveis.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. Footer & 10. Credits -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="images/logo-ipfv-198x198.webp" alt="Logo Footer"
+                        style="height: 70px; margin-bottom: 1.5rem;" loading="lazy">
+                    <p>Aqui Deus fortalece vidas e renova a esperança!</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/ipfvcolatina/" target="_blank" class="social-link"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/wanderley.coutinho.16" target="_blank" class="social-link"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@PastorWanderleyCoutinho" target="_blank"
+                            class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    <p>CNPJ: 25.991.877/0001-12</p>
+                    <p>Colatina / João Neiva - ES</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Igreja Pentecostal Fortalecendo Vidas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CRÉDITOS OFICIAIS -->
+    <section class="credits-section reveal">
+        <div class="credits-bg-text" aria-hidden="true">30 / 30</div>
+
+        <div class="credits-container">
+            <div class="credits-flex">
+                <div class="credits-badge">
+                    <div class="badge-info">
+                        <span class="badge-label">Projeto do Desafio</span>
+                        <h5 class="badge-title">
+                            <span>30 Dias,</span> 30 Sites
+                        </h5>
+                    </div>
+                    <div class="badge-divider"></div>
+                    <p class="badge-desc">Este site foi solicitado via <a href="https://www.instagram.com/p/DWhKoJpqWZR/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-weight: 700; text-decoration: none;">@Instagram</a></p>
+                </div>
+
+                <div class="credits-dev">
+                    <span class="dev-label">Desenvolvido por</span>
+                    <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer" class="dev-brand">
+                        <span class="dev-main">MESOLU</span>
+                        <span class="dev-ext">.com.br</span>
+                    </a>
+                    <a href="https://desafio-1vx.pages.dev/" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        Acompanhar Projeto →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Show/Hide Navbar after Hero
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const heroHeight = document.getElementById('hero').offsetHeight;
+            if (window.scrollY > heroHeight - 80) {
+                navbar.classList.remove('hidden-nav');
+            } else {
+                navbar.classList.add('hidden-nav');
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // 3. Church Modal Logic
+        const churchData = {
+            colatina: {
+                name: "Sede Colatina",
+                address: "Av. Brasil, 389 - Lacê, Colatina - ES",
+                mapsLink: "https://www.google.com/maps/search/?api=1&query=Igreja+Pentecostal+Fortalecendo+Vidas+SEDE+Colatina",
+                embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15024.120530472448!2d-40.6380629!3d-19.53986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb629000bd95055%3A0xc3f8f1146747d967!2sIgreja%20Pentecostal%20Fortalecendo%20Vidas%20(SEDE)!5e0!3m2!1spt-BR!2sbr!4v1713000000000!5m2!1spt-BR!2sbr",
+                schedule: [
+                    { day: "Quarta", title: "Culto Profético", time: "09h / 14h / 18h30" },
+                    { day: "Quinta", title: "Escola Bíblica", time: "18h30" },
+                    { day: "Sexta", title: "Libertação", time: "09h / 18h30" },
+                    { day: "Sábado", title: "Oração e Gratidão", time: "Consagração (07h) • Gratidão (19h) — 1º Sábado do Mês" },
+                    { day: "Domingo", title: "Dia do Senhor", time: "Jejum (08h) • Família (18h30)" }
+                ]
+            },
+            joaoneiva: {
+                name: "Filial João Neiva",
+                address: "Av. Negri Orestes, 358 - João Neiva, ES",
+                mapsLink: "https://www.google.com/maps/search/?api=1&query=Igreja+Pentecostal+Fortalecendo+Vidas+Joao+Neiva",
+                embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15000.000000000000!2d-40.38!3d-19.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDQ1JzAwLjAiUyA0MMKwMjInNDguMCJX!5e0!3m2!1spt-BR!2sbr!4v1713000000000!5m2!1spt-BR!2sbr",
+                schedule: [
+                    { day: "Terça", title: "Terça Profética", time: "19h" },
+                    { day: "Sexta", title: "Campanha", time: "19h" },
+                    { day: "Domingo", title: "Escola Bíblica", time: "19h" }
+                ]
+            }
+        };
+
+        function openChurchModal(id) {
+            const data = churchData[id];
+            const modal = document.getElementById('churchFullScreenModal');
+            const content = document.getElementById('churchModalContent');
+
+            let scheduleHtml = data.schedule.map(item => `
+        <div class="schedule-row">
+          <div class="day-label">${item.day}</div>
+          <div class="activity-info">
+            <strong>${item.title}</strong>
+            <span>${item.time}</span>
+          </div>
+        </div>
+      `).join('');
+
+            content.innerHTML = `
+        <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 0.5rem;">${data.name}</h2>
+        <p style="color: var(--text-muted); margin-bottom: 3rem;"><i class="fas fa-location-dot"></i> ${data.address}</p>
+        
+        <div class="schedule-list">
+          ${scheduleHtml}
+        </div>
+
+        <div class="modal-map">
+          <div class="map-wrapper">
+             <iframe src="${data.embed}" style="width: 100%; height: 100%; border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <a href="${data.mapsLink}" target="_blank" class="btn-google-maps">
+            <i class="fas fa-map-marker-alt"></i> Abrir no Google Maps
+          </a>
+        </div>
+      `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeChurchModal() {
+            const modal = document.getElementById('churchFullScreenModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // 4. Random Bible Verse (Promises ACF)
+        const verses = [
+            { text: "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz, e não de mal, para vos dar o fim que esperais.", ref: "Jeremias 29:11" },
+            { text: "Não to mandei eu? Esforça-te, e tem bom ânimo; não temas, nem te espantes; porque o Senhor teu Deus é contigo, por onde quer que andares.", ref: "Josué 1:9" },
+            { text: "O Senhor é o meu pastor, nada me faltará.", ref: "Salmo 23:1" },
+            { text: "Deleita-te também no Senhor, e te concederá os desejos do teu coração.", ref: "Salmo 37:4" },
+            { text: "Lancem sobre ele toda a sua ansiedade, porque ele tem cuidado de vocês.", ref: "1 Pedro 5:7" },
+            { text: "Tudo posso naquele que me fortalece.", ref: "Filipenses 4:13" },
+            { text: "E o meu Deus, segundo as suas riquezas, suprirá todas as vossas necessidades em glória, por Cristo Jesus.", ref: "Filipenses 4:19" },
+            { text: "Buscai primeiro o reino de Deus, e a sua justiça, e todas estas coisas vos serão acrescentadas.", ref: "Mateus 6:33" }
+        ];
+
+        function setDailyVerse() {
+            // Use the day of the year as index for "daily" consistency
+            const now = new Date();
+            const start = new Date(now.getFullYear(), 0, 0);
+            const diff = now - start;
+            const oneDay = 1000 * 60 * 60 * 24;
+            const dayOfYear = Math.floor(diff / oneDay);
+
+            const verse = verses[dayOfYear % verses.length];
+            document.getElementById('verse-text').innerText = `"${verse.text}"`;
+            document.getElementById('verse-ref').innerText = verse.ref;
+        }
+        setDailyVerse();
+
+        // 4. Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 5. Load YouTube Video on demand (Modal Version)
+        function loadYoutubeVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalIframe');
+            iframe.src = 'https://www.youtube.com/embed/ERWicWl62Eg?autoplay=1';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalIframe');
+            iframe.src = ''; // Stop video
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    </script>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <a href="javascript:void(0)" class="close-modal" onclick="closeModal()" style="text-decoration: none;">&times;</a>
+            <div class="video-wrapper">
+                <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Church Full Screen Modal -->
+    <div id="churchFullScreenModal" class="full-screen-modal">
+        <div class="modal-header">
+            <div class="logo">
+                <img src="images/logo-ipfv-198x198.webp" alt="IPFV Logo" style="height: 50px;" loading="lazy">
+            </div>
+            <a href="javascript:void(0)" class="modal-close" onclick="closeChurchModal()" style="text-decoration: none;">&times;</a>
+        </div>
+        <div class="modal-body">
+            <div id="churchModalContent"></div>
+        </div>
+    </div>
+</body>
+
+</html>
