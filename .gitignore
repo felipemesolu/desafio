@@ -21,3 +21,4 @@
 
 # Important: Don't ignore the gitignore itself
 !.gitignore
+!/miniaturas/
