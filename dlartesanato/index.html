@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PPX85K3QL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4PPX85K3QL', {
+            page_title: 'DL Artesanato | Domingos Martins/ES'
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL Artesanato | Domingos Martins/ES</title>
+    <meta name="description"
+        content="Artesanato em madeira, pintura e biscuit feito com carinho em Domingos Martins/ES. Peças únicas e personalizadas por Débora. Encomende pelo WhatsApp.">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desafio-1vx.pages.dev/dlartesanato/">
+    <meta property="og:title" content="DL Artesanato | Domingos Martins/ES">
+    <meta property="og:description"
+        content="Artesanato em madeira, pintura e biscuit feito com carinho em Domingos Martins/ES. Peças únicas e personalizadas por Débora.">
+    <meta property="og:image" content="https://desafio-1vx.pages.dev/dlartesanato/images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Libraries for Animations (GSAP & Lenis) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <!-- Decorative Blurry Orbs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- HERO: Clean, Logo Only -->
+            <section class="hero-clean" id="hero">
+
+                <div class="logo-wrapper">
+                    <picture>
+                        <source srcset="images/dl-artesanato-domingos-martins-es.avif" type="image/avif">
+                        <img src="images/dl-artesanato-domingos-martins-es.webp" alt="DL Artesanato" class="logo-hero">
+                    </picture>
+                </div>
+            </section>
+
+
+            <div class="section-divider">✧ ✧ ✧</div>
+
+            <!-- ABOUT: Soft, feminine typografy and layout -->
+            <section class="about-delicate" id="sobre">
+                <div class="about-content">
+                    <div class="text-block">
+                        <div class="brush-bg">
+                            <picture>
+                                <source srcset="images/elemento-brush.avif" type="image/avif">
+                                <img src="images/elemento-brush.webp" alt="" class="brush-img">
+                            </picture>
+                        </div>
+                        <h2 class="soft-heading">Nossa<br>Essência.</h2>
+                        <p>Meu nome é Débora, e sempre gostei de trabalhar com as mãos.
+
+                            Comecei fazendo peças para minha casa, depois para família e amigos — e quando vi, já estava
+                            criando para outras pessoas também.
+
+                            Hoje faço artesanato com madeira, pintura e biscuit, sempre com muito carinho e atenção em
+                            cada detalhe.
+
+                            Não é produção em quantidade — faço com calma, do meu jeito, pensando em cada peça como algo
+                            especial.</p>
+                        <div class="stats-mini">
+                            <div class="stat">
+                                <span class="num">100+</span>
+                                <span class="lbl">Ambientes Transformados</span>
+                            </div>
+                            <div class="stat">
+                                <span class="num">5+</span>
+                                <span class="lbl">Anos Criando com Amor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider">✧ ✧ ✧</div>
+
+            <!-- COLLAGE MOSAIC: Organic/Scrapbook feel (Desktop Only) -->
+            <section class="collage-mosaic" id="mosaico">
+                <div class="mosaic-header">
+                    <h2 class="mosaic-title">Fragmentos de Afeto</h2>
+                    <p class="mosaic-tag">Tudo aqui é feito com tempo, cuidado e muito carinho.</p>
+                </div>
+                <div class="mosaic-container" id="mosaic-target">
+                    <!-- Gerado dinamicamente via JS -->
+                </div>
+            </section>
+
+            <!-- MOBILE SLIDER: Exclusive for mobile -->
+            <section class="mobile-slider-section" id="mosaico-mobile">
+                <div class="mosaic-header">
+                    <h2 class="mosaic-title">Fragmentos de Afeto</h2>
+                    <p class="mosaic-tag">Deslize para sentir cada detalhe.</p>
+                </div>
+
+                <div class="swiper main-slider">
+                    <div class="swiper-wrapper" id="swiper-target">
+                        <!-- Gerado dinamicamente via JS -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <div class="section-divider">✧ ✧ ✧</div>
+
+            <!-- CONTACT: Simplified for WhatsApp focus -->
+            <section class="contact-delicate" id="contato">
+                <div class="contact-wrapper">
+                    <div class="contact-info text-fade">
+                        <h2 class="soft-heading">Vamos criar<br>algo lindo?</h2>
+                        <p class="contact-subtitle">Se você gostou de alguma peça ou quer algo personalizado,
+                            pode me chamar 😊
+
+                            Vou adorar conversar e criar algo especial pra você.</p>
+
+                        <div class="social-links-delicate">
+                            <a href="https://wa.me/5527988082697" target="_blank" class="cute-btn">♥ Me chama no
+                                WhatsApp</a>
+                            <a href="https://instagram.com/dl_artesanatos69" target="_blank"
+                                class="cute-btn cute-btn-outline">✧ Nosso Instagram</a>
+                        </div>
+
+                        <div class="payments">
+                            <span class="payment-title">Comodidade no pagamento:</span><br>
+                            Pix • PicPay • Cartões de Crédito e Débito • Dinheiro
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-delicate">
+                <p>Feito com carinho em casa ✧ DL Artesanato</p>
+            </footer>
+
+            <!-- CRÉDITOS OFICIAIS -->
+            <section class="credits-section">
+                <div class="credits-bg-text" aria-hidden="true">14 / 30</div>
+
+                <div class="credits-container">
+                    <div class="credits-flex">
+                        <div class="credits-badge">
+                            <div class="badge-info">
+                                <span class="badge-label">Projeto do Desafio</span>
+                                <h5 class="badge-title">
+                                    <span>30 Dias,</span> 30 Sites
+                                </h5>
+                            </div>
+                            <div class="badge-divider"></div>
+                            <p class="badge-desc">Este site foi solicitado via <a
+                                    href="https://www.instagram.com/p/DWhKoJpqWZR/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    style="color: var(--accent); font-weight: 700; text-decoration: none;">@Instagram</a>
+                            </p>
+                        </div>
+
+                        <div class="credits-dev">
+                            <span class="dev-label">Desenvolvido por</span>
+                            <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer" class="dev-brand">
+                                <span class="dev-main">MESOLU</span>
+                                <span class="dev-ext">.com.br</span>
+                            </a>
+                            <a href="https://desafio-1vx.pages.dev/" target="_blank" rel="noopener noreferrer"
+                                class="dev-link">
+                                Acompanhar Projeto →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
