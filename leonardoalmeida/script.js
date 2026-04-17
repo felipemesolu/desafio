@@ -7,19 +7,6 @@ AOS.init({
     easing: 'ease-out-cubic',
 });
 
-// Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    const navBg = document.getElementById('nav-bg');
-    if (window.scrollY > 50) {
-        navBg.classList.add('shadow-sm', 'bg-white/95');
-        navBg.classList.remove('bg-white/80', 'border-transparent');
-    } else {
-        navBg.classList.remove('shadow-sm', 'bg-white/95');
-        navBg.classList.add('bg-white/80');
-    }
-});
-
 // Add Parallax behaviors to the Hero area
 window.addEventListener('scroll', () => {
     const h = document.getElementById('hero-img');
@@ -47,30 +34,31 @@ window.addEventListener('scroll', () => {
 });
 
 // Data for Units (Combined array from data)
+// Data for Units (Combined array from data)
 const unitsData = [
     // Bloco 01
-    { b: 1, ref: "Apto 01", type: "Tipo", area: "109,43", config: "3 Q (1 Suíte)", img: "images/bloco01/apto 01 bloco 01.png" },
-    { b: 1, ref: "Apto 02", type: "Tipo", area: "110,84", config: "3 Q (1 Suíte)", img: "images/bloco01/apto 02 bloco 01.png" },
-    { b: 1, ref: "Apto 03", type: "Tipo", area: "105,03", config: "3 Q (1 Suíte)", img: "images/bloco01/apto 03 bloco 01.png" },
-    { b: 1, ref: "Apto 04", type: "Tipo", area: "95,00", config: "3 Q (1 Suíte)", img: "images/bloco01/apto 04 bloco 01.png" },
-    { b: 1, ref: "Apto 05", type: "Tipo", area: "110,08", config: "3 Q (1 Suíte)", img: "images/bloco01/apto 05 bloco 01.png" },
-    { b: 1, ref: "Apto 06", type: "Tipo", area: "107,21", config: "3 Q (1 Suíte)", img: "images/bloco01/apto 06 bloco 01.png" },
-    { b: 1, ref: "Garden 01", type: "Garden", area: "151,64", config: "Premium", img: "images/bloco01/garden 01 bloco 01.png" },
-    { b: 1, ref: "Garden 05", type: "Garden", area: "131,41", config: "Premium", img: "images/bloco01/garden 05 bloco 01.png" },
-    { b: 1, ref: "Garden 06", type: "Garden", area: "214,72", config: "Super Premium", img: "images/bloco01/garden 06 bloco 01.png" },
+    { b: 1, ref: "Apto 01", type: "Tipo", area: "109,43", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco01/apto 01 bloco 01" },
+    { b: 1, ref: "Apto 02", type: "Tipo", area: "110,84", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco01/apto 02 bloco 01" },
+    { b: 1, ref: "Apto 03", type: "Tipo", area: "105,03", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco01/apto 03 bloco 01" },
+    { b: 1, ref: "Apto 04", type: "Tipo", area: "95,00", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco01/apto 04 bloco 01" },
+    { b: 1, ref: "Apto 05", type: "Tipo", area: "110,08", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco01/apto 05 bloco 01" },
+    { b: 1, ref: "Apto 06", type: "Tipo", area: "107,21", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco01/apto 06 bloco 01" },
+    { b: 1, ref: "Garden 01", type: "Garden", area: "151,64", config: "Premium", img: "images/otimizadas/plantas/bloco01/garden 01 bloco 01" },
+    { b: 1, ref: "Garden 05", type: "Garden", area: "131,41", config: "Premium", img: "images/otimizadas/plantas/bloco01/garden 05 bloco 01" },
+    { b: 1, ref: "Garden 06", type: "Garden", area: "214,72", config: "Super Premium", img: "images/otimizadas/plantas/bloco01/garden 06 bloco 01" },
 
     // Bloco 02
-    { b: 2, ref: "Apto 01", type: "Tipo", area: "113,35", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 01 bloco 02.png" },
-    { b: 2, ref: "Apto 02", type: "Tipo", area: "113,71", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 02 bloco 02.png" },
-    { b: 2, ref: "Apto 03", type: "Tipo", area: "105,43", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 03 bloco 02.png" },
-    { b: 2, ref: "Apto 04", type: "Tipo", area: "106,66", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 04 bloco 02.png" },
-    { b: 2, ref: "Apto 05", type: "Tipo", area: "105,17", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 05 bloco 02.png" },
-    { b: 2, ref: "Apto 06", type: "Tipo", area: "98,95", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 06 bloco 02.png" },
-    { b: 2, ref: "Apto 07", type: "Tipo", area: "100,62", config: "3 Q (1 Suíte)", img: "images/bloco02/apto 07 bloco 02.png" },
-    { b: 2, ref: "Garden 01", type: "Garden", area: "286,09", config: "Super Premium", img: "images/bloco02/garden 01 bloco 02.png" },
-    { b: 2, ref: "Garden 02", type: "Garden", area: "282,32", config: "Super Premium", img: "images/bloco02/garden 02 bloco 02.png" },
-    { b: 2, ref: "Garden 06", type: "Garden", area: "138,55", config: "Premium", img: "images/bloco02/garden 06 bloco 02.png" },
-    { b: 2, ref: "Garden 07", type: "Garden", area: "176,30", config: "Premium", img: "images/bloco02/garden 07 bloco 02.png" }
+    { b: 2, ref: "Apto 01", type: "Tipo", area: "113,35", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 01 bloco 02" },
+    { b: 2, ref: "Apto 02", type: "Tipo", area: "113,71", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 02 bloco 02" },
+    { b: 2, ref: "Apto 03", type: "Tipo", area: "105,43", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 03 bloco 02" },
+    { b: 2, ref: "Apto 04", type: "Tipo", area: "106,66", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 04 bloco 02" },
+    { b: 2, ref: "Apto 05", type: "Tipo", area: "105,17", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 05 bloco 02" },
+    { b: 2, ref: "Apto 06", type: "Tipo", area: "98,95", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 06 bloco 02" },
+    { b: 2, ref: "Apto 07", type: "Tipo", area: "100,62", config: "3 Q (1 Suíte)", img: "images/otimizadas/plantas/bloco02/apto 07 bloco 02" },
+    { b: 2, ref: "Garden 01", type: "Garden", area: "286,09", config: "Super Premium", img: "images/otimizadas/plantas/bloco02/garden 01 bloco 02" },
+    { b: 2, ref: "Garden 02", type: "Garden", area: "282,32", config: "Super Premium", img: "images/otimizadas/plantas/bloco02/garden 02 bloco 02" },
+    { b: 2, ref: "Garden 06", type: "Garden", area: "138,55", config: "Premium", img: "images/otimizadas/plantas/bloco02/garden 06 bloco 02" },
+    { b: 2, ref: "Garden 07", type: "Garden", area: "176,30", config: "Premium", img: "images/otimizadas/plantas/bloco02/garden 07 bloco 02" }
 ];
 
 let swiperInstance = null;
@@ -96,7 +84,10 @@ function renderSwiperInstance(n) {
                         
                         <div class="p-10 md:p-14 bg-gray-50 flex items-center justify-center flex-grow overflow-hidden relative">
                             <div class="absolute inset-0 bg-white/40"></div>
-                            <img src="${u.img}" alt="Planta ${u.ref}" class="w-full max-h-[300px] object-contain relative z-10 transition-transform duration-700 ease-out group-hover:scale-[1.15]" loading="lazy">
+                            <picture class="relative z-10 w-full flex justify-center">
+                                <source srcset="${encodeURI(u.img)}.avif" type="image/avif">
+                                <img src="${encodeURI(u.img)}.webp" alt="Planta ${u.ref}" class="w-full max-h-[300px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.15]" loading="lazy">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -210,21 +201,48 @@ function renderProjetoGallery() {
 
     // Galeria Cênica do Projeto
     const galleryImgs = [
-        "images/fachada/foto (4).jpeg",
-        "images/areas-de-lazer/foto (1).jpeg",
-        "images/areas-de-lazer/foto (15).jpeg",
-        "images/areas-de-lazer/foto (26).jpeg"
+        "images/otimizadas/fachada-galeria",
+        "images/otimizadas/academia",
+        "images/otimizadas/beach-tenis",
+        "images/otimizadas/bike",
+        "images/otimizadas/coworking",
+        "images/otimizadas/espaco-wine",
+        "images/otimizadas/espaco-kids",
+        "images/otimizadas/lavanderia",
+        "images/otimizadas/piscina1",
+        "images/otimizadas/piscina2",
+        "images/otimizadas/prancha",
+        "images/otimizadas/quadra",
+        "images/otimizadas/salao-de-festa"
+
+
     ];
 
-    wrapper.innerHTML = galleryImgs.map(img => `
-        <div class="swiper-slide w-[85%] md:w-[60%] h-full">
+    wrapper.innerHTML = galleryImgs.map(img => {
+        const isVideo = img.includes('fachada-galeria');
+        return `
+        <div class="swiper-slide w-[85%] md:w-[60%] h-full ${isVideo ? 'cursor-pointer group/slide' : ''}" 
+             ${isVideo ? 'onclick="openVideoModal()"' : ''}>
             <div class="w-full h-full bg-gray-100 overflow-hidden relative shadow-sm">
-                <img src="${img}" class="w-full h-full object-cover" alt="Visão Arquitetônica" loading="lazy">
+                <picture class="w-full h-full">
+                    <source srcset="${encodeURI(img)}.avif" type="image/avif">
+                    <img src="${encodeURI(img)}.webp" class="w-full h-full object-cover transition-transform duration-700 ${isVideo ? 'group-hover/slide:scale-105' : ''}" alt="Visão Arquitetônica" loading="lazy">
+                </picture>
+                
+                ${isVideo ? `
+                <div class="absolute inset-0 flex items-center justify-center bg-navy/20 group-hover/slide:bg-navy/40 transition-all duration-500">
+                    <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border border-white/40 flex flex-col items-center justify-center backdrop-blur-md group-hover/slide:scale-110 group-hover/slide:border-white transition-all duration-500">
+                        <i class="ph ph-play-fill text-white text-3xl mb-2 ml-1"></i>
+                        <span class="text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center px-3 leading-tight">Clique para<br>Assistir</span>
+                    </div>
+                </div>
+                ` : `
                 <!-- Efeito Overlay Transparente -->
                 <div class="absolute inset-0 bg-transparent transition-colors duration-1000"></div>
+                `}
             </div>
         </div>
-    `).join('');
+    `}).join('');
 
     new Swiper('.projeto-swiper', {
         slidesPerView: 'auto',
@@ -234,15 +252,76 @@ function renderProjetoGallery() {
         speed: 1200,
         autoplay: {
             delay: 3000,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
         },
-        allowTouchMove: false // Requirement: "sem clique" / "sem arrastar"
+        grabCursor: true,
+        allowTouchMove: true
+    });
+}
+
+// Video Modal Functions
+window.openVideoModal = function () {
+    const modal = document.getElementById('video-modal');
+    const container = document.getElementById('video-container');
+
+    // Vimeo Embed Code (Vertical 9:16)
+    const vimeoEmbed = `
+        <div style="padding:177.78% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1183720745?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1" 
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                title="Aldeia Beach Clube - Guarapari/ES"></iframe>
+        </div>
+    `;
+
+    container.innerHTML = vimeoEmbed;
+
+    // Ensure Vimeo API script is loaded if not already
+    if (!document.querySelector('script[src*="player.vimeo.com/api/player.js"]')) {
+        const s = document.createElement('script');
+        s.src = "https://player.vimeo.com/api/player.js";
+        document.body.appendChild(s);
+    }
+
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    document.body.style.overflow = 'hidden';
+}
+
+window.closeVideoModal = function () {
+    const modal = document.getElementById('video-modal');
+    const container = document.getElementById('video-container');
+
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    container.innerHTML = ''; // Kill the video
+    document.body.style.overflow = '';
+}
+
+function initMain() {
+    blockTab(1);
+    renderLazerCards();
+    renderProjetoGallery();
+
+    // Close modal triggers
+    const closeBtn = document.getElementById('close-modal');
+    const modal = document.getElementById('video-modal');
+
+    if (closeBtn) closeBtn.onclick = closeVideoModal;
+    if (modal) {
+        modal.onclick = (e) => {
+            if (e.target === modal) closeVideoModal();
+        }
+    }
+
+    // ESC key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeVideoModal();
     });
 }
 
 // Initial Load
-document.addEventListener('DOMContentLoaded', () => {
-    blockTab(1);
-    renderLazerCards();
-    renderProjetoGallery();
-});
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMain);
+} else {
+    initMain();
+}

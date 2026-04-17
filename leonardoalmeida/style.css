@@ -166,3 +166,16 @@ body {
 .parallax-wrapper {
     clip-path: inset(0);
 }
+
+/* Video Modal Animations */
+#video-modal.opacity-0 {
+    transform: scale(1.05);
+}
+
+#video-modal:not(.opacity-0) {
+    transform: scale(1);
+}
+
+#video-container iframe {
+    border-radius: 8px;
+}
