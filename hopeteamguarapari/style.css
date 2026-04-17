@@ -302,10 +302,12 @@ body {
     }
 }
 
-/* Fix para título longo "Modalidades" em telas muito pequenas (Ex: 320px) */
-@media (max-width: 340px) {
+/* Fix para título longo "Modalidades" em telas pequenas */
+@media (max-width: 640px) {
     #modalidades h2 {
-        font-size: 2.6rem; /* Reduz de 3rem (5xl) para garantir que caiba */
-        line-height: 1;
+        font-size: 11vw; /* Escala dinamicamente com a largura da tela */
+        max-width: 90%;
+        line-height: 1.1;
+        word-wrap: break-word;
     }
 }
