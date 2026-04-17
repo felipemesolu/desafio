@@ -49,6 +49,13 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Luciana Carvalho** | Estética Fashion & Moderna | Tailwind/Refining |
 | **Oliver Confeitaria** | Visual Premium & Gourmet | IA + Refinamento |
 | **Jullya Souza** | Catálogo de Beleza & Admin | Vanilla CSS + IA |
+| **Origem Camisas** | E-commerce de Camisetas | Tailwind CSS |
+| **BonGoût Pimentas** | Gastronomia & Molhos | IA + Custom Design |
+| **IPFV Colatina** | Institucional Religioso | IA + Custom Design |
+| **Doces da Mel** | Confeitaria & Vendas | Tailwind CSS |
+| **Apartamento 302** | Aluguel de Temporada | IA + Custom Design |
+| **DL Artesanato** | Portfolio de Artesanato | Vanilla CSS |
+| **HOPE TEAM BOXE** | Academia de Boxe | Brutalist Design |
 
 ---
 

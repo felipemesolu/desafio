@@ -1,0 +1,311 @@
+:root {
+    --hope-red: #e63939;
+    --dark-bg: #09090b;
+    --accent: #e63939; /* Adicionado para compatibilidade com a section créditos */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* cursor: auto; */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hope-red);
+}
+
+/* Noise overlay */
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Stroke text effect for brutalist style */
+.hover-stroke {
+    transition: all 0.5s ease;
+}
+
+.hover-stroke:hover {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+
+/* Underline Animation */
+.hover-underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Marquee Animation */
+.marquee-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Base Reveal classes (will be triggered by GSAP) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.reveal-text {
+    opacity: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+/* Navbar Sticky Effect */
+#navbar.sticky-nav {
+    background: rgba(9, 9, 11, 0.85); /* base-900 with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Parallax Bg */
+.parallax-bg {
+    background-position: right top;
+}
+
+/* ============================================================
+   CRÉDITOS OFICIAIS (Dark Mode Adaptation)
+   ============================================================ */
+.credits-section {
+    position: relative;
+    padding: 3.5rem 2rem;
+    background: var(--dark-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.credits-bg-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(5rem, 20vw, 14rem);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: rgba(230, 57, 57, 0.05);
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.credits-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.credits-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* ── Badge (left side) ── */
+.credits-badge {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(20, 20, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.25rem 1.75rem;
+    flex-wrap: nowrap; /* Forçando uma linha no desktop */
+    max-width: 550px; /* Aumentado para acomodar a fonte Syne */
+}
+
+.badge-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex-shrink: 0;
+}
+
+.badge-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #71717a;
+}
+
+.badge-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f4f4f5;
+    line-height: 1.2;
+}
+
+.badge-title span {
+    color: var(--hope-red);
+}
+
+.badge-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.badge-desc {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    line-height: 1.5;
+    /* max-width removido para evitar quebra interna */
+}
+
+/* ── Dev block (right side) ── */
+.credits-dev {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    text-align: right;
+}
+
+.dev-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #71717a;
+}
+
+.dev-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.1em;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.dev-main {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #f4f4f5;
+    transition: color 0.2s;
+}
+
+.dev-ext {
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    color: var(--hope-red);
+    transition: color 0.2s;
+}
+
+.dev-brand:hover .dev-main {
+    color: white;
+}
+.dev-brand:hover .dev-ext {
+    color: #ff4d4d;
+}
+
+.dev-link {
+    font-size: 0.85rem;
+    color: var(--hope-red);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: color 0.2s, letter-spacing 0.2s;
+}
+
+.dev-link:hover {
+    color: white;
+    letter-spacing: 0.06em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .credits-flex {
+        flex-direction: column;
+        align-items: center; /* Centralizado no mobile */
+        gap: 3rem; /* Mais espaço entre o badge e a marca */
+    }
+
+    .credits-badge {
+        max-width: 100%;
+        flex-wrap: wrap; 
+        justify-content: center; /* Centraliza conteúdo interno se quebrar */
+        text-align: center;
+    }
+
+    .badge-divider {
+        display: none; /* Esconde o divisor no mobile se quebrar para não ficar estranho */
+    }
+
+    .credits-dev {
+        align-items: center; /* Centraliza logo e links */
+        text-align: center;
+    }
+}
+
+/* Fix para título longo "Modalidades" em telas muito pequenas (Ex: 320px) */
+@media (max-width: 340px) {
+    #modalidades h2 {
+        font-size: 2.6rem; /* Reduz de 3rem (5xl) para garantir que caiba */
+        line-height: 1;
+    }
+}
