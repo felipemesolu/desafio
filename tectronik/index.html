@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tectronik | Instalações Inteligentes e Automação em Guarapari/ES</title>
+    <meta name="description"
+        content="Especialista em automação residencial, câmeras de segurança, energia solar e climatização em Guarapari. Mais de 5 anos de excelência com Jairo Alves.">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://desafio-1vx.pages.dev/tectronik/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://desafio-1vx.pages.dev/tectronik/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://desafio-1vx.pages.dev/tectronik/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://desafio-1vx.pages.dev/tectronik/images/favicons/site.webmanifest">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desafio-1vx.pages.dev/tectronik/">
+    <meta property="og:title" content="Tectronik | Instalações Inteligentes e Automação em Guarapari/ES">
+    <meta property="og:description"
+        content="Soluções inteligentes para sua residência ou empresa em Guarapari/ES. Automação, Segurança e Energia Solar.">
+    <meta property="og:image" content="https://desafio-1vx.pages.dev/tectronik/images/favicons/og-image.jpg">
+
+    <!-- GEO Tags -->
+    <meta name="geo.region" content="BR-ES">
+    <meta name="geo.placename" content="Guarapari">
+    <meta name="geo.position" content="-20.6435877;-40.4786044">
+    <meta name="ICBM" content="-20.6435877, -40.4786044">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.min.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+        "@type": "LocalBusiness",
+        "@id": "https://desafio-1vx.pages.dev/tectronik/#business",
+        "name": "Tectronik Instalações Inteligentes",
+        "image": "https://desafio-1vx.pages.dev/tectronik/images/logo-tectronik.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Paraná - Praia do Morro",
+          "addressLocality": "Guarapari",
+          "addressRegion": "ES",
+          "postalCode": "29217-030",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -20.6435877,
+          "longitude": -40.4786044
+        },
+        "url": "https://desafio-1vx.pages.dev/tectronik/",
+        "telephone": "+5527998147831"
+      }]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- ─── MOBILE NAV ─── -->
+    <nav class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Menu de navegação">
+        <button class="mobile-nav-close" id="close-nav" aria-label="Fechar menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#" class="mobile-nav-link">Início</a>
+        <a href="#servicos" class="mobile-nav-link">Serviços</a>
+        <a href="#especialista" class="mobile-nav-link">Especialista</a>
+        <a href="#contato" class="mobile-nav-link">Contato</a>
+        <a href="https://wa.me/5527998147831?text=Olá! Vim pelo site e gostaria de um orçamento."
+            class="btn btn-solid mobile-cta">Orçamento</a>
+    </nav>
+
+    <!-- ─── HEADER ─── -->
+    <header id="v2-header">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Tectronik – página inicial">
+                <img src="images/nav-icon.png" alt="Tectronik Logo" width="160" height="42">
+            </a>
+
+            <ul class="nav-links" role="list">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#especialista">Especialista</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li>
+                    <a href="https://wa.me/5527998147831?text=Olá! Vim pelo site e gostaria de um orçamento."
+                        class="btn btn-solid nav-cta" id="nav-orcamento-btn">
+                        <i class="fab fa-whatsapp"></i> Orçamento
+                    </a>
+                </li>
+            </ul>
+
+            <button class="burger" id="burger-btn" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ─── HERO ─── -->
+        <section class="hero-v2" aria-label="Apresentação Tectronik">
+            <!-- Decorative vertical line (absolute to not break grid) -->
+            <div class="v-line" aria-hidden="true"
+                style="position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--c-border); z-index: 1;">
+            </div>
+
+            <!-- Left content -->
+            <div class="hero-left">
+                <div class="hero-eyebrow">
+                    <div class="hero-line"></div>
+                    <span>Especialistas em Guarapari/ES</span>
+                </div>
+
+                <h1 class="hero-h1" id="hero-title">
+                    Tecnologia <br><span class="word-highlight">e Segurança</span>
+                </h1>
+
+                <p class="hero-desc">
+                    Câmeras, Automação, Energia Solar e Climatização com suporte especializado. </p>
+
+                <div class="hero-actions">
+                    <a href="#servicos" class="btn btn-solid" id="hero-services-btn">
+                        Ver Serviços <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.google.com/maps/place/Tectronik+instala%C3%A7oes+inteligente/@-20.6435877,-40.4786044,17z/data=!4m14!1m7!3m6!1s0xb8576764ff96bb:0xc6ee5be2d85e88bb!2sTectronik+instala%C3%A7oes+inteligente!8m2!3d-20.6435877!4d-40.4786044!16s%2Fg%2F11f37th8gt!3m5!1s0xb8576764ff96bb:0xc6ee5be2d85e88bb!8m2!3d-20.6435877!4d-40.4786044!16s%2Fg%2F11f37th8gt"
+                        class="btn btn-ghost" id="hero-reviews-btn" target="_blank" rel="noopener">
+                        <i class="fas fa-star"></i> Avaliações
+                    </a>
+                </div>
+
+
+            </div>
+
+            <!-- Right visual panel -->
+            <div class="hero-right">
+                <div class="hero-visual-panel" aria-hidden="true">
+                    <!-- Technical Grid Background -->
+                    <div class="tech-grid-overlay"></div>
+
+                    <div class="hero-logo-container">
+                        <img src="images/logo-tectronik.webp" alt="Tectronik Logo" class="hero-side-logo">
+                    </div>
+
+                    <!-- Decorative Coordinates -->
+                    <div class="tech-coords">
+                        <span>Praia do Morro</span>
+                        <span>GUARAPARI / ES</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── MARQUEE BAR ─── -->
+        <div class="marquee-bar" aria-hidden="true">
+            <div class="marquee-track">
+                <!-- items × 2 for seamless loop -->
+                <div class="marquee-item"><span>Automação Residencial</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Câmeras IP</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Cerca Elétrica</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Fechadura Digital</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Alarme 24h</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Ar Condicionado</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Energia Solar</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Interfonia</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Automação Residencial</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Câmeras IP</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Cerca Elétrica</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Fechadura Digital</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Alarme 24h</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Ar Condicionado</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Energia Solar</span><span class="marquee-dot"></span></div>
+                <div class="marquee-item"><span>Interfonia</span><span class="marquee-dot"></span></div>
+            </div>
+        </div>
+
+        <!-- ─── SERVICES ─── -->
+        <section id="servicos" class="services-v2">
+            <div class="container">
+                <div class="section-header anim-wait" style="--anim-delay:0s">
+                    <div>
+                        <div class="tag" style="margin-bottom: 20px;">O que fazemos</div>
+                        <h2 class="section-title">Serviços de Segurança Eletrônica e Automação em Guarapari</h2>
+                    </div>
+                    <p class="section-sub">Oferecemos soluções completas para residências e empresas em Guarapari ES:
+                    </p>
+                </div>
+
+                <ul class="expertise-list">
+                    <!-- 01 Automação Residencial -->
+                    <li class="expertise-item" style="--i:1">
+                        <div class="expertise-num">01</div>
+                        <div class="expertise-name">
+                            <h3>Automação Residencial</h3>
+                            <p>Automatize iluminação, portões e dispositivos pelo celular. Mais controle, segurança e
+                                praticidade no dia a dia.</p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Automação Residencial."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 02 Câmeras de Segurança -->
+                    <li class="expertise-item" style="--i:2">
+                        <div class="expertise-num">02</div>
+                        <div class="expertise-name">
+                            <h3>Instalação de Câmeras de Segurança</h3>
+                            <p>Instalação de câmeras com acesso remoto e gravação em alta definição. Monitore tudo
+                                direto do seu celular.</p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Câmeras de Segurança."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 03 Cerca Elétrica -->
+                    <li class="expertise-item" style="--i:3">
+                        <div class="expertise-num">03</div>
+                        <div class="expertise-name">
+                            <h3>Cerca Elétrica Residencial e Comercial</h3>
+                            <p>Proteção perimetral com cerca elétrica eficiente e instalação dentro das normas de
+                                segurança.</p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Cerca Elétrica."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 04 Fechadura Digital -->
+                    <li class="expertise-item" style="--i:4">
+                        <div class="expertise-num">04</div>
+                        <div class="expertise-name">
+                            <h3>Fechaduras Digitais</h3>
+                            <p>Acesso por biometria, senha ou TAG. Mais segurança e praticidade sem depender de chaves.
+                            </p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Fechadura Digital."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 05 Sistema de Alarme -->
+                    <li class="expertise-item" style="--i:5">
+                        <div class="expertise-num">05</div>
+                        <div class="expertise-name">
+                            <h3>Sistema de Alarme Monitorado 24h</h3>
+                            <p>Sistema de alarme com sensores inteligentes e monitoramento contínuo contra invasões.</p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Alarme Monitorado."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 06 Interfonia -->
+                    <li class="expertise-item" style="--i:6">
+                        <div class="expertise-num">06</div>
+                        <div class="expertise-name">
+                            <h3>Interfonia & Redes</h3>
+                            <p>Soluções completas em interfonia para residências ou empresas, com integração e alta
+                                qualidade sonora.</p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Interfonia."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 07 Ar Condicionado -->
+                    <li class="expertise-item" style="--i:7">
+                        <div class="expertise-num">07</div>
+                        <div class="expertise-name">
+                            <h3>Instalação e Manutenção de Ar Condicionado</h3>
+                            <p>Instalação e manutenção profissional de climatização para o seu máximo conforto térmico.
+                            </p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Ar Condicionado."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- 08 Energia Solar -->
+                    <li class="expertise-item" style="--i:8">
+                        <div class="expertise-num">08</div>
+                        <div class="expertise-name">
+                            <h3>Energia solar Fotovoltaica</h3>
+                            <p>Gere sua própria energia e reduza a conta de luz com um sistema solar eficiente e
+                                duradouro.</p>
+                            <a class="btn btn-solid-small"
+                                href="https://wa.me/5527998147831?text=Olá! Gostaria de saber mais sobre Energia Solar."
+                                target="_blank" rel="noopener">
+                                Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ─── GALLERY SECTION ─── -->
+        <section class="gallery-v2 anim-wait">
+            <div class="container gallery-header">
+                <div class="tag">Instalação Real</div>
+                <h2>Instalações <span class="text-accent">Realizadas</span></h2>
+                <p>Registros reais de instalações feitas para clientes. Segurança, automação e climatização no dia a
+                    dia.</p>
+            </div>
+
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/ar-condicionado.avif" type="image/avif">
+                            <img src="images/fotos/ar-condicionado.webp" alt="Instalação de Ar Condicionado"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/energia-solar.avif" type="image/avif">
+                            <img src="images/fotos/energia-solar.webp" alt="Energia Solar" loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/instalacao-de-ar-condicionado.avif" type="image/avif">
+                            <img src="images/fotos/instalacao-de-ar-condicionado.webp"
+                                alt="Manutenção de Ar Condicionado" loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/instalacao-de-circuito-de-energia-solar.avif"
+                                type="image/avif">
+                            <img src="images/fotos/instalacao-de-circuito-de-energia-solar.webp"
+                                alt="Circuito de Energia Solar" loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/instalacao-de-sistema-de-interfone-coletivo.avif"
+                                type="image/avif">
+                            <img src="images/fotos/instalacao-de-sistema-de-interfone-coletivo.webp"
+                                alt="Interfone Coletivo" loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/instalacao-fechadura-eletronica.avif" type="image/avif">
+                            <img src="images/fotos/instalacao-fechadura-eletronica.webp" alt="Fechadura Eletrônica"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/organizacao-rack-sistemas-de-camera-ip.avif" type="image/avif">
+                            <img src="images/fotos/organizacao-rack-sistemas-de-camera-ip.webp"
+                                alt="Sistemas de Câmera IP" loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/organizacao-sistema-de-camera-e-rede.avif" type="image/avif">
+                            <img src="images/fotos/organizacao-sistema-de-camera-e-rede.webp" alt="Rede e Segurança"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="images/fotos/placas-solares.avif" type="image/avif">
+                            <img src="images/fotos/placas-solares.webp" alt="Placas Solares" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- ─── PROFESSIONAL ─── -->
+        <section id="especialista" class="professional-v2">
+            <div class="container">
+                <div class="prof-layout">
+
+                    <!-- Photo -->
+                    <div class="prof-photo-wrap anim-wait anim-from-left" style="--anim-delay:0s">
+                        <div class="prof-photo-bg" aria-hidden="true"></div>
+                        <div class="prof-photo">
+                            <img src="images/jairo-alves-tectronik-guarapari.webp"
+                                alt="Jairo Alves – Especialista Responsável Tectronik" width="560" loading="lazy">
+                            <div class="prof-badge">
+                                <span>5+</span>
+                                Anos de<br>Experiência
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="prof-info anim-wait anim-from-right" style="--anim-delay:0.15s">
+                        <div class="tag">Especialista Responsável</div>
+
+                        <h2 class="prof-name">Jairo Alves</h2>
+
+                        <p class="prof-desc">
+                            Com mais de 5 anos de atuação dedicada em Guarapari/ES, a Tectronik sob minha liderança
+                            tornou-se referência em instalações inteligentes. Nosso compromisso é entregar tecnologia
+                            que
+                            simplifica a vida e traz segurança real para sua família ou empresa.
+                        </p>
+
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                Atendimento Personalizado e Focado no Cliente
+                            </li>
+                            <li class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                Equipamentos de Alta Performance e Garantia
+                            </li>
+                            <li class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                Suporte Técnico Especializado Pós-Instalação
+                            </li>
+                            <li class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                Projetos para Residências e Empresas
+                            </li>
+                        </ul>
+
+                        <div class="prof-social">
+                            <a href="https://www.instagram.com/jairoauves/" target="_blank" rel="noopener"
+                                class="btn btn-solid" id="prof-instagram-btn">
+                                <i class="fab fa-instagram"></i> Ver no Instagram
+                            </a>
+                            <a href="https://wa.me/5527998147831?text=Olá Jairo! Vim pelo site e quero um orçamento."
+                                target="_blank" rel="noopener" class="btn btn-ghost" id="prof-wa-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT & LOCATION ─── -->
+        <section id="contato" class="contact-v2">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Left: Header & Intro -->
+                    <div class="contact-header anim-wait" style="--anim-delay:0s">
+                        <div class="tag" style="margin-bottom: 24px;">Onde estamos</div>
+                        <h2>Atendimento em <br><span class="text-accent">Guarapari</span> e região</h2>
+                        <p class="contact-desc">Estamos localizados na Av. Paraná, Praia do Morro, em Guarapari ES.
+                            Atendemos toda a região com rapidez e suporte técnico especializado.</p>
+
+                    </div>
+
+                    <!-- Right: Info List -->
+                    <div class="contact-details anim-wait" style="--anim-delay:0.1s">
+                        <ul class="contact-info-list">
+
+                            <li class="contact-info-item">
+                                <div class="info-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <p>(27) 9 9814-7831</p>
+                                </div>
+                            </li>
+
+                            <li class="contact-info-item">
+                                <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <strong>E-mail</strong>
+                                    <p>tectronik2010@gmail.com</p>
+                                </div>
+                            </li>
+
+                            <li class="contact-info-item">
+                                <div class="info-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <strong>Atendimento</strong>
+                                    <p>Seg–Sex: 08h às 18h &nbsp;|&nbsp; Sáb: 08h às 12h</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <a href="https://wa.me/5527998147831?text=Olá! Vim pelo site e gostaria de um orçamento."
+                            class="btn btn-solid" id="contact-wa-btn" target="_blank" rel="noopener"
+                            style="margin-top: 24px;">
+                            <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Width Map -->
+            <div class="map-full anim-wait" style="--anim-delay:0.2s">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.638476718939!2d-40.478604399999995!3d-20.643587699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8576764ff96bb%3A0xc6ee5be2d85e88bb!2sTectronik%20instala%C3%A7oes%20inteligente!5e0!3m2!1spt-BR!2sbr!4v1776515526377!5m2!1spt-BR!2sbr"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização da Tectronik no Google Maps">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer-v2">
+        <div class="container footer-centered">
+            <div class="footer-brand">
+                <img src="images/logo-tectronik.webp" alt="Tectronik Logo" height="180" class="footer-logo">
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/tectronikautomacao/" target="_blank" rel="noopener"
+                        class="social-link" aria-label="Instagram Tectronik">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063616343850" target="_blank" rel="noopener"
+                        class="social-link" aria-label="Facebook Tectronik">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/5527998147831" target="_blank" rel="noopener" class="social-link"
+                        aria-label="WhatsApp Tectronik">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Tectronik Instalações Inteligentes. Todos os direitos reservados.</span>
+                <span>Guarapari · ES · Brasil</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CRÉDITOS OFICIAIS -->
+    <section class="credits-section">
+        <div class="credits-bg-text" aria-hidden="true">18 / 30</div>
+
+        <div class="credits-container">
+            <div class="credits-flex">
+                <div class="credits-badge">
+                    <div class="badge-info">
+                        <span class="badge-label">Projeto do Desafio</span>
+                        <h5 class="badge-title">
+                            <span>30 Dias,</span> 30 Sites
+                        </h5>
+                    </div>
+                    <div class="badge-divider"></div>
+                    <p class="badge-desc">Este site foi solicitado via <a
+                            href="https://www.instagram.com/p/DWhKoJpqWZR/" target="_blank" rel="noopener noreferrer"
+                            style="color: var(--accent); font-weight: 700; text-decoration: none;">@Instagram</a>
+                    </p>
+                </div>
+
+                <div class="credits-dev">
+                    <span class="dev-label">Desenvolvido por</span>
+                    <a href="https://mesolu.com.br" target="_blank" rel="noopener noreferrer" class="dev-brand">
+                        <span class="dev-main">MESOLU</span>
+                        <span class="dev-ext">.com.br</span>
+                    </a>
+                    <a href="https://desafio-1vx.pages.dev/" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        Acompanhar Projeto →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SCRIPTS ─── -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        /* ── Register GSAP ── */
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ── Gallery Swiper ── */
+        const swiper = new Swiper('.gallery-swiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        /* ── Header on scroll (Reveals on Next Section) ── */
+        const header = document.getElementById('v2-header');
+
+        ScrollTrigger.create({
+            trigger: ".marquee-bar",
+            start: "top top",
+            onEnter: () => header.classList.add('scrolled'),
+            onLeaveBack: () => header.classList.remove('scrolled'),
+        });
+
+        /* ── Mobile nav ── */
+        const mobileNav = document.getElementById('mobile-nav');
+        const burgerBtn = document.getElementById('burger-btn');
+
+        function toggleNav() {
+            const isOpen = mobileNav.classList.contains('open');
+            if (isOpen) {
+                mobileNav.classList.remove('open');
+                burgerBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                mobileNav.classList.add('open');
+                burgerBtn.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                gsap.from('.mobile-nav-link', {
+                    y: 30, opacity: 0, duration: 0.4, stagger: 0.1, ease: 'back.out(1.7)'
+                });
+            }
+        }
+
+        burgerBtn.addEventListener('click', toggleNav);
+        document.getElementById('close-nav').addEventListener('click', toggleNav);
+
+        // Close on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', toggleNav);
+        });
+
+        /* ── Hero GSAP entrance ── */
+        const heroTl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+        heroTl
+            .from('.hero-eyebrow', { y: 30, opacity: 0, duration: 0.8, delay: 0.2 })
+            .from('.hero-h1', { y: 60, opacity: 0, duration: 1, skewY: 2 }, '-=0.5')
+            .from('.hero-desc', { y: 30, opacity: 0, duration: 0.8 }, '-=0.6')
+            .from('.hero-actions', { y: 20, opacity: 0, duration: 0.6 }, '-=0.5')
+
+            .from('.tech-grid-overlay', { opacity: 0, duration: 2 }, '-=1.5')
+            .from('.hero-side-logo', {
+                opacity: 0, scale: 0.8, duration: 1.5, ease: 'expo.out'
+            }, '-=1.8')
+            .from('.tech-coords', { opacity: 0, y: 20, duration: 1 }, '-=0.5');
+
+        /* ── Reveal on scroll ── */
+        const animEls = document.querySelectorAll('.anim-wait');
+        animEls.forEach(el => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%',
+                    onEnter: () => el.classList.add('anim-play'),
+                    once: true
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
