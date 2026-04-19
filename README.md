@@ -56,6 +56,8 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Apartamento 302** | Aluguel de Temporada | IA + Custom Design |
 | **DL Artesanato** | Portfolio de Artesanato | Vanilla CSS |
 | **HOPE TEAM BOXE** | Academia de Boxe | Brutalist Design |
+| **Tectronik** | Automação Industrial | Modern Dark |
+| **Mai Doces** | Confeitaria Artesanal | Editorial & Premium |
 
 ---
 
