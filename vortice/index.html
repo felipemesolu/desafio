@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vórtice Multimarcas — Vestindo você com elegância e estilo.</title>
+    <meta name="description"
+        content="Descubra os melhores produtos de moda em Guarapari. Roupas, calçados e acessórios. Peça direto pelo WhatsApp!">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vórtice Multimarcas — Vestindo você com elegância e estilo.">
+    <meta property="og:description" content="Descubra nosso catálogo de moda imersivo e peça direto pelo WhatsApp.">
+    <meta property="og:image" content="https://desafio-1vx.pages.dev/vortice/images/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="theme-color" content="#050505">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://desafio-1vx.pages.dev/vortice/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://desafio-1vx.pages.dev/vortice/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://desafio-1vx.pages.dev/vortice/images/favicon-16x16.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://desafio-1vx.pages.dev/vortice/#business",
+          "name": "Vórtice Multimarcas",
+          "image": "https://desafio-1vx.pages.dev/vortice/images/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Santana do Iapó, 397 - Muquiçaba",
+            "addressLocality": "Guarapari",
+            "addressRegion": "ES",
+            "addressCountry": "BR"
+          },
+          "url": "https://desafio-1vx.pages.dev/vortice/",
+          "telephone": "+5527999953518"
+        },
+        {
+          "@type": "WebSite",
+          "name": "Vórtice Multimarcas — Vestindo você com elegância e estilo.",
+          "url": "https://desafio-1vx.pages.dev/vortice/",
+          "creator": {
+            "@type": "Person",
+            "name": "Felipe Mesolu",
+            "url": "https://mesolu.com.br"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <!-- ── Store Info Panel (Landing mobile / Sidebar desktop) ─────── -->
+        <aside class="store-info-panel" id="store-info-panel">
+            <div class="store-content">
+
+                <div class="store-hero">
+                    <img src="images/logo-vortice-250x120.png" alt="Vórtice Logo" class="store-logo">
+                    <h1 class="store-title">Vórtice<br>Multimarcas</h1>
+                    <p class="store-tagline">Vestindo você com elegância e estilo.</p>
+                    <div class="store-stats">
+                        <div class="stat-item">
+                            <i class="ph ph-star-fill"></i>
+                            <span><strong>5.0</strong> · 11 avaliações</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Guarapari, ES</span>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-links-container">
+                    <a href="javascript:void(0)" onclick="document.getElementById('about-modal').classList.add('open')"
+                        class="sidebar-filter-btn">
+                        <i class="ph ph-info"></i> Informações da Loja
+                    </a>
+                    <a href="https://www.instagram.com/vorticemultimarca/" target="_blank" class="sidebar-filter-btn">
+                        <i class="ph ph-instagram-logo"></i> Instagram
+                    </a>
+                    <a href="https://wa.me/5527999953518" target="_blank" class="sidebar-filter-btn">
+                        <i class="ph ph-whatsapp-logo"></i> Falar no WhatsApp
+                    </a>
+                </nav>
+
+                <button id="start-catalog-btn" class="btn-primary start-catalog-btn mobile-only"
+                    onclick="document.getElementById('store-info-panel').classList.add('hidden')">
+                    <i class="ph ph-play"></i> Explorar Catálogo
+                </button>
+
+                <div class="store-footer">&copy; 2026 Vórtice Ele &amp; Ela Multimarcas.</div>
+            </div>
+        </aside>
+
+        <!-- ── Main Mobile-Style Container ──────────────────────────────── -->
+        <div class="mobile-container">
+
+            <!-- Header Overlay -->
+            <header class="app-header">
+                <div class="header-top">
+                    <div class="logo-container mobile-logo">
+                        <img src="images/logo-vortice-250x120.png" alt="Vórtice" class="logo">
+                    </div>
+                    <div id="slide-counter" class="slide-counter" aria-live="polite">1 / 16</div>
+                    <div class="header-actions mobile-only">
+                        <button id="menu-toggle-btn" class="icon-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+                            <i class="ph ph-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="category-pills-wrapper">
+                    <div class="category-pills" id="category-pills">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+            </header>
+
+            <!-- Mobile Slide-in Menu -->
+            <div class="mobile-menu mobile-only" id="mobile-menu" aria-hidden="true">
+                <div class="menu-header">
+                    <img src="images/logo-vortice-250x120.png" alt="Vórtice" class="menu-logo">
+                    <button class="icon-btn" onclick="toggleMenu()" aria-label="Fechar menu"><i
+                            class="ph ph-x"></i></button>
+                </div>
+                <ul class="menu-nav">
+                    <li><a href="#" onclick="showStoreInfo(); toggleMenu();">
+                            <i class="ph ph-house"></i> Início
+                        </a></li>
+                    <li><a href="#"
+                            onclick="document.getElementById('about-modal').classList.add('open'); toggleMenu();">
+                            <i class="ph ph-info"></i> Sobre a Loja
+                        </a></li>
+                    <li><a href="https://www.instagram.com/vorticemultimarca/" target="_blank">
+                            <i class="ph ph-instagram-logo"></i> Instagram
+                        </a></li>
+                    <li><a href="https://wa.me/5527999953518" target="_blank">
+                            <i class="ph ph-whatsapp-logo"></i> Contato WhatsApp
+                        </a></li>
+                    <li><a href="https://chat.whatsapp.com/KnMzPtTCwsUHNn1vMbJHt6?mode=ac_t" target="_blank"
+                            class="menu-vip-link">
+                            <i class="ph ph-users"></i> Clube VIP
+                        </a></li>
+                </ul>
+            </div>
+
+            <!-- Product Feed -->
+            <main class="feed-container" id="feed-container" aria-label="Catálogo de produtos">
+                <!-- Rendered via JS -->
+            </main>
+
+            <!-- Swipe Hint (shown only initially) -->
+            <div class="swipe-indicator" id="swipe-indicator" aria-hidden="true">
+                <div class="swipe-animation">
+                    <i class="ph ph-hand-swipe-up"></i>
+                    <span>Deslize para explorar</span>
+                </div>
+            </div>
+
+        </div><!-- /mobile-container -->
+
+        <!-- ── Desktop Right Category Sidebar ───────────────────────────── -->
+        <aside class="desktop-category-sidebar desktop-only" aria-label="Filtro por categorias">
+            <h3>Categorias</h3>
+            <button id="cat-all" class="sidebar-filter-btn active" data-category="all"><i
+                    class="ph ph-squares-four"></i> Todos</button>
+            <button id="cat-vestidos" class="sidebar-filter-btn" data-category="vestidos"><i class="ph ph-dress"></i>
+                Vestidos</button>
+            <button id="cat-blusas" class="sidebar-filter-btn" data-category="blusas"><i class="ph ph-t-shirt"></i>
+                Blusas</button>
+            <button id="cat-conjuntos" class="sidebar-filter-btn" data-category="conjuntos"><i class="ph ph-stack"></i>
+                Conjuntos</button>
+            <button id="cat-calcados" class="sidebar-filter-btn" data-category="calcados"><i class="ph ph-sneaker"></i>
+                Calçados</button>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="https://chat.whatsapp.com/KnMzPtTCwsUHNn1vMbJHt6?mode=ac_t" target="_blank"
+                class="sidebar-filter-btn vip-btn">
+                <i class="ph ph-users"></i> Clube VIP
+            </a>
+        </aside>
+
+    </div><!-- /app-layout -->
+
+    <!-- ── About Store Modal ─────────────────────────────────────────── -->
+    <div class="global-modal" id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="document.getElementById('about-modal').classList.remove('open')"
+                aria-label="Fechar">
+                <i class="ph ph-x"></i>
+            </button>
+            <h2 id="about-modal-title">Vórtice Multimarcas</h2>
+
+            <div class="store-info-list">
+                <div class="info-group">
+                    <i class="ph ph-clock"></i>
+                    <div>
+                        <strong>Funcionamento</strong>
+                        Seg a Sex: 09h30 – 18h<br>
+                        Sábado: 09h – 13h
+                    </div>
+                </div>
+                <div class="info-group">
+                    <i class="ph ph-map-pin"></i>
+                    <div>
+                        <strong>Endereço</strong>
+                        R. Santana do Iapó, 397<br>
+                        Muquiçaba, Guarapari – ES
+                    </div>
+                </div>
+                <div class="info-group reviews">
+                    <i class="ph ph-star-fill"></i>
+                    <div>
+                        <strong>Avaliação Google: 5.0 (11 avaliações)</strong>
+                        <em>"Loja maravilhosa, atendimento impecável e sempre com novidades!"</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.2192237203203!2d-40.5011612!3d-20.6606583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8570072efebc3%3A0xff7a13c9474e91ce!2sV%C3%B3rtice%20-%20Cal%C3%A7ados%20e%20Acess%C3%B3rios!5e0!3m2!1spt-BR!2sbr!4v1776638422572!5m2!1spt-BR!2sbr"
+                    width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Localização Vórtice">
+                </iframe>
+            </div>
+
+            <div style="margin-top: 24px; text-align: center;">
+                <a href="https://chat.whatsapp.com/KnMzPtTCwsUHNn1vMbJHt6?mode=ac_t" target="_blank" class="btn-primary"
+                    style="display:inline-flex; gap:8px; text-decoration:none; font-size:1rem; max-width:280px; margin:0 auto;">
+                    <i class="ph ph-users"></i> Entrar no Clube VIP
+                </a>
+            </div>
+
+            <!-- Project Credits -->
+            <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); text-align: center; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                <p style="margin-bottom: 12px;">
+                    <strong style="color: var(--text-primary);">Projeto do Desafio</strong><br>
+                    30 Dias, 30 Sites<br>
+                    Este site foi solicitado via <a href="https://www.instagram.com/reel/DWhKoJpqWZR/" target="_blank" style="color: var(--gold); text-decoration: none;">@Instagram</a>
+                </p>
+                <p style="margin-bottom: 12px;">
+                    <strong style="color: var(--text-primary);">Desenvolvido por</strong><br>
+                    <a href="https://mesolu.com.br/" target="_blank" style="color: white; text-decoration: none; font-weight: 600;">MESOLU.com.br</a>
+                </p>
+                <a href="https://desafio-1vx.pages.dev/" target="_blank" style="display: inline-block; color: var(--gold); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Ver todos os 30 sites &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

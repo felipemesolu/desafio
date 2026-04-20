@@ -1,0 +1,22 @@
+{
+  "name": "Vórtice Multimarcas",
+  "short_name": "Vórtice",
+  "description": "Catálogo imersivo Vórtice — peça pelo WhatsApp",
+  "start_url": "/v2/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "../images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "../images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
