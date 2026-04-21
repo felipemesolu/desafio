@@ -59,6 +59,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Tectronik** | Automação Industrial | Modern Dark |
 | **Mai Doces** | Confeitaria Artesanal | Editorial & Premium |
 | **Vórtice Multimarcas** | Catálogo de Moda Mobile-First | Mobile First & TikTok Style |
+| **Casa de Hóspedes Vale da Estação** | Aluguel de Temporada Premium | IA + Premium Design |
 
 ---
 

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Hóspedes Vale da Estação - Domingos Martins/ES</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Descubra a Casa de Hóspedes Vale da Estação. Hospedagem premium e locação por temporada em Domingos Martins/ES. O refúgio perfeito nas montanhas capixabas com design, paz e natureza.">
+    <meta name="keywords"
+        content="hospedagem domingos martins, airbnb domingos martins, locação por temporada, férias montanhas capixabas, vale da estação, aluguel de temporada es">
+    <meta name="author" content="Vale da Estação">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Casa de Hóspedes Vale da Estação - Domingos Martins/ES">
+    <meta property="og:description"
+        content="O seu refúgio nas montanhas capixabas. Design, conforto e a tranquilidade que você procura na Casa de Hóspedes Vale da Estação.">
+    <meta property="og:image" content="https://desafio-1vx.pages.dev/valedaestacao/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Casa de Hóspedes Vale da Estação - Domingos Martins/ES">
+    <meta property="twitter:description"
+        content="O seu refúgio nas montanhas capixabas. Design, conforto e a tranquilidade que você procura na Casa de Hóspedes Vale da Estação.">
+    <meta property="twitter:image" content="images/og-image.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://desafio-1vx.pages.dev/valedaestacao/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://desafio-1vx.pages.dev/valedaestacao/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="https://desafio-1vx.pages.dev/valedaestacao/images/favicon-32x32.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            1: '#114559', /* Dark Blue */
+                            2: '#0f4c59', /* Dark Teal */
+                            3: '#d9d37e', /* Soft Yellow */
+                            4: '#736d51', /* Olive */
+                            5: '#d9c39a', /* Beige/Sand */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Clean Base */
+        body {
+            background-color: #ffffff;
+            color: #1f2937;
+            /* Tailwind gray-800 */
+        }
+
+        ::selection {
+            background-color: #d9d37e;
+            /* brand-3 */
+            color: #114559;
+            /* brand-1 */
+        }
+
+        /* Swiper Customizations */
+        .swiper-slide {
+            height: auto;
+        }
+
+        /* Subtle Fade In Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://desafio-1vx.pages.dev/valedaestacao/#business",
+          "name": "Casa de Hóspedes Vale da Estação",
+          "image": "https://desafio-1vx.pages.dev/valedaestacao/images/og-image.jpg",
+          "description": "O seu refúgio nas montanhas capixabas. Hospedagem premium e locação por temporada na Casa de Hóspedes Vale da Estação em Domingos Martins/ES.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Domingos Martins",
+            "addressRegion": "ES",
+            "addressCountry": "BR"
+          },
+          "url": "https://desafio-1vx.pages.dev/valedaestacao/",
+          "telephone": ""
+        },
+        {
+          "@type": "WebSite",
+          "name": "Casa de Hóspedes Vale da Estação - Domingos Martins/ES",
+          "url": "https://desafio-1vx.pages.dev/valedaestacao/",
+          "creator": {
+            "@type": "Person",
+            "name": "Felipe Mesolu",
+            "url": "https://mesolu.com.br"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="font-sans antialiased select-none">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 py-5 px-6 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="#" class="flex items-center gap-2 min-w-0">
+                <img src="images/favicon-32x32.png" alt="Logo" class="w-6 h-6 object-contain shrink-0">
+                <div class="flex flex-col whitespace-nowrap overflow-hidden">
+                    <span
+                        class="text-[8px] uppercase tracking-[0.2em] font-bold text-gray-400 leading-none mb-0.5">Airbnb</span>
+                    <span
+                        class="text-sm md:text-xl font-semibold tracking-tight text-brand-1 font-serif italic leading-none">Casa
+                        de Hóspedes
+                        Vale da Estação</span>
+                </div>
+            </a>
+            <a href="https://www.airbnb.com.br/rooms/1319678643764954512" target="_blank"
+                class="bg-brand-1 text-white px-5 md:px-8 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium hover:bg-brand-2 transition-colors shadow-sm shrink-0 whitespace-nowrap">
+                Agendar
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <span class="text-brand-4 font-medium tracking-widest uppercase text-sm mb-4 block">Domingos
+                Martins🌿❄️</span>
+            <h1
+                class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter text-brand-1 mb-8 leading-tight font-serif italic">
+                Paz. Tranquilidade. <br class="hidden md:block">Natureza.
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
+                A sua melhor experiência de <span class="text-brand-1 font-medium">hospedagem</span> e <span
+                    class="text-brand-1 font-medium">locação por temporada</span> em <span
+                    class="text-brand-1 font-medium">Domingos Martins/ES</span>. O refúgio perfeito para suas <span
+                    class="text-brand-1 font-medium">férias</span> pelo <span
+                    class="text-brand-1 font-medium">Airbnb</span>, onde o design encontra a paz das montanhas.
+            </p>
+        </div>
+    </header>
+
+    <!-- Hero Image & Logo Highlight -->
+    <section class="max-w-[92%] md:max-w-[85%] mx-auto mb-32 fade-in-up">
+        <div
+            class="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_-12px_rgba(17,69,89,0.15)] relative h-[50vh] md:h-[75vh] group">
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700 z-10"></div>
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+                <div
+                    class="bg-white/30 backdrop-blur-md p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/40 transition-transform duration-700 group-hover:scale-105">
+                    <picture>
+                        <source srcset="images/airbnb-vale-da-estaca-logotipo.avif" type="image/avif">
+                        <source srcset="images/airbnb-vale-da-estaca-logotipo.webp" type="image/webp">
+                        <img src="images/airbnb-vale-da-estaca-logotipo.png" alt="Logotipo Vale da Estação"
+                            class="w-48 md:w-80 drop-shadow-lg" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <picture class="w-full h-full">
+                <!-- Mobile -->
+                <source srcset="images/destaque-mobile.avif" media="(max-width: 768px)" type="image/avif">
+                <source srcset="images/destaque-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                <!-- Desktop -->
+                <source srcset="images/destaque-desktop.avif" type="image/avif">
+                <img src="images/destaque-desktop.webp" alt="Fachada Vale da Estação"
+                    class="w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-110"
+                    fetchpriority="high">
+            </picture>
+        </div>
+    </section>
+
+    <!-- WhatsApp Quick Answers Grid (Clean Minimalist) -->
+    <section class="max-w-7xl mx-auto px-6 py-16 mb-24 fade-in-up">
+        <h2
+            class="text-3xl md:text-4xl font-semibold text-brand-1 tracking-tight mb-16 text-center md:text-left font-serif italic">
+            Tudo o que você
+            precisa saber.</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-gray-100 pt-16">
+            <div class="group">
+                <div
+                    class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-brand-5 group-hover:scale-110 transition-transform">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-medium text-brand-1 mb-3 tracking-tight">Até 5 hóspedes</h3>
+                <p class="text-gray-500 font-light">Espaço perfeito para casais, pequenas famílias ou amigos.</p>
+            </div>
+
+            <div class="group">
+                <div
+                    class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-brand-5 group-hover:scale-110 transition-transform">
+                    <i data-lucide="clock" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-medium text-brand-1 mb-3 tracking-tight">Check-in flexível</h3>
+                <p class="text-gray-500 font-light">Liberdade para chegar no horário que fizer mais sentido para a sua
+                    rotina de viagem.</p>
+            </div>
+
+            <div class="group">
+                <div
+                    class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-brand-5 group-hover:scale-110 transition-transform">
+                    <i data-lucide="ban" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-medium text-brand-1 mb-3 tracking-tight">Sem animais</h3>
+                <p class="text-gray-500 font-light">Para manter as configurações do espaço, não é permitido acomodar
+                    pets.</p>
+            </div>
+
+            <div class="group">
+                <div
+                    class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-brand-5 group-hover:scale-110 transition-transform">
+                    <i data-lucide="calendar" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-medium text-brand-1 mb-3 tracking-tight">Long Stay suportado</h3>
+                <p class="text-gray-500 font-light">Estadias de longa duração permitidas (28 dias ou mais).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="bg-gray-50/50 py-32 rounded-[2rem] md:rounded-[3rem] mx-4 md:mx-12 mb-32 fade-in-up">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 md:gap-24 relative">
+            <div class="lg:w-1/3">
+                <div class="sticky top-32">
+                    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-brand-1 mb-6 font-serif italic">O
+                        que o Vale da
+                        Estação oferece.</h2>
+                    <p class="text-gray-500 font-light text-lg">Comodidades completas e organizadas para que a sua
+                        experiência seja apenas de descanso e aproveitamento.</p>
+                </div>
+            </div>
+
+            <div class="lg:w-2/3 space-y-16">
+                <!-- Categoria: Quarto e Banho -->
+                <div class="border-t border-gray-200 pt-8" id="banho">
+                    <h4 class="text-2xl font-medium text-brand-1 mb-8 flex items-center gap-3">
+                        <i data-lucide="bed" class="text-brand-5"></i> Quarto, Lavanderia e Banheiro
+                    </h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 text-gray-600 font-light">
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Água quente e Secador de cabelo</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Roupas de cama</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Cobertores e travesseiros extras</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Cortinas blackout</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Local para guardar as roupas, Cabides
+                        </li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Ferro de passar</li>
+                    </ul>
+                </div>
+
+                <!-- Categoria: Cozinha e Refeições -->
+                <div class="border-t border-gray-200 pt-8">
+                    <h4 class="text-2xl font-medium text-brand-1 mb-8 flex items-center gap-3">
+                        <i data-lucide="utensils" class="text-brand-5"></i> Cozinha e Refeições
+                    </h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 text-gray-600 font-light">
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Cozinha completa para preparo de
+                            refeições</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Pratos, talheres, tigelas, copos e
+                            hashi</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Micro-ondas, Freezer, Liquidificador
+                        </li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Taças de vinho</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Mesa de jantar</li>
+                    </ul>
+                </div>
+
+                <!-- Categoria: Ar Livre e Churrasqueira -->
+                <div class="border-t border-gray-200 pt-8">
+                    <h4 class="text-2xl font-medium text-brand-1 mb-8 flex items-center gap-3">
+                        <i data-lucide="flame" class="text-brand-5"></i> Área Externa
+                    </h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 text-gray-600 font-light">
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Churrasqueira com utensílios próprios
+                        </li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Grelha e espetos disponíveis</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Rede de descanso</li>
+                    </ul>
+                </div>
+
+                <!-- Categoria: Climatização e Entretenimento -->
+                <div class="border-t border-gray-200 pt-8">
+                    <h4 class="text-2xl font-medium text-brand-1 mb-8 flex items-center gap-3">
+                        <i data-lucide="thermometer-sun" class="text-brand-5"></i> Climatização, Conexão e Lazer
+                    </h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 text-gray-600 font-light">
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Ar-condicionado</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Ventiladores portáteis</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Wi-Fi e espaço para trabalho</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> TV com entretenimento</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Livros e brinquedos infantis</li>
+                    </ul>
+                </div>
+
+                <!-- Categoria: Segurança -->
+                <div class="border-t border-gray-200 pt-8">
+                    <h4 class="text-2xl font-medium text-brand-1 mb-8 flex items-center gap-3">
+                        <i data-lucide="shield-check" class="text-brand-5"></i> Segurança
+                    </h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 text-gray-600 font-light">
+                        <li class="flex items-start gap-3"><i data-lucide="check"
+                                class="text-brand-3 w-5 h-5 shrink-0 mt-0.5"></i> Câmeras de segurança na área externa
+                            do imóvel e na entrada 🏡</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Slider Section -->
+    <section class="py-24 overflow-hidden fade-in-up">
+        <div class="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-brand-1 mb-2 font-serif italic">Sinta
+                    o espaço.</h2>
+                <p class="text-gray-500 font-medium text-xs tracking-wider uppercase flex items-center gap-2"><i
+                        data-lucide="maximize" class="w-4 h-4 text-brand-5"></i> [Clique sobre qualquer foto para ver em
+                    tela cheia]</p>
+            </div>
+            <div class="flex gap-4">
+                <button
+                    class="swiper-button-prev-custom w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-1 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-3"><i
+                        data-lucide="arrow-left" class="w-5"></i></button>
+                <button
+                    class="swiper-button-next-custom w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-1 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-3"><i
+                        data-lucide="arrow-right" class="w-5"></i></button>
+            </div>
+        </div>
+
+        <!-- Swiper Container -->
+        <div class="swiper mySwiper pl-6 md:pl-[calc((100vw-80rem)/2+1.5rem)] pb-12 cursor-grab text-brand-1">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- Images injected by JS -->
+            </div>
+            <div class="swiper-pagination mt-8 relative"></div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="max-w-6xl mx-auto px-6 py-32 text-center fade-in-up">
+        <div class="bg-brand-1 rounded-[3rem] p-12 md:p-24 relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div
+                class="absolute -top-40 -left-40 w-96 h-96 bg-brand-2 rounded-full mix-blend-multiply opacity-50 blur-3xl">
+            </div>
+            <div
+                class="absolute -bottom-40 -right-40 w-96 h-96 bg-brand-3 rounded-full mix-blend-multiply opacity-20 blur-3xl">
+            </div>
+
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-white mb-8 font-serif italic">Planeje
+                    seu descanso.</h2>
+                <p class="text-lg md:text-xl text-white/80 font-light max-w-3xl mx-auto mb-12">
+                    Reserve com a tranquilidade da <span class="text-brand-3 font-semibold">Proteção AirCover</span>
+                    exclusiva do Airbnb. Sua hospedagem garantida com suporte especializado em uma das plataformas mais
+                    seguras do mundo.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+                    <a href="https://www.airbnb.com.br/rooms/1319678643764954512" target="_blank"
+                        class="bg-white text-brand-1 px-10 py-5 rounded-full text-lg font-medium hover:bg-gray-50 transition-transform transform hover:scale-105 shadow-xl w-full sm:w-auto text-center flex items-center justify-center gap-2">
+                        <i data-lucide="calendar-check" class="w-5 h-5"></i> Reservar no Airbnb
+                    </a>
+                    <a href="https://www.instagram.com/airbnb_valedaestacao/" target="_blank"
+                        class="text-white/90 border border-white/30 px-10 py-5 rounded-full text-lg font-medium hover:bg-white/10 transition-colors w-full sm:w-auto flex justify-center items-center gap-3">
+                        <i data-lucide="instagram"></i> Ver Instagram
+                    </a>
+                </div>
+
+                <!-- Trust Badges Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/10 text-white/70">
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-brand-3"></i>
+                        </div>
+                        <p class="text-sm font-medium tracking-wide uppercase">Pagamento Blindado</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-brand-3"></i>
+                        </div>
+                        <p class="text-sm font-medium tracking-wide uppercase">Anfitrião Verificado</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+                            <i data-lucide="heart-handshake" class="w-6 h-6 text-brand-3"></i>
+                        </div>
+                        <p class="text-sm font-medium tracking-wide uppercase">Suporte 24/7 AirCover</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 py-12 text-center">
+        <p class="text-sm font-light text-gray-400">© 2026 Casa de Hóspedes Vale da Estação. Domingos Martins, ES.</p>
+    </footer>
+
+    <!-- Credits Section (Mesolu) -->
+    <section class="py-24 bg-white overflow-hidden border-t border-gray-50">
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <!-- Background Large Text -->
+            <div
+                class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] select-none">
+                <span class="text-[12rem] md:text-[20rem] font-bold text-brand-1">21/30</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-between gap-12">
+                <div
+                    class="bg-gray-50/50 border border-gray-100 p-8 md:p-10 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-sm">
+                    <div
+                        class="flex flex-col items-center md:items-start text-center md:text-left gap-2 border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-12">
+                        <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">Projeto do
+                            Desafio</span>
+                        <h4 class="text-2xl font-bold flex gap-2">
+                            <span class="text-brand-1">30 Dias,</span>
+                            <span class="text-brand-1">30 Sites</span>
+                        </h4>
+                    </div>
+
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+                        <p class="text-sm text-gray-500 font-light">Este site foi solicitado via</p>
+                        <a href="https://www.instagram.com/p/DWhKoJpqWZR/" target="_blank"
+                            class="text-lg font-bold text-brand-1 hover:text-brand-2 transition-colors">@Instagram</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+                    <span
+                        class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 leading-none">Desenvolvido
+                        por</span>
+                    <div class="text-4xl md:text-5xl font-bold tracking-tighter">
+                        <a href="https://mesolu.com.br" target="_blank" class="hover:opacity-80 transition-opacity">
+                            <span class="text-brand-1 leading-none">MESOLU</span><span
+                                class="text-brand-5 leading-none">.com.br</span>
+                        </a>
+                    </div>
+                    <a href="https://desafio-1vx.pages.dev/" target="_blank"
+                        class="text-brand-4 font-medium flex items-center gap-2 hover:gap-3 transition-all text-[10px] uppercase tracking-widest mt-2">
+                        Acompanhar Projeto <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox"
+        class="fixed inset-0 bg-black/95 z-[100] hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+        <button onclick="closeLightbox()"
+            class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors focus:outline-none z-[110]"><i
+                data-lucide="x" class="w-10 h-10"></i></button>
+        <button onclick="changePhoto(-1)"
+            class="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors focus:outline-none z-[110]"><i
+                data-lucide="chevron-left" class="w-12 h-12 md:w-16 md:h-16"></i></button>
+        <div class="relative w-full h-full p-4 md:p-12 flex justify-center items-center">
+            <img id="lightbox-img" src=""
+                class="max-w-full max-h-full object-contain drop-shadow-2xl transition-opacity duration-300">
+        </div>
+        <button onclick="changePhoto(1)"
+            class="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors focus:outline-none z-[110]"><i
+                data-lucide="chevron-right" class="w-12 h-12 md:w-16 md:h-16"></i></button>
+        <div id="lightbox-counter"
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-sm tracking-widest font-light z-[110]">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // 1. Navbar shrink effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm', 'py-3');
+                nav.classList.remove('py-5');
+            } else {
+                nav.classList.remove('shadow-sm', 'py-3');
+                nav.classList.add('py-5');
+            }
+        });
+
+        // 2. Load Photos
+        const photos = [
+            "fotos/webp/vista2-ambiente-interno.webp",
+            "fotos/webp/vista1-ambiente-interno.webp",
+            "fotos/webp/cozinha-equipada.webp",
+            "fotos/webp/cozinha-foto2.webp",
+            "fotos/webp/mesa-jantar-interna.webp",
+            "fotos/webp/suite-foto1.webp",
+            "fotos/webp/suite-casal-foto2.webp",
+            "fotos/webp/banheiro-suite-casa-foto2.webp",
+            "fotos/webp/quarto-solteiro-3-camas.webp",
+            "fotos/webp/pia-externa-lavabo.webp",
+            "fotos/webp/banheir-social.webp",
+            "fotos/webp/area-de-servico.webp",
+            "fotos/webp/suite-foto2.webp",
+            "fotos/webp/fachada-entrada-hospedagem.webp",
+            "fotos/webp/area-externa-gourmet-mesa-redes.webp",
+            "fotos/webp/area-externa-foto2.webp",
+            "fotos/webp/area-externa-gourmet-freezer.webp",
+            "fotos/webp/fonte-de-agua-vilarejo.webp",
+            "fotos/webp/linha-de-trem-vilarejo.webp",
+            "fotos/webp/vilarejo-linha-de-trem.webp",
+            "fotos/webp/vilarejo-placa.webp",
+            "fotos/webp/vilarejo-rua.webp",
+            "fotos/webp/vilarejo-trilho-trem-caminho.webp",
+            "fotos/webp/2d885e78-0afb-4563-86eb-a0c65541c7ea.webp"
+        ];
+
+        const swiperWrapper = document.getElementById('swiper-wrapper');
+
+        photos.forEach((photoSrc, index) => {
+            const avifSrc = photoSrc.replace('webp/', '').replace('.webp', '.avif');
+
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide w-[70vw] md:w-[45vw] lg:w-[32vw] rounded-[2rem] overflow-hidden shadow-md border border-gray-100 flex-shrink-0 cursor-pointer';
+            slide.onclick = () => openLightbox(index);
+            slide.innerHTML = `
+                <div class="relative w-full h-full group">
+                    <picture class="w-full h-full">
+                        <source srcset="${avifSrc}" type="image/avif">
+                        <img src="${photoSrc}" alt="Galeria Vale da Estação" class="w-full h-auto aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-10 h-10 drop-shadow-md"></i>
+                    </div>
+                </div>
+            `;
+            swiperWrapper.appendChild(slide);
+        });
+
+        // 3. Init Swiper
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next-custom',
+                prevEl: '.swiper-button-prev-custom',
+            },
+            breakpoints: {
+                768: {
+                    spaceBetween: 32,
+                }
+            }
+        });
+
+        // 4. Scroll Reveal Animations (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(element => {
+            observer.observe(element);
+        });
+
+        // 5. Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        let currentPhotoIndex = 0;
+
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            updateLightboxImage();
+            lightbox.classList.remove('hidden');
+            // Small delay to allow display flex to apply before transitioning opacity
+            setTimeout(() => {
+                lightbox.classList.add('flex');
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons(); // Instantiates any dynamically added lucide icons just in case
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function changePhoto(direction) {
+            currentPhotoIndex += direction;
+            if (currentPhotoIndex < 0) currentPhotoIndex = photos.length - 1;
+            if (currentPhotoIndex >= photos.length) currentPhotoIndex = 0;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            lightboxImg.style.opacity = '0.3';
+            const webpPath = photos[currentPhotoIndex];
+            const avifPath = webpPath.replace('webp/', '').replace('.webp', '.avif');
+
+            setTimeout(() => {
+                // Try AVIF first for max quality in lightbox, fallback logic is browser-native if we used picture
+                // but for JS swap, we just point to the best supported.
+                lightboxImg.src = avifPath;
+                lightboxImg.onerror = () => { lightboxImg.src = webpPath; };
+
+                lightboxImg.onload = () => {
+                    lightboxImg.style.opacity = '1';
+                };
+                lightboxCounter.textContent = `${currentPhotoIndex + 1} / ${photos.length}`;
+            }, 150);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') changePhoto(1);
+            if (e.key === 'ArrowLeft') changePhoto(-1);
+        });
+
+    </script>
+</body>
+
+</html>
