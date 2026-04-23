@@ -1,0 +1,22 @@
+{
+  "name": "Sil Almeida Store",
+  "short_name": "Sil Almeida",
+  "description": "T-shirt com Propósito — Vista sua identidade todos os dias.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4e3e3",
+  "theme_color": "#f4e3e3",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}

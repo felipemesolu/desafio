@@ -61,6 +61,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Vórtice Multimarcas** | Catálogo de Moda Mobile-First | Mobile First & TikTok Style |
 | **Casa de Hóspedes Vale da Estação** | Aluguel de Temporada Premium | IA + Premium Design |
 | **Studio Mary Marinho** | Estética Natural & Terapias | Vanilla CSS |
+| **Sil Almeida Store** | Moda Cristã & Identidade | Vanilla CSS + IA |
 
 ---
 
