@@ -127,7 +127,13 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-bg-image"></div>
+        <picture class="hero-bg-image">
+            <source media="(max-width: 768px)" srcset="images/bg-mobile.avif" type="image/avif">
+            <source media="(max-width: 768px)" srcset="images/bg-mobile.webp" type="image/webp">
+            <source srcset="images/bg-desktop.avif" type="image/avif">
+            <source srcset="images/bg-desktop.webp" type="image/webp">
+            <img src="images/bg-desktop.webp" alt="Background Hero" class="hero-img">
+        </picture>
         <div class="hero-pattern"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -145,7 +151,10 @@
     <section class="section brand-story" id="marca">
         <div class="container story-grid">
             <div class="story-image-wrapper">
-                <img src="images/fotos/foto-gl.avif" alt="Detalhes da Joia" class="story-image">
+                <picture>
+                    <source srcset="images/fotos/foto-gl.avif" type="image/avif">
+                    <img src="images/fotos/foto-gl.webp" alt="Detalhes da Joia" class="story-image">
+                </picture>
                 <div class="story-badge">
                     <i class="ph ph-sparkle"></i>
                     <span>EXCLUSIVO</span>
