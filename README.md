@@ -62,6 +62,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Casa de Hóspedes Vale da Estação** | Aluguel de Temporada Premium | IA + Premium Design |
 | **Studio Mary Marinho** | Estética Natural & Terapias | Vanilla CSS |
 | **Sil Almeida Store** | Moda Cristã & Identidade | Vanilla CSS + IA |
+| **GL Acessórios Finos** | Joias em Verniz Italiano | Vanilla CSS + IA |
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "name": "GL Acessórios Finos",
+  "short_name": "GL Acessórios",
+  "description": "Exclusividade e Elegância em acessórios finos.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#c59253",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
