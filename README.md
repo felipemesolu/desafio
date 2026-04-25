@@ -63,6 +63,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Studio Mary Marinho** | Estética Natural & Terapias | Vanilla CSS |
 | **Sil Almeida Store** | Moda Cristã & Identidade | Vanilla CSS + IA |
 | **GL Acessórios Finos** | Joias em Verniz Italiano | Vanilla CSS + IA |
+| **Luciana Bolos** | Bolos & Kits Festa Premium | Vanilla CSS + IA |
 
 ---
 
