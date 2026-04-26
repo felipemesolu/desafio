@@ -64,6 +64,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Sil Almeida Store** | Moda Cristã & Identidade | Vanilla CSS + IA |
 | **GL Acessórios Finos** | Joias em Verniz Italiano | Vanilla CSS + IA |
 | **Luciana Bolos** | Bolos & Kits Festa Premium | Vanilla CSS + IA |
+| **Auto Escola Rodovia do Sol** | Landing Page para Autoescola | IA + Custom Design |
 
 ---
 
