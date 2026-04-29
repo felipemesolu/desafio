@@ -378,6 +378,7 @@
                     25: { title: 'Luciana Bolos', link: 'https://desafio-1vx.pages.dev/lucianabolos/' },
                     26: { title: 'Auto Escola Rodovia do Sol', link: 'https://desafio-1vx.pages.dev/autoescolarodoviadosol/' },
                     27: { title: 'Espaço RW | Ediene Santana', link: 'https://desafio-1vx.pages.dev/espacorw/' },
+                    28: { title: 'Garden Moda & Acessórios', link: 'https://desafio-1vx.pages.dev/garden/' },
                 };
 
                 if (projects[dayIndex]) {
@@ -398,10 +399,15 @@
             let carouselHTML = '';
             let lastCompleted = 1;
 
+            // Primeiro, identificar o último concluído para o Hero
             for (let i = 1; i <= totalDays; i++) {
+                if (getStatusData(i)) lastCompleted = i;
+            }
+
+            // Depois, gerar o carrossel na ordem inversa (do mais novo para o mais antigo)
+            for (let i = totalDays; i >= 1; i--) {
                 const data = getStatusData(i);
                 if (data) {
-                    lastCompleted = i;
                     const dayString = String(i).padStart(2, '0');
                     carouselHTML += `
                         <div class="swiper-slide flex justify-center">

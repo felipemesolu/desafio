@@ -66,6 +66,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Luciana Bolos** | Bolos & Kits Festa Premium | Vanilla CSS + IA |
 | **Auto Escola Rodovia do Sol** | Landing Page para Autoescola | IA + Custom Design |
 | **Espaço RW | Ediene Santana** | Salão de Beleza & Estética | Vanilla CSS + IA |
+| **Garden Moda & Acessórios** | Moda Feminina & Editorial | Vanilla CSS + IA |
 
 ---
 
