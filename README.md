@@ -65,6 +65,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **GL Acessórios Finos** | Joias em Verniz Italiano | Vanilla CSS + IA |
 | **Luciana Bolos** | Bolos & Kits Festa Premium | Vanilla CSS + IA |
 | **Auto Escola Rodovia do Sol** | Landing Page para Autoescola | IA + Custom Design |
+| **Espaço RW | Ediene Santana** | Salão de Beleza & Estética | Vanilla CSS + IA |
 
 ---
 
