@@ -67,6 +67,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Auto Escola Rodovia do Sol** | Landing Page para Autoescola | IA + Custom Design |
 | **Espaço RW | Ediene Santana** | Salão de Beleza & Estética | Vanilla CSS + IA |
 | **Garden Moda & Acessórios** | Moda Feminina & Editorial | Vanilla CSS + IA |
+| **Hélia Alcântara** | Catálogo Mobile-First & Perfumaria | Vanilla CSS + IA |
 
 ---
 

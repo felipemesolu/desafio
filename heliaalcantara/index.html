@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Primary SEO -->
+    <title>Catálogo da Hélia | Produtos de Pronta Entrega</title>
+    <meta name="description"
+        content="Hélia Alcântara: Consultora de beleza em Guarapari/ES com produtos a pronta entrega e pedidos por catálogo. Natura, Boticário, Avon, produtos naturais e moda feminina.">
+    <meta name="keywords"
+        content="consultora de beleza Guarapari, Natura Guarapari, Boticário Guarapari, Avon Guarapari, pronta entrega cosméticos, moda feminina Guarapari">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Catálogo da Hélia | Produtos de Pronta Entrega">
+    <meta property="og:description"
+        content="Encontre Natura, Boticário, Avon e moda feminina com a Hélia Alcântara em Guarapari/ES. Pronta entrega e pedidos por catálogo. Confira!">
+    <meta property="og:image" content="https://desafio-1vx.pages.dev/heliaalcantara/images/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://desafio-1vx.pages.dev/heliaalcantara/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://desafio-1vx.pages.dev/heliaalcantara/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="https://desafio-1vx.pages.dev/heliaalcantara/images/apple-touch-icon.png">
+
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header class="top-header">
+        <!-- Logo moved to hero section -->
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <!-- Background Elements -->
+            <div class="hero-bg-elements">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+                <div class="bg-text">BELEZA<br>& CUIDADO</div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-brand">
+                    <h1 class="hero-title">
+                        <picture>
+                            <source srcset="images/logotipo-helia.avif" type="image/avif">
+                            <source srcset="images/logotipo-helia.webp" type="image/webp">
+                            <img src="images/logotipo-helia.webp" alt="Catálogo da Hélia" class="hero-logo">
+                        </picture>
+                    </h1>
+                </div>
+                <h2 class="hero-subtitle">Produtos a Pronta Entrega</h2>
+                <p class="hero-description">
+                    Natura, Boticário, Avon e Moda Feminina em Guarapari/ES.
+                </p>
+                <div class="hero-cta">
+                    <a href="#catalog" class="btn btn-catalog btn-icon">
+                        <i class="ph ph-shopping-bag"></i> Ver catálogo
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <div id="filters-desktop" class="filters-container"></div>
+                <!-- Scroll Indicators -->
+                <div class="scroll-indicators">
+                    <button class="scroll-arrow arrow-up" aria-label="Anterior">
+                        <i class="ph ph-caret-up"></i>
+                    </button>
+                    <button class="scroll-arrow arrow-down" aria-label="Próximo">
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                </div>
+
+                <div class="swiper hero-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Dynamically populated by app.js -->
+                    </div>
+                </div>
+                <div class="swiper-pagination custom-pagination"></div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Catálogo Fullscreen para Mobile -->
+    <div id="catalogModal" class="modal-fullscreen">
+        <button class="modal-catalog-close"><i class="ph ph-x"></i></button>
+        <div id="filters-mobile" class="filters-container"
+            style="left: 60px; right: 0; transform: none; max-width: calc(100% - 60px); top: 1.5rem; padding-right: 1.5rem;">
+        </div>
+        <div class="modal-swiper-container">
+            <div class="swiper modal-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Populated by main.js -->
+                </div>
+            </div>
+            <div class="swiper-pagination modal-pagination"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
