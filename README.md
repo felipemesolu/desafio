@@ -68,6 +68,7 @@ A página principal deste repositório (`index.html`) foi projetada como uma **L
 | **Espaço RW | Ediene Santana** | Salão de Beleza & Estética | Vanilla CSS + IA |
 | **Garden Moda & Acessórios** | Moda Feminina & Editorial | Vanilla CSS + IA |
 | **Hélia Alcântara** | Catálogo Mobile-First & Perfumaria | Vanilla CSS + IA |
+| **Kátia Rodrigues Podologia** | Clínica de Podologia & Pés Diabéticos | Vanilla CSS + IA |
 
 ---
 
